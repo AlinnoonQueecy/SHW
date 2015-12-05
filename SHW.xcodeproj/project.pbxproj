@@ -23,7 +23,6 @@
 		1F1B1F2E1C049C3400F52545 /* WBBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1B1F281C049C3400F52545 /* WBBadgeButton.m */; };
 		1F1B1F301C049C5C00F52545 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1B1F2F1C049C5C00F52545 /* TabBarViewController.swift */; };
 		1F1DDEDB1C106807003A69F6 /* ServiceItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DDEDA1C106807003A69F6 /* ServiceItemVC.swift */; };
-		1F23C15B1C08169C0081D3FA /* FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23C15A1C08169C0081D3FA /* FindService.swift */; };
 		1F2482681C0AD24C00EC1540 /* DiscoverTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2482671C0AD24C00EC1540 /* DiscoverTVC.swift */; };
 		1F380C511B69BD2A0076ABB7 /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F380C4E1B69BD2A0076ABB7 /* ico_make.png */; };
 		1F380C641B69CA430076ABB7 /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F380C631B69CA430076ABB7 /* JSDropDownMenu.m */; };
@@ -185,6 +184,7 @@
 		1FAE60051BB2943B00C86F3A /* LaunchHD_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FAE5FFC1BB2943B00C86F3A /* LaunchHD_retina.png */; };
 		1FAE60061BB2943B00C86F3A /* LaunchHD_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FAE5FFC1BB2943B00C86F3A /* LaunchHD_retina.png */; };
 		1FAE60081BB2948400C86F3A /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FAE60071BB2948400C86F3A /* Images-2.xcassets */; };
+		1FB35A131C130721006EA05A /* FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB35A121C130721006EA05A /* FindService.swift */; };
 		1FC530071BA94D95006B1A7C /* HYBImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC530051BA94D95006B1A7C /* HYBImageLoader.swift */; };
 		1FC530081BA94D95006B1A7C /* HYBLoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC530061BA94D95006B1A7C /* HYBLoadingImageView.swift */; };
 		1FC5300F1BA96C7D006B1A7C /* ZYHWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5300D1BA96C7D006B1A7C /* ZYHWebImage.swift */; };
@@ -248,7 +248,6 @@
 		1F1B1F281C049C3400F52545 /* WBBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBBadgeButton.m; sourceTree = "<group>"; };
 		1F1B1F2F1C049C5C00F52545 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1F1DDEDA1C106807003A69F6 /* ServiceItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceItemVC.swift; sourceTree = "<group>"; };
-		1F23C15A1C08169C0081D3FA /* FindService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindService.swift; path = ../../FindService.swift; sourceTree = "<group>"; };
 		1F2482671C0AD24C00EC1540 /* DiscoverTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTVC.swift; sourceTree = "<group>"; };
 		1F380C4E1B69BD2A0076ABB7 /* ico_make.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_make.png; sourceTree = "<group>"; };
 		1F380C611B69C9CD0076ABB7 /* OCContainerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCContainerHeader.h; sourceTree = "<group>"; };
@@ -416,6 +415,7 @@
 		1FAE5FFB1BB2943B00C86F3A /* LaunchHD_5.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchHD_5.5.png; sourceTree = "<group>"; };
 		1FAE5FFC1BB2943B00C86F3A /* LaunchHD_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchHD_retina.png; sourceTree = "<group>"; };
 		1FAE60071BB2948400C86F3A /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		1FB35A121C130721006EA05A /* FindService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindService.swift; path = SHW/FinderService/Controller/FindService.swift; sourceTree = SOURCE_ROOT; };
 		1FC530051BA94D95006B1A7C /* HYBImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBImageLoader.swift; sourceTree = "<group>"; };
 		1FC530061BA94D95006B1A7C /* HYBLoadingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBLoadingImageView.swift; sourceTree = "<group>"; };
 		1FC5300D1BA96C7D006B1A7C /* ZYHWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImage.swift; sourceTree = "<group>"; };
@@ -639,7 +639,7 @@
 		1F69F4131C0D8DEF0010149B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1F23C15A1C08169C0081D3FA /* FindService.swift */,
+				1FB35A121C130721006EA05A /* FindService.swift */,
 				1F47260B1C11B6C00063866F /* PackageListVC.swift */,
 				1F4726071C1147E60063866F /* ServantListVC.swift */,
 				1F1DDEDA1C106807003A69F6 /* ServiceItemVC.swift */,
@@ -1254,13 +1254,13 @@
 				1FA104661B85A94F00BD9AC5 /* PayInfo.m in Sources */,
 				1F84A96D1B72406500FE8B85 /* OrderData.swift in Sources */,
 				1F69F41E1C0D8DEF0010149B /* BusinessVC.swift in Sources */,
+				1FB35A131C130721006EA05A /* FindService.swift in Sources */,
 				1F3F08681C128A82009CE48C /* HeaderCell.swift in Sources */,
 				1F88DCD61C0A8E4E001A72C0 /* XWRefreshAutoNormalFooter.swift in Sources */,
 				1FEB06701C0DC10800A1E442 /* CommentVC.swift in Sources */,
 				1F4478771B9E834100ED8B8A /* LocationViewController.swift in Sources */,
 				1F69F4201C0D8DEF0010149B /* FacilitatorInfo.swift in Sources */,
 				1FAE5FE31BB1021C00C86F3A /* test.mm in Sources */,
-				1F23C15B1C08169C0081D3FA /* FindService.swift in Sources */,
 				1F1B1F181C049BD200F52545 /* UIImage+HSResizingImage.m in Sources */,
 				1F4982C11C1280110048A265 /* ChangePasswordVC.swift in Sources */,
 				1FA104601B85A93700BD9AC5 /* Order.m in Sources */,
@@ -1464,7 +1464,6 @@
 					armv7,
 					armv7s,
 				);
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1501,7 +1500,6 @@
 					armv7,
 					armv7s,
 				);
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: shi zhou (Q5T6B3TCZZ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

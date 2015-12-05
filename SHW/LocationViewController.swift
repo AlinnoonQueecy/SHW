@@ -321,16 +321,16 @@ class LocationViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "toLocation"{
-            
-            let controller = segue.destinationViewController as! MainVC
-            var object = selectedCity.cityName
-            controller.location = object  as String
-        }
-        
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        if segue.identifier == "toLocation"{
+//            
+//            let controller = segue.destinationViewController as! MainVC
+//            var object = selectedCity.cityName
+//            controller.location = object  as String
+//        }
+//        
+//    }
 
  
 
