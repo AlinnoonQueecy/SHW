@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/zhang/Downloads/SHW/SHW/FinderService/View/SideMenuBottomView.m \
-  /Users/zhang/Downloads/SHW/SHW/FinderService/View/SideMenuBottomView.h
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/FinderService/View/SideMenuBottomView.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/FinderService/View/SideMenuBottomView.h

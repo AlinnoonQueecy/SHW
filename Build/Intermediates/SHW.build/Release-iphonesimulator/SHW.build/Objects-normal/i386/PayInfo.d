@@ -1,2 +1,2 @@
-dependencies: /Users/zhang/Downloads/SHW/SHW/PayInfo.m \
-  /Users/zhang/Downloads/SHW/SHW/PayInfo.h
+dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/PayInfo.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/PayInfo.h

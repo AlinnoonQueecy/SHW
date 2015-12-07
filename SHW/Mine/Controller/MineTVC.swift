@@ -202,17 +202,19 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
             }
             
             
-            
-            
-            
         }else if indexPath.section == 2{
+              if customerid != "" && loginPassword != ""{
+                
+               self.performSegueWithIdentifier("toCollect", sender: self)
             
-            
-            
-            
+              }else{
+                //测试
+                let vc = LoginVC()
+                self.navigationController!.pushViewController(vc, animated:true)
+
+            }
+        
         }
-        
-        
         
     }
     

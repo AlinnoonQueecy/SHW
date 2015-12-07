@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/zhang/Downloads/SHW/SHW/3rd\ Frameworks/MJExtension/MJExtensionConst.m
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/3rd\ Frameworks/MJExtension/MJExtensionConst.m

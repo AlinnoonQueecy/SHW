@@ -1,14 +1,13 @@
-version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
-options: "8b12ef1b93db3ade7134762d476396c6"
-build_time: [502769043, 907830000]
-inputs:
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/MultipartFormData.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/ResponseSerialization.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Alamofire.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Download.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Upload.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Request.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/ServerTrustPolicy.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/ParameterEncoding.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Manager.swift": !dirty [502767799, 0]
-  "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Validation.swift": !dirty [502767799, 0]
+version: "Apple Swift version 1.2 (swiftlang-602.0.49.3 clang-clang-602.0.49)"
+options: "4412ca8becdec1c16943850cd5e6b2f0"
+inputs: 
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Alamofire.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Download.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Manager.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/MultipartFormData.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/ParameterEncoding.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Request.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/ResponseSerialization.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/ServerTrustPolicy.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Upload.swift"
+- "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Alamofire/Source/Validation.swift"

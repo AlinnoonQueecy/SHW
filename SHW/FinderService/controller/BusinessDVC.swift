@@ -11,8 +11,8 @@ import UIKit
 class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,UIScrollViewDelegate,NSURLConnectionDelegate,NSURLConnectionDataDelegate{
 
  
-    @IBOutlet weak var FacilitatorTV: UITableView!
     
+    @IBOutlet weak var FacilitatorTV: UITableView!
  
  
     //读取本地数据
@@ -40,10 +40,11 @@ class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
     var introScroll = UIScrollView()
    
     var imageUrlString:String?
+//    var FacilitatorTV = UITableView()
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.whiteColor()
        
         //初始化数据
         readNSUerDefaults ()
@@ -59,6 +60,7 @@ class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
         var width = self.view.frame.width
         //店铺名字
         self.title = "\(detailItem.facilitatorName)"
+        
         //右边Button
         rightButton =  UIBarButtonItem(title: "收藏", style: UIBarButtonItemStyle.Plain, target: self, action: "AddCollect")
         if isCollect == "yes" {
@@ -128,13 +130,12 @@ class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
         Score.backgroundColor = color
         self.view.addSubview(Score)
 
-        
+        //FacilitatorTV = UITableView(frame:  CGRectMake(0, 180,self.view.frame.width,35*3))
         //tableview
         FacilitatorTV.dataSource = self
-        //上部不能下拉
-       // FacilitatorTV.bounces = false
         //不能滚动
         FacilitatorTV.scrollEnabled = false
+        self.view.addSubview(FacilitatorTV)
         
         let y_view = CGFloat(35*3)
         let view = UIView(frame:CGRectMake(0,180+y_view,self.view.frame.width,5))
@@ -199,7 +200,7 @@ class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
         FacilitatorTV.frame = CGRectMake(0, 180,self.view.frame.width,35*3)
         
     }
-//    
+//
     //服务项目的跳转函数
     func  toIntro(term1:UIButton){
         
@@ -318,6 +319,7 @@ class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("FacilitatorCell", forIndexPath: indexPath) as! FacilitatorCell
+        
         let data:[String] = [detailItem.contactPhone,detailItem.officePhone,detailItem.contactAddress]
         let imageName:[String]  = ["phone.png","tel.png","location.png"]
         var image  = UIImage(named:imageName[indexPath.row])

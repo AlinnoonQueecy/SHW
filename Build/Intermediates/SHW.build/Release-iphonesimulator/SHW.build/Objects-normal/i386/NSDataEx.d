@@ -1,2 +1,2 @@
-dependencies: /Users/zhang/Downloads/SHW/SHW/Util/NSDataEx.m \
-  /Users/zhang/Downloads/SHW/SHW/Util/NSDataEx.h
+dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/Util/NSDataEx.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/Util/NSDataEx.h

@@ -35,7 +35,7 @@ class TabBarViewController: HSTabBarViewController {
        let discoverViewController: DiscoverTVC = DiscoverTVC()
         self.addTabBarItemWithViewController(discoverViewController, title: "发现", image: "discover", selectedImage: "discover_highlighted", isWapperedByNavigationController: true)
         
-        let mineViewController: InfoListVC = InfoListVC()
+        let mineViewController: MineTVC = MineTVC()
         self.addTabBarItemWithViewController(mineViewController, title: "我的", image: "mine", selectedImage: "mine_highlighted", isWapperedByNavigationController: true)
         
     }

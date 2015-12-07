@@ -1,3 +1,3 @@
-dependencies: /Users/zhang/Downloads/SHW/View/WBBadgeButton.m \
-  /Users/zhang/Downloads/SHW/View/WBBadgeButton.h \
-  /Users/zhang/Downloads/SHW/Category/UIImage+HSResizingImage.h
+dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/View/WBBadgeButton.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/View/WBBadgeButton.h \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/Category/UIImage+HSResizingImage.h

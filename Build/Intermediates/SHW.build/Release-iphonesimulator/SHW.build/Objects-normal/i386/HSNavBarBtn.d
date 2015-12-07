@@ -1,2 +1,2 @@
-dependencies: /Users/zhang/Downloads/SHW/View/HSNavBarBtn.m \
-  /Users/zhang/Downloads/SHW/View/HSNavBarBtn.h
+dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/View/HSNavBarBtn.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/View/HSNavBarBtn.h

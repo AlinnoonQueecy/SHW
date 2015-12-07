@@ -42,12 +42,10 @@
 		1F47260E1C11BCFA0063866F /* DiscoverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F47260D1C11BCFA0063866F /* DiscoverData.swift */; };
 		1F4726101C11D3820063866F /* DiscoverDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F47260F1C11D3820063866F /* DiscoverDetailVC.swift */; };
 		1F4982BF1C1280110048A265 /* BaseInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B21C1280110048A265 /* BaseInfoVC.swift */; };
-		1F4982C01C1280110048A265 /* ChangeHeadPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B31C1280110048A265 /* ChangeHeadPictureVC.swift */; };
 		1F4982C11C1280110048A265 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B41C1280110048A265 /* ChangePasswordVC.swift */; };
 		1F4982C31C1280110048A265 /* CollectiontabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B61C1280110048A265 /* CollectiontabelViewController.swift */; };
 		1F4982C41C1280110048A265 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B71C1280110048A265 /* CollectionVC.swift */; };
 		1F4982C51C1280110048A265 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B81C1280110048A265 /* CollectionViewController.swift */; };
-		1F4982C61C1280110048A265 /* InfoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B91C1280110048A265 /* InfoListVC.swift */; };
 		1F4982C71C1280110048A265 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BA1C1280110048A265 /* LoginVC.swift */; };
 		1F4982C81C1280110048A265 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BB1C1280110048A265 /* Register.swift */; };
 		1F4982C91C1280110048A265 /* CollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BD1C1280110048A265 /* CollectionData.swift */; };
@@ -148,6 +146,7 @@
 		1FC5300F1BA96C7D006B1A7C /* ZYHWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5300D1BA96C7D006B1A7C /* ZYHWebImage.swift */; };
 		1FC530101BA96C7D006B1A7C /* ZYHWebImageChcheCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5300E1BA96C7D006B1A7C /* ZYHWebImageChcheCenter.swift */; };
 		1FC5307D1BAACEA1006B1A7C /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5307C1BAACEA1006B1A7C /* NSString+URL.m */; };
+		1FD8571D1C15380900F8FC65 /* CommentTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD8571C1C15380900F8FC65 /* CommentTCell.swift */; };
 		1FEB06641C0DA5A400A1E442 /* PackageItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB06631C0DA5A400A1E442 /* PackageItemVC.swift */; };
 		1FEB06681C0DC00D00A1E442 /* servantbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FEB06671C0DC00D00A1E442 /* servantbackground.png */; };
 		1FEB066F1C0DC10800A1E442 /* workerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB066C1C0DC10800A1E442 /* workerViewController.swift */; };
@@ -169,7 +168,6 @@
 		EF1D392B1C13161800BB768C /* ServiceItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D390D1C13161800BB768C /* ServiceItemData.swift */; };
 		EF1D392C1C13161800BB768C /* CDRTranslucentSideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39111C13161800BB768C /* CDRTranslucentSideBar.m */; };
 		EF1D392D1C13161800BB768C /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39131C13161800BB768C /* BusinessCell.swift */; };
-		EF1D392E1C13161800BB768C /* CommentTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39141C13161800BB768C /* CommentTCell.swift */; };
 		EF1D392F1C13161800BB768C /* FacilitatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39151C13161800BB768C /* FacilitatorCell.swift */; };
 		EF1D39301C13161800BB768C /* packageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39161C13161800BB768C /* packageCell.swift */; };
 		EF1D39311C13161800BB768C /* packageItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39171C13161800BB768C /* packageItemCell.swift */; };
@@ -272,12 +270,10 @@
 		1F47260D1C11BCFA0063866F /* DiscoverData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverData.swift; sourceTree = "<group>"; };
 		1F47260F1C11D3820063866F /* DiscoverDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverDetailVC.swift; sourceTree = "<group>"; };
 		1F4982B21C1280110048A265 /* BaseInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInfoVC.swift; sourceTree = "<group>"; };
-		1F4982B31C1280110048A265 /* ChangeHeadPictureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeHeadPictureVC.swift; sourceTree = "<group>"; };
 		1F4982B41C1280110048A265 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		1F4982B61C1280110048A265 /* CollectiontabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectiontabelViewController.swift; sourceTree = "<group>"; };
 		1F4982B71C1280110048A265 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		1F4982B81C1280110048A265 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		1F4982B91C1280110048A265 /* InfoListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoListVC.swift; sourceTree = "<group>"; };
 		1F4982BA1C1280110048A265 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1F4982BB1C1280110048A265 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		1F4982BD1C1280110048A265 /* CollectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionData.swift; sourceTree = "<group>"; };
@@ -395,6 +391,7 @@
 		1FC5300E1BA96C7D006B1A7C /* ZYHWebImageChcheCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImageChcheCenter.swift; sourceTree = "<group>"; };
 		1FC5307B1BAACEA1006B1A7C /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
 		1FC5307C1BAACEA1006B1A7C /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
+		1FD8571C1C15380900F8FC65 /* CommentTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTCell.swift; sourceTree = "<group>"; };
 		1FEB06631C0DA5A400A1E442 /* PackageItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageItemVC.swift; sourceTree = "<group>"; };
 		1FEB06671C0DC00D00A1E442 /* servantbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = servantbackground.png; sourceTree = "<group>"; };
 		1FEB066C1C0DC10800A1E442 /* workerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workerViewController.swift; sourceTree = "<group>"; };
@@ -421,7 +418,6 @@
 		EF1D39101C13161800BB768C /* CDRTranslucentSideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDRTranslucentSideBar.h; sourceTree = "<group>"; };
 		EF1D39111C13161800BB768C /* CDRTranslucentSideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDRTranslucentSideBar.m; sourceTree = "<group>"; };
 		EF1D39131C13161800BB768C /* BusinessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
-		EF1D39141C13161800BB768C /* CommentTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTCell.swift; sourceTree = "<group>"; };
 		EF1D39151C13161800BB768C /* FacilitatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacilitatorCell.swift; sourceTree = "<group>"; };
 		EF1D39161C13161800BB768C /* packageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = packageCell.swift; sourceTree = "<group>"; };
 		EF1D39171C13161800BB768C /* packageItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = packageItemCell.swift; sourceTree = "<group>"; };
@@ -600,12 +596,10 @@
 			children = (
 				1F3F08691C128B17009CE48C /* MineTVC.swift */,
 				1F4982B21C1280110048A265 /* BaseInfoVC.swift */,
-				1F4982B31C1280110048A265 /* ChangeHeadPictureVC.swift */,
 				1F4982B41C1280110048A265 /* ChangePasswordVC.swift */,
 				1F4982B61C1280110048A265 /* CollectiontabelViewController.swift */,
 				1F4982B71C1280110048A265 /* CollectionVC.swift */,
 				1F4982B81C1280110048A265 /* CollectionViewController.swift */,
-				1F4982B91C1280110048A265 /* InfoListVC.swift */,
 				1F4982BA1C1280110048A265 /* LoginVC.swift */,
 				1F4982BB1C1280110048A265 /* Register.swift */,
 			);
@@ -923,8 +917,8 @@
 		EF1D39121C13161800BB768C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				1FD8571C1C15380900F8FC65 /* CommentTCell.swift */,
 				EF1D39131C13161800BB768C /* BusinessCell.swift */,
-				EF1D39141C13161800BB768C /* CommentTCell.swift */,
 				EF1D39151C13161800BB768C /* FacilitatorCell.swift */,
 				EF1D39161C13161800BB768C /* packageCell.swift */,
 				EF1D39171C13161800BB768C /* packageItemCell.swift */,
@@ -1339,9 +1333,7 @@
 				1F1DDEDB1C106807003A69F6 /* ServiceItemVC.swift in Sources */,
 				1F612D0D1C0ADA5200040F29 /* DiscoverCell.swift in Sources */,
 				EF1D39261C13161800BB768C /* FacilitatorInfo.swift in Sources */,
-				1F4982C01C1280110048A265 /* ChangeHeadPictureVC.swift in Sources */,
 				EF9880061C13DFC300943117 /* MJExtensionConst.m in Sources */,
-				EF1D392E1C13161800BB768C /* CommentTCell.swift in Sources */,
 				EF1D392D1C13161800BB768C /* BusinessCell.swift in Sources */,
 				1F3F086C1C128B21009CE48C /* FooterCell.swift in Sources */,
 				1F4982CA1C1280110048A265 /* MyInfoData.swift in Sources */,
@@ -1383,6 +1375,7 @@
 				1F84A96F1B72E63A00FE8B85 /* EvaluateVC.swift in Sources */,
 				EF1D392F1C13161800BB768C /* FacilitatorCell.swift in Sources */,
 				1FA104651B85A94F00BD9AC5 /* AlipayMethod.m in Sources */,
+				1FD8571D1C15380900F8FC65 /* CommentTCell.swift in Sources */,
 				1F4982C41C1280110048A265 /* CollectionVC.swift in Sources */,
 				1FC530071BA94D95006B1A7C /* HYBImageLoader.swift in Sources */,
 				1F90C2E81B422E27008618B4 /* erweimaViewController.swift in Sources */,
@@ -1391,7 +1384,6 @@
 				EF1D39301C13161800BB768C /* packageCell.swift in Sources */,
 				1F2482681C0AD24C00EC1540 /* DiscoverTVC.swift in Sources */,
 				1F88DCD91C0A8E4E001A72C0 /* XWRefreshGifHeader.swift in Sources */,
-				1F4982C61C1280110048A265 /* InfoListVC.swift in Sources */,
 				EF98800D1C13DFC300943117 /* NSObject+MJKeyValue.m in Sources */,
 				1F1B1F2C1C049C3400F52545 /* HSTabBarButton.m in Sources */,
 				1FEB06801C0E88DC00A1E442 /* FinishTVController.swift in Sources */,

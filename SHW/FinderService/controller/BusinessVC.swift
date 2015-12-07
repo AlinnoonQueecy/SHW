@@ -520,7 +520,14 @@
     
     
     func package(){
- 
+        //push跳转
+//        let svc = PackageVC()
+//        svc.FirstType = FirstType
+//            
+//    
+//        self.navigationController!.pushViewController(svc,animated:true)
+        
+
        self.performSegueWithIdentifier("toPackage", sender: self)
         
     }
@@ -555,7 +562,18 @@
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isPerson == 0 {
             
-            self.performSegueWithIdentifier("toBDetail", sender: self)
+           self.performSegueWithIdentifier("toBDetail", sender: self)
+//            //push跳转
+//            let svc = BusinessDVC()
+//            if let indexPath = self.businessTable.indexPathForSelectedRow(){
+//                svc.facilitatorid = selectbusiness[indexPath.row].facilitatorID
+//                
+//            }
+//            self.navigationController!.pushViewController(svc,animated:true)
+            
+        
+        
+
             
         }else if isPerson == 1 {
             //push跳转

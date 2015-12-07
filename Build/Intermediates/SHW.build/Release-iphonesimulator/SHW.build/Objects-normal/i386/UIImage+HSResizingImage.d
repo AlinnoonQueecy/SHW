@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/zhang/Downloads/SHW/Category/UIImage+HSResizingImage.m \
-  /Users/zhang/Downloads/SHW/Category/UIImage+HSResizingImage.h
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/Category/UIImage+HSResizingImage.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/Category/UIImage+HSResizingImage.h

@@ -1,2 +1,2 @@
-dependencies: /Users/zhang/Downloads/SHW/SHW/Order.m \
-  /Users/zhang/Downloads/SHW/SHW/Order.h
+dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/Order.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/Order.h

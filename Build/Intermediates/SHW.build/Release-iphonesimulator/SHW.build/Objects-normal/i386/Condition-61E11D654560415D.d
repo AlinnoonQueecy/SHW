@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/zhang/Downloads/SHW/SHW/FinderService/Model/Condition.m \
-  /Users/zhang/Downloads/SHW/SHW/FinderService/Model/Condition.h
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/FinderService/Model/Condition.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/FinderService/Model/Condition.h

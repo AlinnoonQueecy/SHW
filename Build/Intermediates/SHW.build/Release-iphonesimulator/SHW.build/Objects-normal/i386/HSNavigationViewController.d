@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/zhang/Downloads/SHW/Controller/HSNavigationViewController.m \
-  /Users/zhang/Downloads/SHW/Controller/HSNavigationViewController.h
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/Controller/HSNavigationViewController.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/Controller/HSNavigationViewController.h

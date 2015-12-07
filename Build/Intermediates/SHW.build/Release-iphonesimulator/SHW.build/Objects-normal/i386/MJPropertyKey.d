@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/zhang/Downloads/SHW/SHW/3rd\ Frameworks/MJExtension/MJPropertyKey.m \
-  /Users/zhang/Downloads/SHW/SHW/3rd\ Frameworks/MJExtension/MJPropertyKey.h
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/3rd\ Frameworks/MJExtension/MJPropertyKey.m \
+  /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/3rd\ Frameworks/MJExtension/MJPropertyKey.h

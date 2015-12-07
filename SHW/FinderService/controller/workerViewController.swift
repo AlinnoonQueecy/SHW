@@ -274,6 +274,7 @@ class workerViewController: UIViewController,UITableViewDelegate,UITableViewData
          commentTableView.hidden = true
         commentTableView.dataSource = self
         self.view.addSubview(commentTableView)
+        
         serverResponse = getResponse(Servantdata.servantID) as String
         commentlabel = UILabel(frame:CGRectMake(8,8,self.view.frame.width,40))
         commentlabel.textColor = UIColor.grayColor()
