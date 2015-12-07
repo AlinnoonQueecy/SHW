@@ -1,1 +1,1 @@
-dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/SHW/test.mm
+dependencies: /Users/zhang/Desktop/\ Learn\ IOS/SHW/test.mm

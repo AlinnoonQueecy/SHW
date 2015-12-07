@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:TableViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:SHW.xcodeproj">
    </FileRef>
    <FileRef

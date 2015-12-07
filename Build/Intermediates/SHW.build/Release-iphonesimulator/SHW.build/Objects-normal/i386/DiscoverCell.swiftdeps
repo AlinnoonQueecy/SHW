@@ -4,20 +4,20 @@ provides:
 nominals:
 - "C3SHW12DiscoverCell"
 class-members:
-- "DiscoverImage"
 - "setSelected"
 - "awakeFromNib"
+- "DiscoverImage"
 top-level:
-- "UITableViewCell"
 - "Bool"
 - "UIImageView"
+- "UITableViewCell"
 member-access:
 - "CSo6UIView"
-- "CSo8NSObject"
 - "C3SHW12DiscoverCell"
+- "CSo11UIResponder"
 - "PSs9AnyObject"
 - "CSo15UITableViewCell"
-- "CSo11UIResponder"
+- "CSo8NSObject"
 dynamic-lookup:
 cross-module:
 - "/Volumes/Xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/32/Swift.swiftmodule"

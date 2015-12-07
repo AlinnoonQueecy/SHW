@@ -13,21 +13,18 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     
     @IBOutlet weak var loginPassword: UITextField!
     
-    @IBAction func reply(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil )
-    }
+ 
    
     @IBOutlet weak var register: UIButton!
     @IBOutlet weak var getmima: UIButton!
 
-    //声明导航条
-    var navigationBar : UINavigationBar?
+ 
     //接收是否成功
     var serverResponse:String?
  
     var customerid:String = ""
     var loginPwd:String = ""
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
        // loginPassword.attributedPlaceholder  = attributeStr
@@ -35,9 +32,7 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
         //读取用户信息，如果不是第一次登录，则会自动登录
         readNSUerDefaults()
  
-        
-        loginPassword.delegate  = self
-        customerID.delegate = self
+     
         //输入框中一开始就有的文字
         loginPassword.placeholder = "请输入密码"
         customerID.placeholder = "请输入用户名"
@@ -157,30 +152,26 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     }
    
     @IBAction func touchView(sender: AnyObject) {
-        println("取消键盘")
+       
         self.view.endEditing(true)
     }
  
-//    //文本框编辑时,启动
-//    func textFieldDidBeginEditing(textField: UITextField) {
-//        loginPassword.secureTextEntry = true
-//        println("编辑时变成密码框")
-//    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+             }
+    override func viewWillAppear(animated: Bool) {
+        
+        loginPassword.delegate  = self
+        customerID.delegate = self
     }
     
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    override func viewWillDisappear(animated: Bool) {
+        
+        loginPassword.delegate  = nil
+        customerID.delegate = nil
     }
-    */
+
     
-    
+        
 }

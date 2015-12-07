@@ -251,7 +251,7 @@
         <!--修改密码-->
         <scene sceneID="2S5-bG-aYf">
             <objects>
-                <viewController id="VA4-cb-7yX" customClass="ChangePasswordVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordVC" id="VA4-cb-7yX" customClass="ChangePasswordVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bue-rf-ckq"/>
                         <viewControllerLayoutGuide type="bottom" id="0T2-2S-jOb"/>
@@ -351,6 +351,7 @@
                     <navigationItem key="navigationItem" title="我的" id="bFk-NL-Rnd"/>
                     <connections>
                         <segue destination="uUl-BF-IFW" kind="push" identifier="toCollect" id="Hfw-Ua-WK5"/>
+                        <segue destination="1Ax-cw-sjn" kind="push" identifier="toSeting" id="KdS-sH-bCj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVk-Zc-At6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1210,7 +1211,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAw-cH-gyX" id="to5-rY-NhR">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Nf-SZd">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Nf-SZd">
                                                     <rect key="frame" x="8" y="6" width="24" height="24"/>
                                                     <animations/>
                                                 </imageView>
@@ -1578,6 +1579,36 @@
             </objects>
             <point key="canvasLocation" x="1872" y="-1456"/>
         </scene>
+        <!--SetingTVC-->
+        <scene sceneID="eyp-hc-9Ea">
+            <objects>
+                <tableViewController storyboardIdentifier="Seting" id="1Ax-cw-sjn" customClass="SetingTVC" customModule="SHW" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="82C-vk-kVf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ass-TI-QfT">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ass-TI-QfT" id="fDx-GG-kwq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1Ax-cw-sjn" id="ELz-Zp-bSi"/>
+                            <outlet property="delegate" destination="1Ax-cw-sjn" id="wzb-yw-TNR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="JhY-By-xnI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8D-sO-b0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2262" y="-926"/>
+        </scene>
         <!--3-->
         <scene sceneID="6qx-sU-rGw">
             <objects>
@@ -1663,7 +1694,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="phone.png" width="500" height="500"/>
+        <image name="phone" width="250" height="250"/>
+        <image name="phone.png" width="250" height="250"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1671,8 +1703,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Irb-Ku-g7x"/>
-        <segue reference="C7L-gf-d3E"/>
+        <segue reference="Wd5-sZ-taN"/>
+        <segue reference="0C4-hk-sqY"/>
         <segue reference="Tbh-Ac-vcx"/>
     </inferredMetricsTieBreakers>
 </document>

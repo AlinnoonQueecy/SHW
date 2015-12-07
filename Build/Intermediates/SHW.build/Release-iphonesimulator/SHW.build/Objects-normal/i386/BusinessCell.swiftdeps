@@ -4,25 +4,25 @@ provides:
 nominals:
 - "C3SHW12BusinessCell"
 class-members:
-- "address"
-- "setSelected"
-- "dizhi"
-- "name"
-- "officePhone"
 - "dianhua"
 - "picture"
 - "awakeFromNib"
+- "dizhi"
+- "setSelected"
+- "officePhone"
+- "address"
+- "name"
 top-level:
-- "UITableViewCell"
-- "UILabel"
-- "UIImageView"
 - "Bool"
+- "UILabel"
+- "UITableViewCell"
+- "UIImageView"
 member-access:
-- "C3SHW12BusinessCell"
-- "CSo15UITableViewCell"
 - "CSo8NSObject"
 - "CSo6UIView"
+- "C3SHW12BusinessCell"
 - "PSs9AnyObject"
+- "CSo15UITableViewCell"
 - "CSo11UIResponder"
 dynamic-lookup:
 cross-module:

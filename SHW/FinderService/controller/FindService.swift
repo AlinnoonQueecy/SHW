@@ -192,8 +192,24 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
             ButtonScroll.contentSize = CGSizeMake(viewBounds.width, CGFloat(terms/3+1)*((ButtonScrollheight-4)/3+2))
         }
         
+ 
 
  
+    }
+    
+     //    //清除NSUerDefaults中数据
+    func removeNSUerDefaults () {
+        
+        //将数据全部存储到NSUerDefaults中
+        var userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        //存储时，除了NSNumber类型使用对应的类型外，其他的都使用setObject:forKey:
+        userDefaults.setObject("" , forKey: "customerID")
+        userDefaults.setObject("", forKey: "loginPassword")
+        
+        //建议同步到磁盘，但不是必须得
+        userDefaults.synchronize()
+        
+        
     }
     //6.定时器函数
 //    func timerFireMethod(timer: NSTimer) {

@@ -24,13 +24,13 @@ provides:
 nominals:
 class-members:
 top-level:
-- "CGFloat"
+- "String"
 - "StringLiteralType"
+- "xwColor"
 - "IntegerLiteralType"
 - "UIFont"
+- "CGFloat"
 - "FloatLiteralType"
-- "xwColor"
-- "String"
 member-access:
 - "V12CoreGraphics7CGFloat"
 - "CSo6UIFont"

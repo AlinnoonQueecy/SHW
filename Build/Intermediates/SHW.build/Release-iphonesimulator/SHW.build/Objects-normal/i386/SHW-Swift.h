@@ -299,7 +299,6 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 @interface BusinessVC : UIViewController <UITableViewDataSource, UITableViewDelegate, JSDropDownMenuDelegate, JSDropDownMenuDataSource, CDRTranslucentSideBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, OptionalItemCollectionViewCellDelegate, SideMenuBottomViewDelegate>
 @property (nonatomic, copy) NSString * __nullable FirstType;
 @property (nonatomic) BOOL status;
-@property (nonatomic) UINavigationBar * __nullable navigationBar;
 @property (nonatomic) UIBarButtonItem * __nonnull rightButton;
 @property (nonatomic, copy) NSString * __nonnull location;
 @property (nonatomic) UIButton * __nonnull writing;
@@ -327,6 +326,7 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 @property (nonatomic) NSInteger column2;
 @property (nonatomic) NSInteger row2;
 @property (nonatomic) NSInteger n;
+@property (nonatomic, readonly) UIColor * __nonnull color;
 @property (nonatomic) NSInteger page;
 @property (nonatomic) UILabel * __nonnull loadMoreText;
 @property (nonatomic, readonly) UIView * __nonnull tableFooterView;
@@ -342,6 +342,8 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 @property (nonatomic, copy) NSArray * __nonnull selectbusiness;
 @property (nonatomic, weak) IBOutlet UILabel * __null_unspecified label;
 - (void)viewDidLoad;
+- (void)loadMoreData;
+- (void)loadData;
 - (void)resetSelectedArray;
 - (void)setupRightSideBar;
 - (void)setupContentView;
@@ -368,8 +370,6 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 - (void)refresh;
 - (void)upPullLoadData;
 - (void)downPlullLoadData;
-- (void)loadMoreData;
-- (void)loadData;
 - (void)viewDidLayoutSubviews;
 - (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (void)package;
@@ -771,6 +771,7 @@ SWIFT_CLASS("_TtC3SHW11FindService")
 @property (nonatomic) BMKGeoCodeSearch * __null_unspecified geocodeSearch;
 @property (nonatomic, copy) NSArray * __nonnull FirstTypeData;
 - (void)viewDidLoad;
+- (void)removeNSUerDefaults;
 - (void)toLocation:(UIButton * __nonnull)Location;
 - (void)ToLocation;
 - (void)tapped:(UIButton * __nonnull)term1;
@@ -811,7 +812,7 @@ SWIFT_CLASS("_TtC3SHW12FinishTVCell")
 @class UISegmentedControl;
 
 SWIFT_CLASS("_TtC3SHW17FinishVController")
-@interface FinishVController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FinishVController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 @property (nonatomic) IBOutlet UITableView * __null_unspecified yuding;
 @property (nonatomic, copy) NSString * __nonnull customerid;
 @property (nonatomic, copy) NSString * __nonnull loginPassword;
@@ -823,6 +824,7 @@ SWIFT_CLASS("_TtC3SHW17FinishVController")
 @property (nonatomic) UISegmentedControl * __nonnull segmentedControl;
 @property (nonatomic, copy) NSString * __nonnull orderStatus;
 - (void)viewDidLoad;
+- (void)alertView:(UIAlertView * __nonnull)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 - (void)refresh;
 - (void)loadData;
 - (void)viewDidLayoutSubviews;
@@ -904,50 +906,14 @@ SWIFT_CLASS("_TtC3SHW10FooterCell")
 @end
 
 
-
-/// 图片加载控件，所有需要到网络加载的图片，都需要使用此控件操作
-///
-/// 作者：黄仪标 
-///
-/// Email: 632840804@qq.com
-///
-/// github：https://github.com/632840804
-///
-/// CSDN Blog: http://blog.csdn.net/woaifen3344/
-///
-/// Note：有任何可以，可以通过Email反馈，会在空闲时间处理，谢谢！
 SWIFT_CLASS("_TtC3SHW19HYBLoadingImageView")
 @interface HYBLoadingImageView : UIImageView
 - (SWIFT_NULLABILITY(nonnull) instancetype)init;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-
-/// 加载图片
-///
-/// url 图片请求地址
 - (void)loadImage:(NSString * __nonnull)url;
-
-/// 加载图片
-///
-/// url 图片请求地址
-///
-/// holder 占位图片名称
 - (void)loadImage:(NSString * __nonnull)url holder:(NSString * __nonnull)holder;
-
-/// 加载图片
-///
-/// url 图片请求地址
-///
-/// completion 图片加载完成时的回调闭包
 - (void)loadImage:(NSString * __nonnull)url completion:(void (^ __nullable)(UIImage * __nullable))completion;
-
-/// 加载图片
-///
-/// url 图片请求地址
-///
-/// holder 占位图片名称
-///
-/// completion 图片加载完成时的回调闭包
 - (void)loadImage:(NSString * __nonnull)url holder:(NSString * __nonnull)holder completion:(void (^ __nullable)(UIImage * __nullable))completion;
 @end
 
@@ -1010,10 +976,8 @@ SWIFT_CLASS("_TtC3SHW7LoginVC")
 @interface LoginVC : UIViewController <UITextFieldDelegate, NSURLConnectionDataDelegate>
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified customerID;
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified loginPassword;
-- (IBAction)reply:(id __nonnull)sender;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified register;
 @property (nonatomic, weak) IBOutlet UIButton * __null_unspecified getmima;
-@property (nonatomic) UINavigationBar * __nullable navigationBar;
 @property (nonatomic, copy) NSString * __nullable serverResponse;
 @property (nonatomic, copy) NSString * __nonnull customerid;
 @property (nonatomic, copy) NSString * __nonnull loginPwd;
@@ -1024,6 +988,8 @@ SWIFT_CLASS("_TtC3SHW7LoginVC")
 - (void)viewDidLayoutSubviews;
 - (IBAction)touchView:(id __nonnull)sender;
 - (void)didReceiveMemoryWarning;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1042,6 +1008,7 @@ SWIFT_CLASS("_TtC3SHW7MineTVC")
 @property (nonatomic) UIActivityIndicatorView * __null_unspecified av;
 @property (nonatomic, readonly) UIImageView * __nonnull headerPicture;
 - (void)viewDidLoad;
+- (void)seting;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
 - (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
@@ -1084,8 +1051,6 @@ SWIFT_CLASS("_TtC3SHW6MyInfo")
 
 
 @interface NSDate (SWIFT_EXTENSION(SHW))
-
-/// 转换NSDate->String 精确点 
 - (NSString * __nonnull)xwConvertStringTime;
 @end
 
@@ -1539,6 +1504,52 @@ SWIFT_CLASS("_TtC3SHW11ServiceType")
 @end
 
 
+SWIFT_CLASS("_TtC3SHW10SetingCell")
+@interface SetingCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * __null_unspecified Picture;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified Label;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC3SHW9SetingTVC")
+@interface SetingTVC : UITableViewController
+@property (nonatomic, readonly, copy) NSArray * __nonnull baseArray;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithNibName:(NSString * __null_unspecified)nibNameOrNil bundle:(NSBundle * __null_unspecified)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithCoder:(NSCoder * __null_unspecified)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC3SHW8SetingVC")
+@interface SetingVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UITableView * __null_unspecified Table;
+@property (nonatomic, readonly, copy) NSArray * __nonnull baseArray;
+@property (nonatomic, copy) NSString * __nonnull customerid;
+@property (nonatomic, copy) NSString * __nonnull loginPassword;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)viewDidLayoutSubviews;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (CGFloat)tableView:(UITableView * __nonnull)tableView heightForHeaderInSection:(NSInteger)section;
+- (void)tableView:(UITableView * __nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (void)removeNSUerDefaults;
+- (void)readNSUerDefaults;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC3SHW20TabBarViewController")
 @interface TabBarViewController : HSTabBarViewController
 - (void)viewDidLoad;
@@ -1550,11 +1561,6 @@ SWIFT_CLASS("_TtC3SHW20TabBarViewController")
 
 
 @interface UIImageView (SWIFT_EXTENSION(SHW))
-
-/// *设置web图片
-/// *url:图片路径
-/// *defaultImage:默认缺省图片
-/// *isCache：是否进行缓存的读取
 - (void)setZYHWebImage:(NSString * __nullable)url defaultImage:(NSString * __nullable)defaultImage;
 @end
 
@@ -1567,32 +1573,15 @@ SWIFT_CLASS("_TtC3SHW20TabBarViewController")
 @class XWRefreshFooter;
 
 @interface UIScrollView (SWIFT_EXTENSION(SHW))
-
-/// 下拉刷新的控件 
 @property (nonatomic) XWRefreshHeader * __nullable headerView;
-
-/// 上拉刷新的控件 
 @property (nonatomic) XWRefreshFooter * __nullable footerView;
 @property (nonatomic, readonly) NSInteger totalDataCount;
 - (void)executeReloadDataClosure;
-
-/// 添加上拉刷新回调
-/// - parameter callBack: 闭包代码块,当心循环引用 使用 [weak self]
 - (void)addHeaderWithCallback:(void (^ __nonnull)(void))callBack;
-
-/// 添加下拉刷新回调,当心循环引用 使用 [weak self] 
 - (void)addFooterWithCallback:(void (^ __nonnull)(void))callBack;
-
-/// 开始headerView刷新 
 - (void)beginHeaderRefreshing;
-
-/// 停止headerView刷新 
 - (void)endHeaderRefreshing;
-
-/// 开始footerView刷新 
 - (void)beginFooterRefreshing;
-
-/// 停止footerView刷新 
 - (void)endFooterRefreshing;
 @end
 
@@ -1628,62 +1617,28 @@ SWIFT_CLASS("_TtC3SHW20TabBarViewController")
 
 @class UIFont;
 
-
-/// 抽象类，不直接使用，用于继承后，重写
 SWIFT_CLASS("_TtC3SHW18XWRefreshComponent")
 @interface XWRefreshComponent : UIView
 @property (nonatomic) UIColor * __nullable textColor;
 @property (nonatomic) UIFont * __nullable font;
 @property (nonatomic, copy) void (^ __nonnull refreshingClosure)(void);
-
-/// 拉拽的百分比 
 @property (nonatomic) CGFloat pullingPercent;
-
-/// 根据拖拽比例自动切换透明度 
 @property (nonatomic) BOOL automaticallyChangeAlpha;
-
-/// 是否在刷新 
 @property (nonatomic, readonly) BOOL isRefreshing;
 - (void)addCallBack:(void (^ __nonnull)(void))block;
-
-/// 闭包回调 
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithComponentRefreshingClosure:(void (^ __nonnull)(void))ComponentRefreshingClosure;
-
-/// target action 回调 [推荐]
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithTarget:(id __nonnull)target action:(SEL __null_unspecified)action;
 - (void)setRefreshingTarget:(id __nonnull)target action:(SEL __null_unspecified)action;
-
-/// 开始刷新,进入刷新状态 
 - (void)beginRefreshing;
-
-/// 结束刷新 
 - (void)endRefreshing;
-
-/// 加载全部 
 - (void)allRefreshing;
-
-/// <ol><li><p>初始化 </p></li></ol>
 - (void)prepare;
-
-/// <ol><li><p>摆放子控件 </p></li></ol>
 - (void)placeSubvies;
-
-/// <ol><li><p>当scrollView的contentOffset发生改变的时候调用 </p></li></ol>
 - (void)scrollViewContentOffsetDidChange:(NSDictionary * __nullable)change;
-
-/// <ol><li><p>当scrollView的contentSize发生改变的时候调用 </p></li></ol>
 - (void)scrollViewContentSizeDidChange:(NSDictionary * __nullable)change;
-
-/// <ol><li><p>当scrollView的拖拽状态发生改变的时候调用 </p></li></ol>
 - (void)scrollViewPanStateDidChange:(NSDictionary * __nullable)change;
-
-/// 促发回调 
 - (void)executeRefreshingCallback;
-
-/// 记录scrollView刚开始的inset 
 @property (nonatomic) UIEdgeInsets scrollViewOriginalInset;
-
-/// 父控件 
 @property (nonatomic, weak) UIScrollView * __null_unspecified scrollView;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -1694,21 +1649,11 @@ SWIFT_CLASS("_TtC3SHW18XWRefreshComponent")
 @end
 
 
-
-/// 抽象类，不直接使用，用于继承后，重写
 SWIFT_CLASS("_TtC3SHW15XWRefreshFooter")
 @interface XWRefreshFooter : XWRefreshComponent
-
-/// 提示没有更多的数据 
 - (void)noticeNoMoreData;
-
-/// 重置没有更多的数据（消除没有更多数据的状态） 
 - (void)resetNoMoreData;
-
-/// 忽略多少scrollView的contentInset的bottom 
 @property (nonatomic) CGFloat ignoredScrollViewContentInsetBottom;
-
-/// 自动根据有无数据来显示和隐藏（有数据就显示，没有数据隐藏） 
 @property (nonatomic) BOOL automaticallyHidden;
 - (void)prepare;
 - (void)willMoveToSuperview:(UIView * __nullable)newSuperview;
@@ -1717,16 +1662,10 @@ SWIFT_CLASS("_TtC3SHW15XWRefreshFooter")
 @end
 
 
-
-/// footerView 什么样式都没有的 
 SWIFT_CLASS("_TtC3SHW19XWRefreshAutoFooter")
 @interface XWRefreshAutoFooter : XWRefreshFooter
-
-/// 是否自动刷新(默认为YES) 
 @property (nonatomic) BOOL automaticallyRefresh;
 @property (nonatomic) CGFloat appearencePercentTriggerAutoRefresh;
-
-/// 当底部控件出现多少时就自动刷新(默认为1.0，也就是底部控件完全出现时，才会自动刷新) 
 @property (nonatomic) CGFloat triggerAutomaticallyRefreshPercent;
 - (void)willMoveToSuperview:(UIView * __nullable)newSuperview;
 - (void)scrollViewContentSizeDidChange:(NSDictionary * __nullable)change;
@@ -1738,15 +1677,9 @@ SWIFT_CLASS("_TtC3SHW19XWRefreshAutoFooter")
 @end
 
 
-
-/// footerView 只有状态文字 
 SWIFT_CLASS("_TtC3SHW24XWRefreshAutoStateFooter")
 @interface XWRefreshAutoStateFooter : XWRefreshAutoFooter
-
-/// 显示刷新状态的label 
 @property (nonatomic) UILabel * __nonnull stateLabel;
-
-/// 隐藏刷新状态的文字 
 @property (nonatomic) BOOL refreshingTitleHidden;
 - (void)prepare;
 - (void)stateLabelClick;
@@ -1756,12 +1689,8 @@ SWIFT_CLASS("_TtC3SHW24XWRefreshAutoStateFooter")
 @end
 
 
-
-/// footerView 带有菊花和状态文字的 
 SWIFT_CLASS("_TtC3SHW25XWRefreshAutoNormalFooter")
 @interface XWRefreshAutoNormalFooter : XWRefreshAutoStateFooter
-
-/// 菊花样式 
 @property (nonatomic) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
 @property (nonatomic) UIActivityIndicatorView * __nonnull activityView;
 - (void)placeSubvies;
@@ -1773,48 +1702,26 @@ SWIFT_CLASS("_TtC3SHW25XWRefreshAutoNormalFooter")
 
 
 
-
-/// 抽象类不直接使用 用于重写
 SWIFT_CLASS("_TtC3SHW15XWRefreshHeader")
 @interface XWRefreshHeader : XWRefreshComponent
-
-/// 利用这个key来保存上次的刷新时间（不同界面的刷新控件应该用不同的dateKey，以区分不同界面的刷新时间） 
 @property (nonatomic, copy) NSString * __nonnull lastUpdatedateKey;
-
-/// 忽略多少scrollView的contentInset的top 
 @property (nonatomic) CGFloat ignoredScrollViewContentInsetTop;
-
-/// 上一次下拉刷新成功的时间 
 @property (nonatomic, readonly) NSDate * __nonnull lastUpdatedTime;
 - (void)prepare;
 - (void)placeSubvies;
 - (void)scrollViewContentOffsetDidChange:(NSDictionary * __nullable)change;
-
-/// 结束刷新 
 - (void)endRefreshing;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-
-/// headerView 只有状态文字 
 SWIFT_CLASS("_TtC3SHW20XWRefreshStateHeader")
 @interface XWRefreshStateHeader : XWRefreshHeader
-
-/// 利用这个colsure来决定显示的更新时间 
 @property (nonatomic, copy) NSString * __nonnull (^ __nullable closureCallLastUpdatedTimeTitle)(NSDate * __nonnull);
-
-/// 显示上一次刷新时间的label 
 @property (nonatomic) UILabel * __nonnull lastUpdatedTimeLabel;
-
-/// 显示刷新状态的label 
 @property (nonatomic) UILabel * __nonnull stateLabel;
-
-/// 文字刷新状态下的显示与隐藏 
 @property (nonatomic) BOOL refreshingTitleHidden;
-
-/// 时间刷新状态下的显示与隐藏
 @property (nonatomic) BOOL refreshingTimeHidden;
 @property (nonatomic, copy) NSString * __nonnull lastUpdatedateKey;
 - (void)prepare;
@@ -1824,8 +1731,6 @@ SWIFT_CLASS("_TtC3SHW20XWRefreshStateHeader")
 @end
 
 
-
-/// headerView gif 样式 要设置gif状态图片
 SWIFT_CLASS("_TtC3SHW18XWRefreshGifHeader")
 @interface XWRefreshGifHeader : XWRefreshStateHeader
 @property (nonatomic) CGFloat pullingPercent;
@@ -1836,18 +1741,10 @@ SWIFT_CLASS("_TtC3SHW18XWRefreshGifHeader")
 
 
 
-
-/// headerView 带有状态和指示图片
 SWIFT_CLASS("_TtC3SHW21XWRefreshNormalHeader")
 @interface XWRefreshNormalHeader : XWRefreshStateHeader
-
-/// 菊花样式 
 @property (nonatomic) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
-
-/// 指示器的图片[箭头] 
 @property (nonatomic) UIImage * __nullable arrowImage;
-
-/// 指示图片 
 @property (nonatomic) UIImageView * __nonnull arrowView;
 - (void)placeSubvies;
 - (void)commonFun;

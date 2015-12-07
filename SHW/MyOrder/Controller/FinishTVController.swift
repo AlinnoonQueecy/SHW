@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinishVController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class FinishVController: UIViewController,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate{
   
     @IBOutlet var yuding: UITableView!
     //读取本地数据
@@ -61,9 +61,27 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         yuding.addSubview(refreshControl)
         loadData()
+        if customerid == "" || loginPassword == ""{
+
+        let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
+        alert.show()
+            
+            
+        }
+        
+        
         
            
     }
+    func  alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+ 
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+        
+        self.navigationController!.pushViewController(vc, animated:true)
+        
+    }
+
  
     
     // 下拉刷新方法
@@ -181,7 +199,14 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
     }
     
     override func  viewWillAppear(animated: Bool) {
-        
+         readNSUerDefaults()
+//        if customerid == "" || loginPassword == ""{
+//            
+//            let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
+//            alert.show()
+//            
+//            
+//        }
         FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
         self.yuding.reloadData()
         

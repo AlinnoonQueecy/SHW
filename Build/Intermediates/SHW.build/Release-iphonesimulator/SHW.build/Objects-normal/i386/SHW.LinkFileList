@@ -1,3 +1,4 @@
+/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/test.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/base64.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/OptionalItemCollectionViewCell.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/MJPropertyKey.o
@@ -27,7 +28,6 @@
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/WBBadgeButton.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/PayInfo.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/NSObject+MJClass.o
-/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/test.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/UIImage+HSResizingImage.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/Order.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/AlipayMethod.o
@@ -54,7 +54,9 @@
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/PackageData.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/ServiceItemData.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/LoginVC.o
+/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/SetingCell.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/TabBarViewController.o
+/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/SetingVC.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/XWRefreshFooter.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/XWConst.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/workerViewController.o
@@ -87,6 +89,7 @@
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/CommonOrder.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/AppDelegate.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/PackaVC.o
+/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/SetingTVC.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/CollectCell.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/XWShortcutMethod.o
 /Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/SHW.build/Release-iphonesimulator/SHW.build/Objects-normal/i386/OrderData.o

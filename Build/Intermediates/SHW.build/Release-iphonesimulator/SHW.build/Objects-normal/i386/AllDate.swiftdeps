@@ -6,8 +6,8 @@ nominals:
 class-members:
 top-level:
 - "String"
-- "StringLiteralType"
 - "UnicodeScalarType"
+- "StringLiteralType"
 member-access:
 - "V3SHW8HttpData"
 dynamic-lookup:

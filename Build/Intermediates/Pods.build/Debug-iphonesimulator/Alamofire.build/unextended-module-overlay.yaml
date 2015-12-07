@@ -3,11 +3,11 @@
   'case-sensitive': 'false',
   'roots': [{
     'type': 'directory',
-    'name': '/Users/zhang/Downloads/SHW-master/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules'
+    'name': '/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Debug-iphonesimulator/Alamofire.framework/Modules'
     'contents': [{
       'type': 'file',
       'name': 'module.modulemap',
-      'external-contents': '/Users/zhang/Downloads/SHW-master/Build/Intermediates/Pods.build/Debug-iphonesimulator/Alamofire.build/unextended-module.modulemap',
+      'external-contents': '/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/Pods.build/Debug-iphonesimulator/Alamofire.build/unextended-module.modulemap',
     }]
   }]
 }

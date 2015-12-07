@@ -205,10 +205,10 @@ class PackageItemVC: UIViewController,UITableViewDelegate,UITableViewDataSource,
         
         let cell = tableview.dequeueReusableCellWithIdentifier("FacilitatorCell", forIndexPath: indexPath) as! FacilitatorCell
         
-        println("第几步")
+       
         var data:[String] = [facilitatorData.contactPhone,facilitatorData.officePhone,facilitatorData.contactAddress]
         
-        println("第1步")
+       
         let imageName:[String]  = ["phone.png","tel.png","location.png"]
         var image  = UIImage(named:imageName[indexPath.row])
         cell.frontImage.image = image

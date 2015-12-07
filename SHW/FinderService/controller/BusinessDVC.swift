@@ -233,10 +233,10 @@ class BusinessDVC: UIViewController,UITableViewDelegate,UITableViewDataSource,UI
         readNSUerDefaults()
         
         if customerid == "" ||  loginPassword == "" {
-            
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! UIViewController
  
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+         
             self.navigationController!.pushViewController(vc, animated:true)
             
             

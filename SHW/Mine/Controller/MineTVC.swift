@@ -35,9 +35,29 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
         //        self.tableView.frame = CGRectMake(0,0, width, height)
         self.tableView.scrollEnabled = false
         
+        
+ 
+        let rightButton =  UIBarButtonItem(title: "设置", style: UIBarButtonItemStyle.Plain, target: self, action: "seting")
+   
+        self.navigationItem.setRightBarButtonItem(rightButton, animated: true)
+        
+
+        
+        
     }
     
-    override func didReceiveMemoryWarning() {
+    func  seting(){
+     
+        
+          self.performSegueWithIdentifier("toSeting", sender: self)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewControllerWithIdentifier("SetingVC") as! SetingVC
+//        
+//        self.navigationController!.pushViewController(vc, animated:true)
+
+        
+    }
+      override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -70,7 +90,11 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
         var cell = UITableViewCell()
         if indexPath.section == 0 {
             let  cell = tableView.dequeueReusableCellWithIdentifier("HeaderCell", forIndexPath: indexPath) as! HeaderCell
+            
+            
             if customerid != "" && loginPassword != ""{
+                MineData = QueryInfo(customerid) as MyInfo
+
                 //1.定义一个地址字符串常量
                 let imageUrlString:String = HttpData.http+"/FamilyServiceSystem/upload/customer/\(MineData.id)/\(MineData.headPicture)"
                 headerPicture.setZYHWebImage(imageUrlString, defaultImage: "touxiang.jpg")
@@ -82,6 +106,8 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
                 
             }else {
                 cell.userInteractionEnabled = true
+                cell.CustomerName.text = "登录/注册"
+                cell.Phone.text =  "登录后可享受更多特权"
                 cell.Picture.image = UIImage(named: "touxiang.jpg")
             }
             //圆角
@@ -143,10 +169,12 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
         if indexPath.section == 0 {
             
             
-            //            let sb = UIStoryboard(name: "Main", bundle: nil)
-            //            let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! UIViewController
-            let vc = LoginVC()
+            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+            
             self.navigationController!.pushViewController(vc, animated:true)
+
             
             
             
@@ -195,9 +223,12 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
                 
                 
             }else{
-                //测试
-                let vc = LoginVC()
+                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+                
                 self.navigationController!.pushViewController(vc, animated:true)
+
                 
             }
             
@@ -208,9 +239,12 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
                self.performSegueWithIdentifier("toCollect", sender: self)
             
               }else{
-                //测试
-                let vc = LoginVC()
+                
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+                
                 self.navigationController!.pushViewController(vc, animated:true)
+
 
             }
         
@@ -331,7 +365,12 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
     
     
     override func  viewWillAppear(animated: Bool) {
+        
+        readNSUerDefaults () 
         self.tableView.reloadData()
+        
+        
+        
     }
     
     

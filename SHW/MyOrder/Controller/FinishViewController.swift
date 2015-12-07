@@ -21,7 +21,7 @@ class FinishViewController: UIViewController {
     var ScrollY = CGFloat()
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("qqqqqqqqqqqqqqqqqqqq")
+      
         var width = self.view.frame.width-16
          println("宽度:\(width)")
         
@@ -96,23 +96,23 @@ class FinishViewController: UIViewController {
             servantName.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(servantName)
 
-            var servantID = UILabel(frame: CGRectMake(8, 155, width, 20))
-            servantID.text = "人员工号:\(detail.servantID)"
-            servantID.textColor = UIColor.blackColor()
-            servantID.font = UIFont.systemFontOfSize(14)
-            scrollView.addSubview(servantID)
+//            var servantID = UILabel(frame: CGRectMake(8, 155, width, 20))
+//            servantID.text = "人员工号:\(detail.servantID)"
+//            servantID.textColor = UIColor.blackColor()
+//            servantID.font = UIFont.systemFontOfSize(14)
+//            scrollView.addSubview(servantID)
         
-        var lable2 = UILabel(frame: CGRectMake(0, 175,width+16, 7))
+        var lable2 = UILabel(frame: CGRectMake(0, 155,width+16, 7))
         lable2.backgroundColor = button8C
         scrollView.addSubview(lable2)
 
-            var serviceType = UILabel(frame: CGRectMake(8, 185, width, 20))
+            var serviceType = UILabel(frame: CGRectMake(8, 165, width, 20))
             serviceType.text = "服务类型:\(detail.serviceType)"
             serviceType.textColor = UIColor.blackColor()
             serviceType.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(serviceType)
 
-            var serviceContent = UILabel(frame: CGRectMake(8, 205, width, 40))
+            var serviceContent = UILabel(frame: CGRectMake(8, 185, width, 40))
             serviceContent.text = "服务内容:\(detail.serviceContent)"
             serviceContent.numberOfLines = 0
 ////            serviceContent.lineBreakMode = .ByTruncatingMiddle//折行方式
@@ -122,14 +122,14 @@ class FinishViewController: UIViewController {
             serviceContent.textColor = UIColor.blackColor()
             serviceContent.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(serviceContent)
-        var contactPhone = UILabel(frame: CGRectMake(8, 245, width, 20))
+        var contactPhone = UILabel(frame: CGRectMake(8, 225, width, 20))
         contactPhone.text = "联系电话:\(detail.contactPhone)"
         contactPhone.textColor = UIColor.blackColor()
         contactPhone.font = UIFont.systemFontOfSize(14)
         contactPhone.numberOfLines = 0
         contactPhone.baselineAdjustment = .AlignBaselines
         scrollView.addSubview(contactPhone)
-        var contactAddress = UILabel(frame: CGRectMake(8, 265, width, 40))
+        var contactAddress = UILabel(frame: CGRectMake(8, 245, width, 40))
         contactAddress.text = "联系地址:\(detail.contactAddress)"
         contactAddress.textColor = UIColor.blackColor()
         contactAddress.font = UIFont.systemFontOfSize(14)
@@ -139,34 +139,34 @@ class FinishViewController: UIViewController {
         
 
             
-            var itemName = UILabel(frame: CGRectMake(8, 305, width, 20))
+            var itemName = UILabel(frame: CGRectMake(8, 285, width, 20))
             itemName.text = "项目名称:\(detail.itemName)"
             itemName.textColor = UIColor.blackColor()
             itemName.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(itemName)
+//
+//            var itemID = UILabel(frame: CGRectMake(8, 305, width, 20))
+//            itemID.text = "项目ID:\(detail.itemIDs)"
+//            itemID.textColor = UIColor.blackColor()
+//            itemID.font = UIFont.systemFontOfSize(14)
+//            scrollView.addSubview(itemID)
 
-            var itemID = UILabel(frame: CGRectMake(8, 325, width, 20))
-            itemID.text = "项目ID:\(detail.itemIDs)"
-            itemID.textColor = UIColor.blackColor()
-            itemID.font = UIFont.systemFontOfSize(14)
-            scrollView.addSubview(itemID)
-
-        var lable3 = UILabel(frame: CGRectMake(0, 345,width+16, 7))
+        var lable3 = UILabel(frame: CGRectMake(0, 305,width+16, 7))
         lable3.backgroundColor = button8C
         scrollView.addSubview(lable3)
         
-            var orderTime = UILabel(frame: CGRectMake(8,355, width, 20))
+            var orderTime = UILabel(frame: CGRectMake(8,315, width, 20))
             orderTime.text = "订单时间:\(detail.orderTime)"
             orderTime.textColor = UIColor.blackColor()
             orderTime.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(orderTime)
             
-            var confirmTime = UILabel(frame: CGRectMake(8, 375, width, 20))
+            var confirmTime = UILabel(frame: CGRectMake(8, 335, width, 20))
             confirmTime.text = "确定时间:\(detail.confirmTime)"
             confirmTime.textColor = UIColor.blackColor()
             confirmTime.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(confirmTime)
-            var H = CGFloat(395)
+            var H = CGFloat(355)
  
         var lable4 = UILabel(frame: CGRectMake(0, H,width+16, 7))
         lable4.backgroundColor = button8C

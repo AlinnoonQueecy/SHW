@@ -16,8 +16,7 @@
     var FirstType:String?//选择的大类
     //var SecondType:String?//会有的小类
     var status = true
-    //声明导航条
-    var navigationBar : UINavigationBar?
+    
     //声明右边按钮
     var rightButton =  UIBarButtonItem()
     //声明label
@@ -53,7 +52,8 @@
     var column2 = 2
     var  row2  = 0
     var  n = 0
-    
+  
+    let color = UIColor(red: 234/255, green: 103/255, blue: 7/255, alpha: 1.0)
      //上拉加载更多
     var page = 1//下拉加载后的页数
     var allpage:Int?
@@ -100,15 +100,25 @@
         data12 = queryCounty(location) as! [String]
         data1 += data12
         data11 += data12
-        
-        if  Person[0] == "1" {
+        // 创建筛选导航栏按钮
+        //右边Button
+//        rightButton =  UIBarButtonItem(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
+ ////      rightButton =  UIBarButtonItem(customView: right)
+//        self.navigationItem.setRightBarButtonItem(rightButton, animated: true)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
+//           self.navigationItem.rightBarButtonItem = nil
+         if  Person[0] == "1" {
             isPerson = 1
-        }else{
+          }else{
             isPerson = 0
+            
+             
         }
         
         loadData()
-        
+   
+//
+//             self.navigationItem.rightBarButtonItem = nil
         var menu = JSDropDownMenu(origin: CGPoint(x: 0.0,y: 0.0), andHeight: 36)
         menu.indicatorColor = UIColor(red: 175.0/255.0, green: 175.0/255.0, blue: 175.0/255.0, alpha: 1.0)
         menu.separatorColor = UIColor(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1.0)
@@ -135,8 +145,9 @@
         
         self.view.addSubview(writing)
         
-        // 创建筛选导航栏按钮
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
+  
+        
+        
         
         // 创建Right SideBar
         self.setupRightSideBar()
@@ -149,7 +160,62 @@
 
 
     }
+    //加载更多数据
+    func loadMoreData() {
+        
+        if isPerson == 1 {
+            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCounty,page) as! [ServantInfo]
+            ServantData += data
+            data3 = ["默认排序","人员星级"]
+            data31 = ["","servantScore"]
+            writing.enabled = false
+            writing.hidden = true
+        
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
+           
+            //self.navigationItem.setRightBarButtonItem(rightButton, animated: true)
+            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+        }else if isPerson == 0 {
+            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCounty,page) as! [facilitatorInfo]
+            selectbusiness += data
+            data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
+            data31 = ["","clientClick","creditScore"]
+            writing.enabled = true
+            writing.hidden = false
     
+            self.navigationItem.rightBarButtonItem = nil
+            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+        }
+        self.businessTable.reloadData()
+        
+    }
+    //刷新、重载
+    func loadData() {
+        
+        if isPerson == 1 {
+            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCounty,page) as! [ServantInfo]
+            ServantData = data
+            data3 = ["默认排序","人员星级"]
+            data31 = ["","servantScore"]
+            writing.enabled = false
+            writing.hidden = true
+              self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
+            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+        }else if isPerson == 0 {
+            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCounty,page) as! [facilitatorInfo]
+            selectbusiness = data
+            data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
+            data31 = ["","clientClick","creditScore"]
+            writing.enabled = true
+            writing.hidden = false
+            self.navigationItem.rightBarButtonItem = nil
+            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+        }
+        self.businessTable.reloadData()
+        
+    }
+    
+
     // 重置数组
     func resetSelectedArray(){
         for var i = 0; i < self.conditions.count; ++i{
@@ -325,8 +391,7 @@
             }
         }
         self.optionalItemCollectionView.reloadData()
-        
-        print(self.selectedOperationArray)
+     
     }
     
     
@@ -401,53 +466,6 @@
  
     
     
-    //加载更多数据
-    func loadMoreData() {
-        
-        if isPerson == 1 {
-            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCounty,page) as! [ServantInfo]
-            ServantData += data
-            data3 = ["默认排序","人员星级"]
-            data31 = ["","servantScore"]
-            writing.enabled = false
-            writing.hidden = true
-            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCounty,page)
-        }else if isPerson == 0 {
-            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCounty,page) as! [facilitatorInfo]
-            selectbusiness += data
-            data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
-            data31 = ["","clientClick","creditScore"]
-            writing.enabled = true
-            writing.hidden = false
-            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCounty,page)
-        }
-        self.businessTable.reloadData()
- 
-    }
-    //刷新、重载
-    func loadData() {
-        
-        if isPerson == 1 {
-            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCounty,page) as! [ServantInfo]
-            ServantData = data
-            data3 = ["默认排序","人员星级"]
-            data31 = ["","servantScore"]
-            writing.enabled = false
-            writing.hidden = true
-            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCounty,page)
-        }else if isPerson == 0 {
-            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCounty,page) as! [facilitatorInfo]
-            selectbusiness = data
-            data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
-            data31 = ["","clientClick","creditScore"]
-            writing.enabled = true
-            writing.hidden = false
-            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCounty,page)
-        }
-        self.businessTable.reloadData()
-        
-    }
- 
     
     
     override func viewDidLayoutSubviews() {
@@ -520,12 +538,7 @@
     
     
     func package(){
-        //push跳转
-//        let svc = PackageVC()
-//        svc.FirstType = FirstType
-//            
-//    
-//        self.navigationController!.pushViewController(svc,animated:true)
+ 
         
 
        self.performSegueWithIdentifier("toPackage", sender: self)
@@ -563,13 +576,7 @@
         if isPerson == 0 {
             
            self.performSegueWithIdentifier("toBDetail", sender: self)
-//            //push跳转
-//            let svc = BusinessDVC()
-//            if let indexPath = self.businessTable.indexPathForSelectedRow(){
-//                svc.facilitatorid = selectbusiness[indexPath.row].facilitatorID
-//                
-//            }
-//            self.navigationController!.pushViewController(svc,animated:true)
+ 
             
         
         
@@ -688,13 +695,14 @@ func menu(menu: JSDropDownMenu!, numberOfRowsInColumn column: Int, leftOrRight: 
                 rightButton.title = ""
                 writing.enabled = false
                 writing.hidden = true
+                //self.navigationItem.rightBarButtonItem = rightButton
             }else{
                 data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
                 data31 = ["","clientClick","creditScore"]
-                
                 writing.enabled = true
                 writing.hidden = false
-                
+                 // self.navigationItem.rightBarButtonItem = rightButton
+               // self.navigationItem.rightBarButtonItem = nil
             }
         } else{
             currentData3Index = indexPath.row;
