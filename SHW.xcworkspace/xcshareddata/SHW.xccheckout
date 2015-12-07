@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A8D2064E-95FD-4716-9EB1-0FE1F33F1FB8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SHW</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8C239B553D4B3220A29FB29FA28148655915E6E6</key>
+		<string>https://github.com/AlinnoonQueecy/SHW.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SHW.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8C239B553D4B3220A29FB29FA28148655915E6E6</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AlinnoonQueecy/SHW.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8C239B553D4B3220A29FB29FA28148655915E6E6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8C239B553D4B3220A29FB29FA28148655915E6E6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SHW%20%E5%89%AF%E6%9C%AC</string>
+		</dict>
+	</array>
+</dict>
+</plist>

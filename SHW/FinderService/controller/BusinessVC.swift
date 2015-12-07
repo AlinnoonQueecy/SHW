@@ -7,8 +7,9 @@
    //
    
    import UIKit
+   import Alamofire
    
-   class BusinessVC: UIViewController,UITableViewDataSource,UITableViewDelegate,JSDropDownMenuDelegate,JSDropDownMenuDataSource{
+   class BusinessVC: UIViewController,UITableViewDataSource,UITableViewDelegate,JSDropDownMenuDelegate,JSDropDownMenuDataSource, CDRTranslucentSideBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource, OptionalItemCollectionViewCellDelegate, SideMenuBottomViewDelegate{
     
     
     
@@ -59,6 +60,17 @@
     var loadMoreText = UILabel()
     //列表的底部，用于显示“上拉查看更多”的提示，当上拉后显示类容为“松开加载更多”。
     let tableFooterView = UIView()
+    
+    // 筛选相关
+    let rightSideBar = CDRTranslucentSideBar.init(direction: true)
+    let backgroundButton = UIButton()
+    let optionalItemCollectionView = OptionalItemCollectionView()
+    let contentView = UIView()
+    let sideMenuBottomView = SideMenuBottomView()
+    var conditions = NSArray()
+    
+    var selectedOperationArray = NSMutableArray()
+
     
     @IBOutlet weak var businessTable: UITableView!
     //声明一个数组businesss来保存获取的信息
@@ -123,8 +135,234 @@
         
         self.view.addSubview(writing)
         
+        // 创建筛选导航栏按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
+        
+        // 创建Right SideBar
+        self.setupRightSideBar()
+        
+        // 创建选择contentView
+        self.setupContentView()
+        
+        // 添加手势
+        self.setupPanGesture()
+
+
+    }
+    
+    // 重置数组
+    func resetSelectedArray(){
+        for var i = 0; i < self.conditions.count; ++i{
+            self.selectedOperationArray.replaceObjectAtIndex(i, withObject:"")
+        }
         
     }
+    
+    // MARK: - 创建自定义VIew
+    func setupRightSideBar(){
+        self.rightSideBar.delegate = self
+        self.rightSideBar.sideBarWidth = UIScreen.mainScreen().bounds.size.width * 0.8
+        self.rightSideBar.translucentStyle = UIBarStyle.Default
+    }
+    
+    func setupContentView(){
+        self.contentView.frame =  CGRectMake(0, 0, self.rightSideBar.sideBarWidth, UIScreen.mainScreen().bounds.size.height)
+        self.contentView.backgroundColor = UIColor.whiteColor()
+        // 创建collectionView
+        self.setupCollectionView()
+        // 创建SiderBar的底部按钮
+        self.setupSideMenuBottomView()
+        
+        self.rightSideBar.setContentViewInSideBar(self.contentView)
+        
+    }
+    func setupCollectionView(){
+        self.optionalItemCollectionView.frame = CGRectMake(0, 0, self.rightSideBar.sideBarWidth, UIScreen.mainScreen().bounds.size.height - 49)
+        self.optionalItemCollectionView.delegate = self
+        self.optionalItemCollectionView.dataSource = self
+        self.optionalItemCollectionView.registerClass(OptionalItemCollectionViewCell.self, forCellWithReuseIdentifier: "OptionalCell")
+        self.optionalItemCollectionView.registerNib(TitleCollectionViewHeaderCellCollectionViewCell.nib(), forSupplementaryViewOfKind:UICollectionElementKindSectionHeader , withReuseIdentifier:"UICollectionElementKindSectionHeader")
+        
+        
+        self.contentView.addSubview(self.optionalItemCollectionView)
+    }
+    
+    func setupSideMenuBottomView(){
+        self.sideMenuBottomView.delegate = self
+        self.sideMenuBottomView.frame = CGRectMake(0, UIScreen.mainScreen().bounds.size.height - 49, self.rightSideBar.sideBarWidth, 49)
+        self.contentView.addSubview(self.sideMenuBottomView)
+    }
+
+    
+    /**
+    显示侧栏
+    */
+    func showSideBar(){
+        self.backgroundButton.frame = self.view.bounds
+        self.backgroundButton.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.view.addSubview(self.backgroundButton)
+        self.rightSideBar.show()
+        // 加载数据
+        self.loadConditions()
+    }
+    
+    func collectionButtonItemClicked(sender:UIButton){
+        sender.selected = !sender.selected
+    }
+    
+    // MARK: - 手势
+    func setupPanGesture(){
+        let panGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: "handlePanGesture:")
+        self.view.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    /**
+    手势触发
+    */
+    func handlePanGesture(recognizer:UIPanGestureRecognizer){
+        if recognizer.state == UIGestureRecognizerState.Began{
+            self.rightSideBar.isCurrentPanGestureTarget = true
+        }
+        self.rightSideBar.handlePanGestureToShow(recognizer, inView: self.view)
+        self.backgroundButton.frame = self.view.bounds
+        self.backgroundButton.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.view.addSubview(self.backgroundButton)
+        // 加载数据
+        self.loadConditions()
+    }
+    
+    // MARK: - 加载数据
+    func loadConditions(){
+        // 告诉系统将operations字典数组转为模型数组
+        Condition.mj_setupObjectClassInArray { () -> [NSObject : AnyObject]! in
+            return ["operations" : "Operation"]
+        }
+        
+        let parameters = [
+            "typeName" : "月嫂"
+        ]
+        
+        Alamofire.request(.POST, "http://219.216.65.182:8080/FamilyServiceSystem/MobileServiceTypeAction?operation=_queryByName", parameters: parameters, encoding: .JSON, headers: nil)
+            .responseJSON(options: NSJSONReadingOptions.AllowFragments) { (request, response, data, error) -> Void in
+                let JSON: AnyObject? = data
+                self.conditions = Condition.mj_objectArrayWithKeyValuesArray(JSON!["fiterCondition"] as! [AnyObject])
+                // 初始化选中选项数组
+                self.selectedOperationArray.removeAllObjects()
+                for var i = 0; i < self.conditions.count; ++i{
+                    self.selectedOperationArray.addObject("")
+                }
+                self.optionalItemCollectionView.reloadData()
+            }
+//            .responseJSON { response in
+//                let JSON = response
+//                self.conditions = Condition.mj_objectArrayWithKeyValuesArray(JSON!["fiterCondition"] as! [AnyObject])
+//                // 初始化选中选项数组
+//                self.selectedOperationArray.removeAllObjects()
+//                for var i = 0; i < self.conditions.count; ++i{
+//                    self.selectedOperationArray.addObject("")
+//                }
+//                self.optionalItemCollectionView.reloadData()
+//        }
+    }
+    
+    // MARK: - DataSource
+    // MARK: UICollectionViewDataSource
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return self.conditions.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let condition = self.conditions[section] as! Condition
+        return condition.operations.count;
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell =  collectionView.dequeueReusableCellWithReuseIdentifier("OptionalCell", forIndexPath: indexPath) as! OptionalItemCollectionViewCell
+        cell.delegate = self
+        let condition = self.conditions[indexPath.section] as! Condition
+        let operation = condition.operations[indexPath.item] as! Operation
+        operation.section = indexPath.section
+        operation.item = indexPath.item
+        cell.cellBtn.setTitle(operation.name, forState: UIControlState.Normal)
+        cell.cellBtn.userInteractionEnabled = false
+        cell.cellBtn.selected = operation.selected
+        return cell
+    }
+    // MARK: - 代理方法
+    // MARK:CDRTranslucentSideBarDelegate
+    func sideBar(sideBar: CDRTranslucentSideBar!, didDisappear animated: Bool) {
+        self.backgroundButton.removeFromSuperview()
+    }
+    
+    // MARK: UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+        let condition = self.conditions[indexPath.section] as! Condition
+        let operation = condition.operations[indexPath.item] as! Operation
+        
+        let operationArray = condition.operations
+        var selectedOperation = Operation()
+        for var i = 0; i < operationArray.count; ++i{
+            let tempOperation = operationArray[i] as! Operation
+            if tempOperation.selected{
+                selectedOperation = tempOperation
+                continue
+            }else{
+                selectedOperation.section = -1
+                selectedOperation.item = -1
+            }
+        }
+        
+        if selectedOperation.section == operation.section && selectedOperation.item == operation.item{
+            operation.selected = !operation.selected
+            self.selectedOperationArray.replaceObjectAtIndex(indexPath.section, withObject: "")
+        }else{
+            selectedOperation.selected = !selectedOperation.selected
+            operation.selected = !operation.selected
+            for var i = 0; i < operationArray.count; ++i{
+                let tempOperation = operationArray[i] as! Operation
+                if tempOperation.selected{
+                    self.selectedOperationArray.replaceObjectAtIndex(indexPath.section, withObject: tempOperation.name)
+                }
+            }
+        }
+        self.optionalItemCollectionView.reloadData()
+        
+        print(self.selectedOperationArray)
+    }
+    
+    
+    func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
+        return CGSizeMake(UIScreen.mainScreen().bounds.size.width * 0.8, 40)
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "UICollectionElementKindSectionHeader", forIndexPath: indexPath) as! TitleCollectionViewHeaderCellCollectionViewCell
+        let condition = self.conditions[indexPath.section] as! Condition
+        cell.sectionTitleLabel!.text = condition.name
+        return cell
+    }
+    
+    // MARK: SideMenuBottomViewDelegate
+    func resetButtonDidClicked() {
+        for var i = 0; i < self.conditions.count; ++i{
+            let condition = self.conditions[i] as! Condition
+            let operationArray = condition.operations as NSArray
+            for var j = 0; j < operationArray.count; ++j{
+                let operation = operationArray[j] as! Operation
+                operation.selected = false
+            }
+        }
+        // 重置数组
+        self.resetSelectedArray()
+        // 重载数据
+        self.optionalItemCollectionView.reloadData()
+    }
+    
+    func confirmButtonDidClicked() {
+        self.rightSideBar.dismissAnimated(true)
+        print("选中的选项数组----\(self.selectedOperationArray)")
+    }
+
+
     
     //默认的下拉刷新模式
     func refresh(){
@@ -395,16 +633,12 @@ func menu(menu: JSDropDownMenu!, numberOfRowsInColumn column: Int, leftOrRight: 
         switch (column) {
         case 0:
             return data1[0] as String
-            break
         case 1:
             return data2[0] as String
-            break
         case 2:
             return data3[0] as! String
-            break
         default:
             return nil
-            break
         }
     }
 //具体显示内容

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="G0e-Us-FZI" customClass="TitleCollectionViewHeaderCellCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="256" height="40"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPE-A3-O0T">
+                        <rect key="frame" x="0.0" y="39" width="256" height="1"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.52304159628378377" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNq-wM-kd8">
+                        <rect key="frame" x="8" y="19" width="240" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="sPE-A3-O0T" secondAttribute="bottom" id="479-yA-Uit"/>
+                <constraint firstItem="sPE-A3-O0T" firstAttribute="width" secondItem="G0e-Us-FZI" secondAttribute="width" id="Aod-wp-ijJ"/>
+                <constraint firstItem="sPE-A3-O0T" firstAttribute="top" secondItem="G0e-Us-FZI" secondAttribute="top" constant="39" id="e31-ix-bqw"/>
+                <constraint firstItem="sPE-A3-O0T" firstAttribute="leading" secondItem="G0e-Us-FZI" secondAttribute="leading" id="oIT-Bj-s3Z"/>
+            </constraints>
+            <size key="customSize" width="275" height="40"/>
+            <connections>
+                <outlet property="sectionTitleLabel" destination="DNq-wM-kd8" id="AP3-0C-tdj"/>
+            </connections>
+            <point key="canvasLocation" x="468" y="272"/>
+        </collectionViewCell>
+    </objects>
+</document>

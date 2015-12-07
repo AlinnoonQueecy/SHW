@@ -1,0 +1,282 @@
+
+/* Class = "UIButton"; normalTitle = "浏览"; ObjectID = "08K-uc-kEj"; */
+"08K-uc-kEj.normalTitle" = "浏览";
+
+/* Class = "UILabel"; text = "价格："; ObjectID = "2Yz-rJ-GqK"; */
+"2Yz-rJ-GqK.text" = "价格：";
+
+/* Class = "UILabel"; text = "introLabell"; ObjectID = "384-op-D7J"; */
+"384-op-D7J.text" = "introLabell";
+
+/* Class = "UILabel"; text = "预约："; ObjectID = "5Sb-RB-7th"; */
+"5Sb-RB-7th.text" = "预约：";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "5fD-YE-Sxd"; */
+"5fD-YE-Sxd.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "修改头像："; ObjectID = "6PS-Tc-q6V"; */
+"6PS-Tc-q6V.text" = "修改头像：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "71r-Ia-raE"; */
+"71r-Ia-raE.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "关于软件"; ObjectID = "8nQ-ZV-Vwb"; */
+"8nQ-ZV-Vwb.title" = "关于软件";
+
+/* Class = "UIViewController"; title = "Package"; ObjectID = "8wZ-Jg-Ax2"; */
+"8wZ-Jg-Ax2.title" = "Package";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "8wa-eT-vdr"; */
+"8wa-eT-vdr.text" = "name";
+
+/* Class = "UILabel"; text = "1000分"; ObjectID = "9J8-aG-rzM"; */
+"9J8-aG-rzM.text" = "1000分";
+
+/* Class = "UILabel"; text = "1000分"; ObjectID = "AGp-eF-ZAq"; */
+"AGp-eF-ZAq.text" = "1000分";
+
+/* Class = "UILabel"; text = "期望薪资："; ObjectID = "Akp-9G-P4D"; */
+"Akp-9G-P4D.text" = "期望薪资：";
+
+/* Class = "UILabel"; text = "评价："; ObjectID = "AwH-9P-gli"; */
+"AwH-9P-gli.text" = "评价：";
+
+/* Class = "UILabel"; text = "servantName"; ObjectID = "BlV-Un-cMi"; */
+"BlV-Un-cMi.text" = "servantName";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CdP-tT-lQ5"; */
+"CdP-tT-lQ5.text" = "Label";
+
+/* Class = "UILabel"; text = "登录/注册"; ObjectID = "EGS-p9-e6C"; */
+"EGS-p9-e6C.text" = "登录/注册";
+
+/* Class = "UINavigationItem"; title = "我的收藏"; ObjectID = "EuW-xi-N2k"; */
+"EuW-xi-N2k.title" = "我的收藏";
+
+/* Class = "UINavigationItem"; title = "登录"; ObjectID = "HPr-Sq-ZNU"; */
+"HPr-Sq-ZNU.title" = "登录";
+
+/* Class = "UINavigationItem"; title = "订单详情"; ObjectID = "Hwx-bl-RR5"; */
+"Hwx-bl-RR5.title" = "订单详情";
+
+/* Class = "UIButton"; normalTitle = "快速注册"; ObjectID = "IhO-oi-dmu"; */
+"IhO-oi-dmu.normalTitle" = "快速注册";
+
+/* Class = "UIViewController"; title = "修改头像"; ObjectID = "J7Z-j7-vgx"; */
+"J7Z-j7-vgx.title" = "修改头像";
+
+/* Class = "UILabel"; text = "4000"; ObjectID = "J7m-AI-Psc"; */
+"J7m-AI-Psc.text" = "4000";
+
+/* Class = "UILabel"; text = "开启省流量节省版"; ObjectID = "Kny-q7-3fk"; */
+"Kny-q7-3fk.text" = "开启省流量节省版";
+
+/* Class = "UILabel"; text = "servicePay"; ObjectID = "Kq9-G7-Jkq"; */
+"Kq9-G7-Jkq.text" = "servicePay";
+
+/* Class = "UINavigationItem"; title = "我的"; ObjectID = "Kud-rf-xIg"; */
+"Kud-rf-xIg.title" = "我的";
+
+/* Class = "UIViewController"; title = "PackageItemVC"; ObjectID = "L1Y-CE-qLU"; */
+"L1Y-CE-qLU.title" = "PackageItemVC";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "MJX-MY-w0u"; */
+"MJX-MY-w0u.text" = "name";
+
+/* Class = "UILabel"; text = "根据您的位置信息，向你展示丰富资讯"; ObjectID = "N3L-iE-qwv"; */
+"N3L-iE-qwv.text" = "根据您的位置信息，向你展示丰富资讯";
+
+/* Class = "UINavigationItem"; title = "一口价列表"; ObjectID = "NCu-hK-BlC"; */
+"NCu-hK-BlC.title" = "一口价列表";
+
+/* Class = "UILabel"; text = "包括文字和图片"; ObjectID = "O3j-LC-xYY"; */
+"O3j-LC-xYY.text" = "包括文字和图片";
+
+/* Class = "UINavigationItem"; title = "基本资料"; ObjectID = "OR2-bQ-PPG"; */
+"OR2-bQ-PPG.title" = "基本资料";
+
+/* Class = "UIButton"; normalTitle = "待业中"; ObjectID = "Oc7-tX-Iik"; */
+"Oc7-tX-Iik.normalTitle" = "待业中";
+
+/* Class = "UILabel"; text = "预约："; ObjectID = "P0D-gh-rW6"; */
+"P0D-gh-rW6.text" = "预约：";
+
+/* Class = "UILabel"; text = "保洁服务"; ObjectID = "RAD-8W-QM5"; */
+"RAD-8W-QM5.text" = "保洁服务";
+
+/* Class = "UILabel"; text = "12次"; ObjectID = "REv-0u-KYN"; */
+"REv-0u-KYN.text" = "12次";
+
+/* Class = "UITabBarItem"; title = "2"; ObjectID = "SLk-hO-PHe"; */
+"SLk-hO-PHe.title" = "2";
+
+/* Class = "UINavigationItem"; title = "修改密码"; ObjectID = "SSl-E4-eUF"; */
+"SSl-E4-eUF.title" = "修改密码";
+
+/* Class = "UINavigationItem"; title = "修改头像"; ObjectID = "SxH-lR-ZBS"; */
+"SxH-lR-ZBS.title" = "修改头像";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TVS-8P-rVV"; */
+"TVS-8P-rVV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VGY-bL-OdS"; */
+"VGY-bL-OdS.text" = "Label";
+
+/* Class = "UILabel"; text = "12次"; ObjectID = "WLp-QT-bRD"; */
+"WLp-QT-bRD.text" = "12次";
+
+/* Class = "UILabel"; text = "项目："; ObjectID = "WU4-rn-sWK"; */
+"WU4-rn-sWK.text" = "项目：";
+
+/* Class = "UINavigationItem"; title = "订单评价"; ObjectID = "Wfu-qs-MKN"; */
+"Wfu-qs-MKN.title" = "订单评价";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "YOI-pN-9hM"; */
+"YOI-pN-9hM.title" = "Item";
+
+/* Class = "UILabel"; text = "联系电话:"; ObjectID = "YOL-3q-Kh0"; */
+"YOL-3q-Kh0.text" = "联系电话:";
+
+/* Class = "UILabel"; text = "4000"; ObjectID = "ZQs-da-hgb"; */
+"ZQs-da-hgb.text" = "4000";
+
+/* Class = "UILabel"; text = "项目："; ObjectID = "a2e-C3-PN0"; */
+"a2e-C3-PN0.text" = "项目：";
+
+/* Class = "UILabel"; text = "当前头像："; ObjectID = "aMZ-Zn-PRF"; */
+"aMZ-Zn-PRF.text" = "当前头像：";
+
+/* Class = "UILabel"; text = "orderNo"; ObjectID = "aMk-jF-W9D"; */
+"aMk-jF-W9D.text" = "orderNo";
+
+/* Class = "UINavigationItem"; title = "我的"; ObjectID = "bFk-NL-Rnd"; */
+"bFk-NL-Rnd.title" = "我的";
+
+/* Class = "UINavigationItem"; title = "商家详情"; ObjectID = "bwR-03-KMD"; */
+"bwR-03-KMD.title" = "商家详情";
+
+/* Class = "UIButton"; normalTitle = "找回密码"; ObjectID = "ddI-XV-5nt"; */
+"ddI-XV-5nt.normalTitle" = "找回密码";
+
+/* Class = "UILabel"; text = "4000"; ObjectID = "eCu-kK-t3J"; */
+"eCu-kK-t3J.text" = "4000";
+
+/* Class = "UINavigationItem"; title = "服务人员"; ObjectID = "eR1-6s-6SQ"; */
+"eR1-6s-6SQ.title" = "服务人员";
+
+/* Class = "UILabel"; text = "根据网络情况为您节省流量"; ObjectID = "eyY-XA-0ey"; */
+"eyY-XA-0ey.text" = "根据网络情况为您节省流量";
+
+/* Class = "UINavigationItem"; title = "注册信息"; ObjectID = "ezw-lS-eas"; */
+"ezw-lS-eas.title" = "注册信息";
+
+/* Class = "UILabel"; text = "清除缓存"; ObjectID = "fOX-qk-EOD"; */
+"fOX-qk-EOD.text" = "清除缓存";
+
+/* Class = "UINavigationItem"; title = "详情"; ObjectID = "gXl-Iv-AYb"; */
+"gXl-Iv-AYb.title" = "详情";
+
+/* Class = "UINavigationItem"; title = "我的信息"; ObjectID = "h4y-oG-Uds"; */
+"h4y-oG-Uds.title" = "我的信息";
+
+/* Class = "UILabel"; text = "公司地址:"; ObjectID = "hqr-sl-rsj"; */
+"hqr-sl-rsj.text" = "公司地址:";
+
+/* Class = "UILabel"; text = "评价："; ObjectID = "iIA-Re-eBN"; */
+"iIA-Re-eBN.text" = "评价：";
+
+/* Class = "UILabel"; text = "保洁服务"; ObjectID = "ip3-oz-WjI"; */
+"ip3-oz-WjI.text" = "保洁服务";
+
+/* Class = "UITabBarItem"; title = "3"; ObjectID = "izk-Oi-MmX"; */
+"izk-Oi-MmX.title" = "3";
+
+/* Class = "UILabel"; text = "登录后可享受更多特权"; ObjectID = "jDz-mU-Ed2"; */
+"jDz-mU-Ed2.text" = "登录后可享受更多特权";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jRr-v6-6LN"; */
+"jRr-v6-6LN.text" = "Label";
+
+/* Class = "UILabel"; text = "价格："; ObjectID = "jiE-pA-DPo"; */
+"jiE-pA-DPo.text" = "价格：";
+
+/* Class = "UINavigationItem"; title = "支付详情"; ObjectID = "lE8-bI-dyf"; */
+"lE8-bI-dyf.title" = "支付详情";
+
+/* Class = "UIViewController"; title = "商家详情"; ObjectID = "mFt-qL-YTo"; */
+"mFt-qL-YTo.title" = "商家详情";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mnz-gf-Zf9"; */
+"mnz-gf-Zf9.text" = "Label";
+
+/* Class = "UILabel"; text = "4000"; ObjectID = "myW-3p-TRL"; */
+"myW-3p-TRL.text" = "4000";
+
+/* Class = "UIButton"; normalTitle = " "; ObjectID = "nGh-Fm-c0L"; */
+"nGh-Fm-c0L.normalTitle" = " ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oOR-E4-TZU"; */
+"oOR-E4-TZU.text" = "Label";
+
+/* Class = "UILabel"; text = "开启位置服务"; ObjectID = "olp-c1-SN6"; */
+"olp-c1-SN6.text" = "开启位置服务";
+
+/* Class = "UILabel"; text = "期望薪资："; ObjectID = "oop-tD-sEq"; */
+"oop-tD-sEq.text" = "期望薪资：";
+
+/* Class = "UIButton"; normalTitle = "待业中"; ObjectID = "pOz-Bl-2tw"; */
+"pOz-Bl-2tw.normalTitle" = "待业中";
+
+/* Class = "UILabel"; text = "introLabell"; ObjectID = "pYc-n9-r9S"; */
+"pYc-n9-r9S.text" = "introLabell";
+
+/* Class = "UINavigationItem"; title = "退款信息"; ObjectID = "piL-jz-Xkm"; */
+"piL-jz-Xkm.title" = "退款信息";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pn1-1w-e3D"; */
+"pn1-1w-e3D.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "发现"; ObjectID = "q7e-Oj-ug0"; */
+"q7e-Oj-ug0.title" = "发现";
+
+/* Class = "UILabel"; text = "facilitator"; ObjectID = "qLq-gK-pyE"; */
+"qLq-gK-pyE.text" = "facilitator";
+
+/* Class = "UINavigationItem"; title = "退款详情"; ObjectID = "rEv-n4-Rwl"; */
+"rEv-n4-Rwl.title" = "退款详情";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "rPL-iy-teE"; */
+"rPL-iy-teE.text" = "name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rZS-rA-QoX"; */
+"rZS-rA-QoX.text" = "Label";
+
+/* Class = "UILabel"; text = "address"; ObjectID = "t2q-Y9-pzc"; */
+"t2q-Y9-pzc.text" = "address";
+
+/* Class = "UINavigationItem"; title = "退款信息"; ObjectID = "ubS-Ic-tU8"; */
+"ubS-Ic-tU8.title" = "退款信息";
+
+/* Class = "UITabBarItem"; title = "3"; ObjectID = "ujh-Su-V9b"; */
+"ujh-Su-V9b.title" = "3";
+
+/* Class = "UINavigationItem"; title = "找服务"; ObjectID = "v4h-my-bfz"; */
+"v4h-my-bfz.title" = "找服务";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vMB-FG-pON"; */
+"vMB-FG-pON.text" = "Label";
+
+/* Class = "UILabel"; text = "officeP"; ObjectID = "vdF-wg-WXt"; */
+"vdF-wg-WXt.text" = "officeP";
+
+/* Class = "UILabel"; text = "serviceType"; ObjectID = "wbn-jn-LLj"; */
+"wbn-jn-LLj.text" = "serviceType";
+
+/* Class = "UIButton"; normalTitle = " "; ObjectID = "xs0-tV-Eja"; */
+"xs0-tV-Eja.normalTitle" = " ";
+
+/* Class = "UILabel"; text = "建议尺寸 50 * 50"; ObjectID = "yd1-0P-qz2"; */
+"yd1-0P-qz2.text" = "建议尺寸 50 * 50";
+
+/* Class = "UITabBarItem"; title = "1"; ObjectID = "ytw-PC-Uhl"; */
+"ytw-PC-Uhl.title" = "1";

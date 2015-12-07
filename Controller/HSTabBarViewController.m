@@ -13,7 +13,7 @@
 #import "UIView+SetFrame.h"
 
 
-@interface HSTabBarViewController ()<HSTabBarDelegate>
+@interface HSTabBarViewController ()
 @property (assign, nonatomic)  BOOL isLoadedChildVc;
 @end
 

@@ -331,16 +331,13 @@ class CollectionVC: UIViewController,UITableViewDataSource,UITableViewDelegate ,
         switch (column) {
         case 0:
             return data1[0] as String;
-            break;
 //        case 1:
 //            return data2[0] as! String;
 //            break;
 //        case 2:
 //            return data3[0] as! String;
-            break;
         default:
             return nil;
-            break;
         }
     }
     

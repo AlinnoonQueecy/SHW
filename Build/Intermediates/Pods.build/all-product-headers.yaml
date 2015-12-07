@@ -1,0 +1,60 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Release-iphonesimulator/Alamofire.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Alamofire-Swift.h",
+          'external-contents': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Release-iphonesimulator/Alamofire.framework/Headers/Alamofire-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Alamofire-umbrella.h",
+          'external-contents': "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Release-iphonesimulator/Alamofire.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/Pods.build/Release-iphonesimulator/Alamofire.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Release-iphonesimulator/Pods_SHW.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-SHW-umbrella.h",
+          'external-contents': "/Users/zhang/Desktop/ Learn IOS/SHW/Pods/Target Support Files/Pods-SHW/Pods-SHW-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_SHW-Swift.h",
+          'external-contents': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Release-iphonesimulator/Pods_SHW.framework/Headers/Pods_SHW-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Products/Release-iphonesimulator/Pods_SHW.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/zhang/Desktop/ Learn IOS/SHW/Build/Intermediates/Pods.build/Release-iphonesimulator/Pods-SHW.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
