@@ -100,13 +100,7 @@
         data12 = queryCounty(location) as! [String]
         data1 += data12
         data11 += data12
-        // 创建筛选导航栏按钮
-        //右边Button
-//        rightButton =  UIBarButtonItem(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
- ////      rightButton =  UIBarButtonItem(customView: right)
-//        self.navigationItem.setRightBarButtonItem(rightButton, animated: true)
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
-//           self.navigationItem.rightBarButtonItem = nil
+ 
          if  Person[0] == "1" {
             isPerson = 1
           }else{
@@ -117,8 +111,7 @@
         
         loadData()
    
-//
-//             self.navigationItem.rightBarButtonItem = nil
+ 
         var menu = JSDropDownMenu(origin: CGPoint(x: 0.0,y: 0.0), andHeight: 36)
         menu.indicatorColor = UIColor(red: 175.0/255.0, green: 175.0/255.0, blue: 175.0/255.0, alpha: 1.0)
         menu.separatorColor = UIColor(red: 210.0/255.0, green: 210.0/255.0, blue: 210.0/255.0, alpha: 1.0)
@@ -141,7 +134,7 @@
         writing.showsTouchWhenHighlighted = true
         writing.addTarget(self , action: Selector("package"), forControlEvents: UIControlEvents.TouchUpInside)
         
-       refresh()
+        refresh()
         
         self.view.addSubview(writing)
         

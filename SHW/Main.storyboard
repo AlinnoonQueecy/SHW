@@ -2,9 +2,27 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="glx-l7-EaA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--LoginVC-->
+        <scene sceneID="kGR-T6-cpL">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="6wX-vN-CeI" customClass="LoginVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lAE-Da-PNq"/>
+                        <viewControllerLayoutGuide type="bottom" id="QaA-h0-8QA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6aH-SJ-eOJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7M-Ac-gbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722" y="-1407"/>
+        </scene>
         <!--注册信息-->
         <scene sceneID="Bqe-Ol-mTU">
             <objects>
@@ -27,90 +45,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksA-PF-Fo4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1070" y="-1356"/>
-        </scene>
-        <!--登录-->
-        <scene sceneID="99c-7o-ePm">
-            <objects>
-                <viewController storyboardIdentifier="LoginVC" id="BNr-pO-XtH" customClass="LoginVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rIU-5Q-6Iy"/>
-                        <viewControllerLayoutGuide type="bottom" id="R3t-qT-ayt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qlx-rR-svG" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhO-oi-dmu">
-                                <rect key="frame" x="16" y="349" width="60" height="30"/>
-                                <animations/>
-                                <state key="normal" title="快速注册">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-3a-wjF">
-                                <rect key="frame" x="71" y="168" width="220" height="30"/>
-                                <animations/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-XV-5nt">
-                                <rect key="frame" x="244" y="340" width="60" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="找回密码">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fD-YE-Sxd">
-                                <rect key="frame" x="35" y="269" width="250" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="1" green="0.42785383934517129" blue="0.22168913380907795" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="Login:" destination="BNr-pO-XtH" eventType="touchUpInside" id="uqn-t0-z6K"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMS-rx-kMf">
-                                <rect key="frame" x="71" y="108" width="220" height="30"/>
-                                <animations/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="5fD-YE-Sxd" firstAttribute="leading" secondItem="qlx-rR-svG" secondAttribute="leadingMargin" constant="20" id="2xe-ZB-ohQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5fD-YE-Sxd" secondAttribute="trailing" constant="20" id="vHY-0L-I0t"/>
-                            <constraint firstItem="5fD-YE-Sxd" firstAttribute="top" secondItem="rIU-5Q-6Iy" secondAttribute="bottom" constant="205" id="xvw-9d-ZyH"/>
-                        </constraints>
-                        <connections>
-                            <action selector="touchView:" destination="BNr-pO-XtH" eventType="touchUpInside" id="1Vb-vJ-alK"/>
-                        </connections>
-                    </view>
-                    <navigationItem key="navigationItem" title="登录" id="HPr-Sq-ZNU"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="customerID" destination="EMS-rx-kMf" id="oeX-It-uUq"/>
-                        <outlet property="getmima" destination="ddI-XV-5nt" id="Sow-Wc-Nrn"/>
-                        <outlet property="loginPassword" destination="0eC-3a-wjF" id="ntx-EL-940"/>
-                        <outlet property="register" destination="IhO-oi-dmu" id="iTD-kW-0Mj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="26o-2e-mKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="638" y="-1356"/>
         </scene>
         <!--关于软件-->
         <scene sceneID="Ekt-RD-oj6">
@@ -602,7 +536,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AGW-td-a7y" id="fWx-iZ-aR8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="6cJ-J2-BJm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="6cJ-J2-BJm">
                                                     <rect key="frame" x="8" y="6" width="24" height="24"/>
                                                     <animations/>
                                                 </imageView>
@@ -1731,7 +1665,6 @@
     </scenes>
     <resources>
         <image name="phone" width="250" height="250"/>
-        <image name="phone.png" width="250" height="250"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

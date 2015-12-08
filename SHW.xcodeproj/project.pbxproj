@@ -41,7 +41,6 @@
 		1F4982C31C1280110048A265 /* CollectiontabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B61C1280110048A265 /* CollectiontabelViewController.swift */; };
 		1F4982C41C1280110048A265 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B71C1280110048A265 /* CollectionVC.swift */; };
 		1F4982C51C1280110048A265 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982B81C1280110048A265 /* CollectionViewController.swift */; };
-		1F4982C71C1280110048A265 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BA1C1280110048A265 /* LoginVC.swift */; };
 		1F4982C81C1280110048A265 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BB1C1280110048A265 /* Register.swift */; };
 		1F4982C91C1280110048A265 /* CollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BD1C1280110048A265 /* CollectionData.swift */; };
 		1F4982CA1C1280110048A265 /* MyInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BE1C1280110048A265 /* MyInfoData.swift */; };
@@ -109,6 +108,8 @@
 		1FAE5FE71BB19F4700C86F3A /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAE5FE61BB19F4700C86F3A /* BaiduMapAPI.framework */; };
 		1FAE5FEB1BB24EB800C86F3A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAE5FEA1BB24EB800C86F3A /* Security.framework */; };
 		1FB35A131C130721006EA05A /* FindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB35A121C130721006EA05A /* FindService.swift */; };
+		1FC497521C16782B004CC144 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC497511C16782B004CC144 /* LoginVC.swift */; };
+		1FC497551C167D8F004CC144 /* ILCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC497541C167D8F004CC144 /* ILCountDownButton.swift */; };
 		1FC530071BA94D95006B1A7C /* HYBImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC530051BA94D95006B1A7C /* HYBImageLoader.swift */; };
 		1FC530081BA94D95006B1A7C /* HYBLoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC530061BA94D95006B1A7C /* HYBLoadingImageView.swift */; };
 		1FC5300F1BA96C7D006B1A7C /* ZYHWebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5300D1BA96C7D006B1A7C /* ZYHWebImage.swift */; };
@@ -233,7 +234,6 @@
 		1F4982B61C1280110048A265 /* CollectiontabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectiontabelViewController.swift; sourceTree = "<group>"; };
 		1F4982B71C1280110048A265 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		1F4982B81C1280110048A265 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		1F4982BA1C1280110048A265 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1F4982BB1C1280110048A265 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		1F4982BD1C1280110048A265 /* CollectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionData.swift; sourceTree = "<group>"; };
 		1F4982BE1C1280110048A265 /* MyInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoData.swift; sourceTree = "<group>"; };
@@ -322,6 +322,8 @@
 		1FAE5FEA1BB24EB800C86F3A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1FAE5FF61BB28EAD00C86F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1FB35A121C130721006EA05A /* FindService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindService.swift; path = SHW/FinderService/Controller/FindService.swift; sourceTree = SOURCE_ROOT; };
+		1FC497511C16782B004CC144 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		1FC497541C167D8F004CC144 /* ILCountDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILCountDownButton.swift; sourceTree = "<group>"; };
 		1FC530051BA94D95006B1A7C /* HYBImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBImageLoader.swift; sourceTree = "<group>"; };
 		1FC530061BA94D95006B1A7C /* HYBLoadingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYBLoadingImageView.swift; sourceTree = "<group>"; };
 		1FC5300D1BA96C7D006B1A7C /* ZYHWebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYHWebImage.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 		1F4982B01C1280110048A265 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				1FC497531C167D8F004CC144 /* Supporting Files */,
 				1F4982B11C1280110048A265 /* Controller */,
 				1F3F08641C128A82009CE48C /* cell */,
 				1F4982BC1C1280110048A265 /* Data */,
@@ -522,6 +525,7 @@
 		1F4982B11C1280110048A265 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1FC497511C16782B004CC144 /* LoginVC.swift */,
 				1F8B1A741C158F4400A25812 /* SetingVC.swift */,
 				1F8B1A651C157E4800A25812 /* SetingTVC.swift */,
 				1F3F08691C128B17009CE48C /* MineTVC.swift */,
@@ -530,7 +534,6 @@
 				1F4982B61C1280110048A265 /* CollectiontabelViewController.swift */,
 				1F4982B71C1280110048A265 /* CollectionVC.swift */,
 				1F4982B81C1280110048A265 /* CollectionViewController.swift */,
-				1F4982BA1C1280110048A265 /* LoginVC.swift */,
 				1F4982BB1C1280110048A265 /* Register.swift */,
 			);
 			path = Controller;
@@ -709,6 +712,14 @@
 				1FAE5FE41BB19F2F00C86F3A /* mapapi.bundle */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		1FC497531C167D8F004CC144 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FC497541C167D8F004CC144 /* ILCountDownButton.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1FEB06731C0E88DC00A1E442 /* MyOrder */ = {
@@ -1151,7 +1162,6 @@
 				1FC5307D1BAACEA1006B1A7C /* NSString+URL.m in Sources */,
 				EF98800F1C13DFC300943117 /* NSString+MJExtension.m in Sources */,
 				1F1B1F2D1C049C3400F52545 /* M13BadgeView.m in Sources */,
-				1F4982C71C1280110048A265 /* LoginVC.swift in Sources */,
 				1F8B1A791C1597DC00A25812 /* SetingCell.swift in Sources */,
 				1F1B1F301C049C5C00F52545 /* TabBarViewController.swift in Sources */,
 				1F8B1A751C158F4400A25812 /* SetingVC.swift in Sources */,
@@ -1218,6 +1228,7 @@
 				EF98800B1C13DFC300943117 /* NSObject+MJClass.m in Sources */,
 				1FEB06701C0DC10800A1E442 /* CommentVC.swift in Sources */,
 				1F4478771B9E834100ED8B8A /* LocationViewController.swift in Sources */,
+				1FC497551C167D8F004CC144 /* ILCountDownButton.swift in Sources */,
 				1F1B1F181C049BD200F52545 /* UIImage+HSResizingImage.m in Sources */,
 				1F4982C11C1280110048A265 /* ChangePasswordVC.swift in Sources */,
 				1FA104601B85A93700BD9AC5 /* Order.m in Sources */,
@@ -1234,6 +1245,7 @@
 				1F2482681C0AD24C00EC1540 /* DiscoverTVC.swift in Sources */,
 				1F88DCD91C0A8E4E001A72C0 /* XWRefreshGifHeader.swift in Sources */,
 				EF98800D1C13DFC300943117 /* NSObject+MJKeyValue.m in Sources */,
+				1FC497521C16782B004CC144 /* LoginVC.swift in Sources */,
 				1F1B1F2C1C049C3400F52545 /* HSTabBarButton.m in Sources */,
 				1FEB06801C0E88DC00A1E442 /* FinishTVController.swift in Sources */,
 				1FA91D571B591D240093BE58 /* MainVCdata.swift in Sources */,

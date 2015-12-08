@@ -25,7 +25,7 @@ class workerViewController: UIViewController,UITableViewDelegate,UITableViewData
     //头像
     let introImg = UIImageView()
     //声明右边按钮
-    var rightButton =  UIBarButtonItem()
+    var  rightButton =  UIBarButtonItem()
     //介绍
     var introScroll = UIScrollView()
     //评价

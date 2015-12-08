@@ -5,9 +5,9 @@ nominals:
 - "V3SHW8HttpData"
 class-members:
 top-level:
-- "String"
-- "UnicodeScalarType"
 - "StringLiteralType"
+- "UnicodeScalarType"
+- "String"
 member-access:
 - "V3SHW8HttpData"
 dynamic-lookup:

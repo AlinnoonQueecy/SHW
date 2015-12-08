@@ -20,9 +20,12 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
     //删除
      var barButtonItem:UIBarButtonItem?;
    
-     //刷新
-    var refreshControl = UIRefreshControl()
-    var timer: NSTimer!
+    //上拉加载更多
+    var page = 1//下拉加载后的页数
+    var allpage:Int?
+    var loadMoreText = UILabel()
+    //列表的底部，用于显示“上拉查看更多”的提示，当上拉后显示类容为“松开加载更多”。
+    let tableFooterView = UIView()
     //分段选择
     var segmentedControl = UISegmentedControl()
     //orderStatus
@@ -53,14 +56,10 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         //添加事件
         segmentedControl.addTarget(self, action: "selected", forControlEvents: UIControlEvents.ValueChanged)
            
-        //初始下拉刷新控件
-        refreshControl.attributedTitle = NSAttributedString(string: "松开后自动刷新")
-        //背景色和tint颜色都要清除,保证自定义下拉视图高度自适应
-        //refreshControl.tintColor = UIColor.clearColor()
-        refreshControl.backgroundColor = UIColor.clearColor()
-        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
-        yuding.addSubview(refreshControl)
+ 
         loadData()
+        refresh()
+        
         if customerid == "" || loginPassword == ""{
 
         let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
@@ -81,26 +80,67 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         self.navigationController!.pushViewController(vc, animated:true)
         
     }
-
- 
-    
-    // 下拉刷新方法
-    func refresh() {
-        self.refreshControl.attributedTitle = NSAttributedString(string: "数据加载中...")
-        //模拟加载数据
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self,
-            selector: "loadData", userInfo: nil, repeats: true)
-       
+    //默认的下拉刷新模式
+    func refresh(){
+        
+        yuding.headerView = XWRefreshNormalHeader(target: self, action: "upPullLoadData")
+        yuding.headerView!.beginRefreshing()
+        yuding.headerView!.endRefreshing()
+        yuding.footerView = XWRefreshAutoNormalFooter(target: self, action: "downPlullLoadData")
+    }
+    //MARK: 下拉刷新数据
+    func upPullLoadData(){
+        page = 1
+        loadData()
+        yuding.reloadData()
+        yuding.headerView?.endRefreshing()
+        yuding.footerView?.endRefreshing()
+        
         
     }
-    //计时器时间到,加载数据
-    func loadData() {
-        FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
-        self.yuding.reloadData()
-        self.refreshControl.endRefreshing()
-        timer?.invalidate()
-        timer = nil
+    //上拉加载
+    func downPlullLoadData(){
+        page++
+    
+        if  page <= allpage {
+            loadMoreData()
+            yuding.reloadData()
+            yuding.footerView?.endRefreshing()
+            
+        }else {
+            yuding.footerView?.allRefreshing()
+        }
+        
     }
+ 
+    //加载更多数据
+    func loadMoreData() {
+        
+        if orderStatus == "退款"{
+            let data = refreshRefundOrder(customerid,orderStatus) as! [Finishinfo]
+            FinishDatas += data
+        }else{
+            let data = refreshOrderData(customerid,orderStatus,page) as! [Finishinfo]
+            FinishDatas += data
+        }
+           allpage = GetOrderPage(customerid,orderStatus,page)
+        self.yuding.reloadData()
+
+        
+    }
+    //刷新、重载
+    func loadData() {
+        if orderStatus == "退款"{
+            FinishDatas = refreshRefundOrder(customerid,orderStatus) as! [Finishinfo]
+        }else{
+            page = 1
+            FinishDatas = refreshOrderData(customerid,orderStatus,page) as! [Finishinfo]
+        }
+        allpage = GetOrderPage(customerid,orderStatus,page)
+        self.yuding.reloadData()
+        
+    }
+
     
     override func viewDidLayoutSubviews() {
         yuding.frame = CGRectMake(0, 36, self.view.frame.width, self.view.frame.height-100)
@@ -139,46 +179,45 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         cell.facilitator.text = "商家名称:\(yud.facilitatorName)"
         cell.servantName.text = "服务类型:\(yud.serviceType)"
         cell.servicePay.text = "服务费用:\(yud.servicePrice )元"
-        //cell.pic.image = UIImage(named:yud.pic)
+     
 
         return cell
     }
     //分段选择器的函数
     func selected() {
-        println("点击开始")
+    
         //读取控件
         var x = segmentedControl.selectedSegmentIndex
         switch(x){
         case 0:
             orderStatus = ""
-            FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
-            println("点击第一个")
+         loadData()
             self.yuding.reloadData()
 
             break
         case 1:
             orderStatus = "待接受"
-            FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
-            println("点击第2个")
+            loadData()
+        
             self.yuding.reloadData()
             break
         case 2:
             orderStatus = "待付款"
-            FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
-            println("点击第3个")
+            loadData()
+            
             self.yuding.reloadData()
             break
         case 3:
             orderStatus = "付款完成"
-            FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
-            println("点击第3个")
+            loadData()
+
             self.yuding.reloadData()
             break
 
         default:
             orderStatus = "退款"
-            FinishDatas = refreshRefundOrder(customerid,orderStatus) as! [Finishinfo]
-            println("点击其他")
+            loadData()
+
             self.yuding.reloadData()
             break
         }
@@ -199,7 +238,7 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
     }
     
     override func  viewWillAppear(animated: Bool) {
-         readNSUerDefaults()
+        // readNSUerDefaults()
 //        if customerid == "" || loginPassword == ""{
 //            
 //            let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
@@ -207,8 +246,8 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
 //            
 //            
 //        }
-        FinishDatas = refreshOrderData(customerid,orderStatus) as! [Finishinfo]
-        self.yuding.reloadData()
+        loadData()
+         self.yuding.reloadData()
         
     }
     

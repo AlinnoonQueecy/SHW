@@ -73,89 +73,89 @@ class Finishinfo:NSObject {
 }
 
 
-func refreshFinish(customerID:String) ->NSArray  {
-    var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileServiceOrderAction?operation=_query")
-    
-    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
-    
-    request.HTTPMethod = "POST"
-    //var param:String = "{\"customerAccount\":\"Alex\",\"Password\":\"a123\"}"
-    var param:String = "{\"customerID\":\"\(customerID)\"}"
-    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-    request.HTTPBody = data;
-    var response:NSURLResponse?
-    var error:NSError?
-    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
-    if (error != nil)
-    {
-        println(error?.code)
-        println(error?.description)
-    }
-    else
-    {
-        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
-        println(jsonString)
-        
-    }
-    
-    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
- 
-    
-    var FinishiData:[Finishinfo] = []
-    var test1: AnyObject?=json.objectForKey("serverResponse")
-    var  response1 :String = test1 as! String
-    if  response1 == "Success"{
-    var test2: AnyObject?=json.objectForKey("data")
-    let jsonArray = test2 as? NSArray
-    var count = jsonArray?.count
-   
-    for value in jsonArray!{
-        var confirmTime:String=value.objectForKey("confirmTime") as! String
-        var customerEvaluate:String=value.objectForKey("customerEvaluate") as! String
-        var customerID:String=value.objectForKey("customerID") as! String
-        var customerName:String=value.objectForKey("customerName") as! String
-        var facilitatorID:String=value.objectForKey("facilitatorID") as! String
-        
-        var facilitatorName:String=value.objectForKey("facilitatorName") as! String
-        var id:Int=value.objectForKey("id") as! Int
-        var itemIDs:String=value.objectForKey("itemIDs") as! String
-        var itemName:String=value.objectForKey("itemName") as! String
-        var orderNo:String=value.objectForKey("orderNo") as! String
-        
-        var orderStatus:String=value.objectForKey("orderStatus") as! String
-        var orderTime:String=value.objectForKey("orderTime") as! String
-        var overTime:String=value.objectForKey("overTime") as! String
-        var paidAmount:Float=value.objectForKey("paidAmount") as! Float
-        var remarks:String=value.objectForKey("remarks") as! String
-        
-        var servantID:String=value.objectForKey("servantID") as! String
-        var servantName:String=value.objectForKey("servantName") as! String
-        var serviceContent:String=value.objectForKey("serviceContent") as! String
-        var servicePrice:Float=value.objectForKey("servicePrice") as! Float
-        var serviceType:String=value.objectForKey("serviceType") as! String
-        
-        var startTime:String=value.objectForKey("startTime") as! String
-        var contactPhone:String=value.objectForKey("contactPhone") as! String
-        var contactAddress:String=value.objectForKey("contactAddress") as! String
-        let obj:Finishinfo=Finishinfo(confirmTime: confirmTime,customerEvaluate: customerEvaluate, customerID: customerID, customerName: customerName, facilitatorID: facilitatorID, facilitatorName: facilitatorName, id: id, itemIDs: itemIDs, itemName: itemName, orderNo: orderNo, orderStatus: orderStatus, orderTime: orderTime, overTime: overTime, paidAmount: paidAmount, remarks: remarks, servantID: servantID, servantName: servantName, serviceContent: serviceContent, servicePrice: servicePrice, serviceType: serviceType, startTime: startTime,contactPhone:contactPhone,contactAddress:contactAddress)
-        //println(obj.facilitatorID+" "+obj.facilitatorName);
-//        var FinishiData:[Finishinfo] = []
-        FinishiData += [obj]
-       // obj.confirmTime = a;
-//        var b: AnyObject?=value.objectForKey("customerEvaluate")
-//        finishinfo.customerEvaluate = b
-//        var c: AnyObject?=value.objectForKey("customerName")
-//        finishinfo.customerName = c
-        }
-    }
-    return FinishiData
-    
-}
+//func refreshFinish(customerID:String) ->NSArray  {
+//    var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileServiceOrderAction?operation=_query")
+//    
+//    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
+//    
+//    request.HTTPMethod = "POST"
+//    //var param:String = "{\"customerAccount\":\"Alex\",\"Password\":\"a123\"}"
+//    var param:String = "{\"customerID\":\"\(customerID)\"}"
+//    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+//    request.HTTPBody = data;
+//    var response:NSURLResponse?
+//    var error:NSError?
+//    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+//    if (error != nil)
+//    {
+//        println(error?.code)
+//        println(error?.description)
+//    }
+//    else
+//    {
+//        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
+//        println(jsonString)
+//        
+//    }
+//    
+//    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
+// 
+//    
+//    var FinishiData:[Finishinfo] = []
+//    var test1: AnyObject?=json.objectForKey("serverResponse")
+//    var  response1 :String = test1 as! String
+//    if  response1 == "Success"{
+//    var test2: AnyObject?=json.objectForKey("data")
+//    let jsonArray = test2 as? NSArray
+//    var count = jsonArray?.count
+//   
+//    for value in jsonArray!{
+//        var confirmTime:String=value.objectForKey("confirmTime") as! String
+//        var customerEvaluate:String=value.objectForKey("customerEvaluate") as! String
+//        var customerID:String=value.objectForKey("customerID") as! String
+//        var customerName:String=value.objectForKey("customerName") as! String
+//        var facilitatorID:String=value.objectForKey("facilitatorID") as! String
+//        
+//        var facilitatorName:String=value.objectForKey("facilitatorName") as! String
+//        var id:Int=value.objectForKey("id") as! Int
+//        var itemIDs:String=value.objectForKey("itemIDs") as! String
+//        var itemName:String=value.objectForKey("itemName") as! String
+//        var orderNo:String=value.objectForKey("orderNo") as! String
+//        
+//        var orderStatus:String=value.objectForKey("orderStatus") as! String
+//        var orderTime:String=value.objectForKey("orderTime") as! String
+//        var overTime:String=value.objectForKey("overTime") as! String
+//        var paidAmount:Float=value.objectForKey("paidAmount") as! Float
+//        var remarks:String=value.objectForKey("remarks") as! String
+//        
+//        var servantID:String=value.objectForKey("servantID") as! String
+//        var servantName:String=value.objectForKey("servantName") as! String
+//        var serviceContent:String=value.objectForKey("serviceContent") as! String
+//        var servicePrice:Float=value.objectForKey("servicePrice") as! Float
+//        var serviceType:String=value.objectForKey("serviceType") as! String
+//        
+//        var startTime:String=value.objectForKey("startTime") as! String
+//        var contactPhone:String=value.objectForKey("contactPhone") as! String
+//        var contactAddress:String=value.objectForKey("contactAddress") as! String
+//        let obj:Finishinfo=Finishinfo(confirmTime: confirmTime,customerEvaluate: customerEvaluate, customerID: customerID, customerName: customerName, facilitatorID: facilitatorID, facilitatorName: facilitatorName, id: id, itemIDs: itemIDs, itemName: itemName, orderNo: orderNo, orderStatus: orderStatus, orderTime: orderTime, overTime: overTime, paidAmount: paidAmount, remarks: remarks, servantID: servantID, servantName: servantName, serviceContent: serviceContent, servicePrice: servicePrice, serviceType: serviceType, startTime: startTime,contactPhone:contactPhone,contactAddress:contactAddress)
+//        //println(obj.facilitatorID+" "+obj.facilitatorName);
+////        var FinishiData:[Finishinfo] = []
+//        FinishiData += [obj]
+//       // obj.confirmTime = a;
+////        var b: AnyObject?=value.objectForKey("customerEvaluate")
+////        finishinfo.customerEvaluate = b
+////        var c: AnyObject?=value.objectForKey("customerName")
+////        finishinfo.customerName = c
+//        }
+//    }
+//    return FinishiData
+//    
+//}
 
 
 
-//查询订单
-func refreshOrderData(customerID:String,orderStatus:String) ->NSArray  {
+//查询不同状态的订单
+func refreshOrderData(customerID:String,orderStatus:String,page:Int) ->NSArray  {
     
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileServiceOrderAction?operation=_queryOrder")
     
@@ -163,7 +163,7 @@ func refreshOrderData(customerID:String,orderStatus:String) ->NSArray  {
     
     request.HTTPMethod = "POST"
     //var param:String = "{\"customerAccount\":\"Alex\",\"Password\":\"a123\"}"
-    var param:String = "{\"customerID\":\"\(customerID)\",\"orderStatus\":\"\(orderStatus)\"}"
+    var param:String = "{\"customerID\":\"\(customerID)\",\"orderStatus\":\"\(orderStatus)\",\"pageNo\":\"\(page)\"}"
     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;
     var response:NSURLResponse?
@@ -235,6 +235,49 @@ func refreshOrderData(customerID:String,orderStatus:String) ->NSArray  {
     return FinishiData
     
 }
+
+//查询订单页数
+func GetOrderPage(customerID:String,orderStatus:String,page:Int) ->Int  {
+    var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileServiceOrderAction?operation=_queryOrder")
+    
+    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
+    
+    request.HTTPMethod = "POST"
+ 
+    var param:String = "{\"customerID\":\"\(customerID)\",\"orderStatus\":\"\(orderStatus)\",\"pageNo\":\"\(page)\"}"
+    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+    request.HTTPBody = data;
+    var response:NSURLResponse?
+    var error:NSError?
+    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+    if (error != nil)
+    {
+        println(error?.code)
+        println(error?.description)
+    }
+    else
+    {
+        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
+        println(jsonString)
+        
+    }
+    
+    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
+    
+    var test1: AnyObject?=json.objectForKey("serverResponse")
+    var serverResponse:String = test1 as! String
+    var Page:Int!
+    if  serverResponse == "Success" {
+        var pagesize: AnyObject?=json.objectForKey("pageSize")
+        Page = pagesize as? Int
+        
+    }
+    
+    return Page!
+    
+    
+}
+
 //查询所有的退款订单
 func refreshRefundOrder(customerID:String,orderStatus:String) ->NSArray  {
     

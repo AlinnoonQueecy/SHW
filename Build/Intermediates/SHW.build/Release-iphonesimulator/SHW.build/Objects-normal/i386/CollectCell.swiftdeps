@@ -4,24 +4,24 @@ provides:
 nominals:
 - "C3SHW11CollectCell"
 class-members:
-- "servicePay"
-- "picture"
-- "itemName"
 - "setSelected"
+- "servicePay"
 - "facilitatorName"
+- "itemName"
+- "picture"
 - "awakeFromNib"
 top-level:
-- "Bool"
 - "UIImageView"
-- "UITableViewCell"
 - "UILabel"
+- "Bool"
+- "UITableViewCell"
 member-access:
 - "C3SHW11CollectCell"
+- "CSo8NSObject"
+- "CSo15UITableViewCell"
 - "CSo6UIView"
 - "CSo11UIResponder"
-- "CSo15UITableViewCell"
 - "PSs9AnyObject"
-- "CSo8NSObject"
 dynamic-lookup:
 cross-module:
 - "/Volumes/Xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/32/Swift.swiftmodule"

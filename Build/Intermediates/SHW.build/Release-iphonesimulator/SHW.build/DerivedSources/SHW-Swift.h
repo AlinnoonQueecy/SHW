@@ -349,13 +349,9 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 - (void)setupContentView;
 - (void)setupCollectionView;
 - (void)setupSideMenuBottomView;
-
-/// 显示侧栏
 - (void)showSideBar;
 - (void)collectionButtonItemClicked:(UIButton * __nonnull)sender;
 - (void)setupPanGesture;
-
-/// 手势触发
 - (void)handlePanGesture:(UIPanGestureRecognizer * __nonnull)recognizer;
 - (void)loadConditions;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * __nonnull)collectionView;
@@ -760,14 +756,8 @@ SWIFT_CLASS("_TtC3SHW11FindService")
 @property (nonatomic) NSString * __nullable imageUrlString;
 @property (nonatomic) UIImage * __nullable img;
 @property (nonatomic) UIImage * __nullable termImg;
-
-/// 定位服务
 @property (nonatomic) BMKLocationService * __null_unspecified locationService;
-
-/// 当前用户位置
 @property (nonatomic) BMKUserLocation * __null_unspecified userLocation;
-
-/// 地理位置编码
 @property (nonatomic) BMKGeoCodeSearch * __null_unspecified geocodeSearch;
 @property (nonatomic, copy) NSArray * __nonnull FirstTypeData;
 - (void)viewDidLoad;
@@ -807,8 +797,6 @@ SWIFT_CLASS("_TtC3SHW12FinishTVCell")
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIRefreshControl;
-@class NSTimer;
 @class UISegmentedControl;
 
 SWIFT_CLASS("_TtC3SHW17FinishVController")
@@ -819,13 +807,17 @@ SWIFT_CLASS("_TtC3SHW17FinishVController")
 @property (nonatomic, copy) NSArray * __nonnull Infor;
 @property (nonatomic, copy) NSArray * __nonnull FinishDatas;
 @property (nonatomic) UIBarButtonItem * __nullable barButtonItem;
-@property (nonatomic) UIRefreshControl * __nonnull refreshControl;
-@property (nonatomic) NSTimer * __null_unspecified timer;
+@property (nonatomic) NSInteger page;
+@property (nonatomic) UILabel * __nonnull loadMoreText;
+@property (nonatomic, readonly) UIView * __nonnull tableFooterView;
 @property (nonatomic) UISegmentedControl * __nonnull segmentedControl;
 @property (nonatomic, copy) NSString * __nonnull orderStatus;
 - (void)viewDidLoad;
 - (void)alertView:(UIAlertView * __nonnull)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
 - (void)refresh;
+- (void)upPullLoadData;
+- (void)downPlullLoadData;
+- (void)loadMoreData;
 - (void)loadData;
 - (void)viewDidLayoutSubviews;
 - (void)didReceiveMemoryWarning;
@@ -939,6 +931,22 @@ SWIFT_CLASS("_TtC3SHW13HomeAdvertise")
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithId:(NSInteger)id advertisePicture:(NSString * __nonnull)advertisePicture advertiseTopic:(NSString * __nonnull)advertiseTopic facilitatorID:(NSString * __nonnull)facilitatorID OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC3SHW17ILCountDownButton")
+@interface ILCountDownButton : UIButton
+@property (nonatomic, copy) void (^ __nullable restartCallback)(void);
+@property (nonatomic, copy) NSString * __nonnull countFrontString;
+@property (nonatomic, copy) NSString * __nonnull countRearString;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCount:(NSInteger)count;
+- (void)restart;
+- (void)setTitleForRestart:(NSString * __nonnull)title;
+- (void)setBackgroundImageForRestart:(UIImage * __nonnull)image;
+- (void)setBackgroundImageForCount:(UIImage * __nonnull)image;
+- (void)setTitle:(NSString * __nullable)title forState:(UIControlState)state;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class CLLocationManager;
 
 SWIFT_CLASS("_TtC3SHW22LocationViewController")
@@ -974,19 +982,27 @@ SWIFT_CLASS("_TtC3SHW22LocationViewController")
 
 SWIFT_CLASS("_TtC3SHW7LoginVC")
 @interface LoginVC : UIViewController <UITextFieldDelegate, NSURLConnectionDataDelegate>
-@property (nonatomic, weak) IBOutlet UITextField * __null_unspecified customerID;
-@property (nonatomic, weak) IBOutlet UITextField * __null_unspecified loginPassword;
-@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified register;
-@property (nonatomic, weak) IBOutlet UIButton * __null_unspecified getmima;
 @property (nonatomic, copy) NSString * __nullable serverResponse;
 @property (nonatomic, copy) NSString * __nonnull customerid;
 @property (nonatomic, copy) NSString * __nonnull loginPwd;
+@property (nonatomic, readonly) UIView * __nonnull Quicklanding;
+@property (nonatomic, readonly) UIView * __nonnull Landing;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) UISegmentedControl * __nonnull segmentedControl;
+@property (nonatomic) UITextField * __nonnull phoneNo;
+@property (nonatomic) UITextField * __nonnull identifyCode;
+@property (nonatomic) UITextField * __nonnull customerID;
+@property (nonatomic) UITextField * __nonnull loginPassword;
 - (void)viewDidLoad;
-- (IBAction)Login:(id __nonnull)sender;
+- (void)QuicklandingView;
+- (void)landingView;
+- (void)TimerButton;
+- (void)selected;
+- (void)Pressed:(UIButton * __nonnull)countButton;
+- (void)Login;
 - (void)saveNSUerDefaults;
 - (void)readNSUerDefaults;
-- (void)viewDidLayoutSubviews;
-- (IBAction)touchView:(id __nonnull)sender;
 - (void)didReceiveMemoryWarning;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
