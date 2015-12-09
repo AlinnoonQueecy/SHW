@@ -4,20 +4,20 @@ provides:
 nominals:
 - "C3SHW9Condition"
 class-members:
-- "operations"
 - "name"
+- "operations"
 - "isAvaliable"
 top-level:
+- "String"
+- "NSArray"
 - "NSObject"
 - "IntegerLiteralType"
-- "NSArray"
 - "FloatLiteralType"
-- "String"
 member-access:
-- "CSo7NSArray"
 - "C3SHW9Condition"
-- "CSo8NSObject"
 - "SS"
+- "CSo7NSArray"
+- "CSo8NSObject"
 - "PSs9AnyObject"
 dynamic-lookup:
 cross-module:

@@ -28,8 +28,9 @@ class ILCountDownButton: UIButton {
         self.titleLabel?.font = UIFont.systemFontOfSize(17)
         self.originCoutDown = count
         self.countDown = count
-        super.addTarget(self, action: "restart", forControlEvents: UIControlEvents.TouchUpInside )
+        //super.addTarget(self, action: "restart", forControlEvents: UIControlEvents.TouchUpInside )
     }
+ 
     
     //开始倒计时
     func restart() {
@@ -39,6 +40,14 @@ class ILCountDownButton: UIButton {
         self.enabled = false
         self.restartCallback?()
     }
+//    //开始倒计时
+//    func restart(count: Int) {
+//        self.countDown = self.originCoutDown
+//        self.heartbeat()
+//        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "heartbeat", userInfo: nil, repeats: true)
+//        self.enabled = false
+//        self.restartCallback?()
+//    }
     
     //设置可点击时标题
     func setTitleForRestart(title: String) {

@@ -21,7 +21,7 @@ struct HttpData {
     static let  label2term:[String] = ["保洁服务","保姆服务","月嫂服务","催乳师","管家","钟点工"]
     static let Item:[String] = ["保姆","清洁","月嫂","看护","小时工","公司保洁","99洗护","高级管家","育婴高教","保姆","清洁","月嫂","看护","小时工","公司保洁","钟点"]
     static var maintwo:[String] = ["家政","搬运服务","洗染服务","礼仪庆典","美容美体","人像摄影","居家养老","维修服务","法律援助"]
-    
+    static let grayColor = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
     
    //正则表达式
    static  let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"//邮箱

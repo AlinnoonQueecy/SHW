@@ -4,23 +4,23 @@ provides:
 nominals:
 - "C3SHW15FacilitatorCell"
 class-members:
-- "frontImage"
-- "callButton"
+- "contentlabel"
 - "awakeFromNib"
 - "setSelected"
-- "contentlabel"
+- "frontImage"
+- "callButton"
 top-level:
 - "UITableViewCell"
-- "Bool"
 - "UILabel"
 - "UIButton"
 - "UIImageView"
+- "Bool"
 member-access:
-- "CSo8NSObject"
-- "CSo6UIView"
-- "CSo15UITableViewCell"
 - "CSo11UIResponder"
+- "CSo15UITableViewCell"
+- "CSo6UIView"
 - "PSs9AnyObject"
+- "CSo8NSObject"
 - "C3SHW15FacilitatorCell"
 dynamic-lookup:
 cross-module:

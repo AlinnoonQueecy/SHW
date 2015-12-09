@@ -67,161 +67,161 @@ class facilitatorInfo:NSObject {
     
 }
 
-////1.1. 查询提供某一服务的所有商家
-// func refreshFacilitator(secondType:String,attributeName:String,upDown:String,facilitatorCity:String,facilitatorCounty:String,pageNo:Int,fiterCondition:String) ->NSArray  {
-//    var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
-//    
-//    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
-//    
-//    request.HTTPMethod = "POST"
-//     var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCity\":\"\(facilitatorCity)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\"}"
-//    
-//     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-//    request.HTTPBody = data;
-//    var response:NSURLResponse?
-//    var error:NSError?
-//    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
-//    if (error != nil)
-//    {
-// 
-//    }
-//    else
-//    {
-//        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
-//     }
-//    
-//    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
-//    
-//    var test1: AnyObject?=json.objectForKey("serverResponse")
-//    var serverResponse:String = test1 as! String 
-//    
-//    var FacilitatorData:[facilitatorInfo] = []
-//    if  serverResponse == "Success" {
-//    var test2: AnyObject?=json.objectForKey("data")
-//     let jsonArray = test2 as? NSArray
-//    var count = jsonArray?.count
-//   
-//    for value in jsonArray!{
-//        var id:Int=value.objectForKey("id") as! Int
-//        var facilitatorName:String=value.objectForKey("facilitatorName") as! String
-//       
-//        var facilitatorID:String=value.objectForKey("facilitatorID") as! String
-//        var officePhone:String=value.objectForKey("officePhone") as! String
-//        
-//        
-//        
-//        var qqNumber:String=value.objectForKey("qqNumber") as! String
-//        var contactPhone:String=value.objectForKey("contactPhone") as! String
-//        var facilitatorProvince:String=value.objectForKey("facilitatorProvince") as! String
-//        var facilitatorCity:String=value.objectForKey("facilitatorCity") as! String
-//        var facilitatorCounty:String=value.objectForKey("facilitatorCounty") as! String
-//        
-//        
-//        var emailAddress:String=value.objectForKey("emailAddress") as! String
-//        var contactAddress:String=value.objectForKey("contactAddress") as! String
-//        var registerTime:String=value.objectForKey("registerTime") as! String
-//        var facilitatorLevel:Int=value.objectForKey("facilitatorLevel") as! Int
-//        var creditScore:String = value.objectForKey("creditScore") as! String
-//        
-//        
-//        
-//        var facilitatorIntro:String=value.objectForKey("facilitatorIntro") as! String
-//        var facilitatorLogo:String=value.objectForKey("facilitatorLogo") as! String
-//        var facilitatorStatus:String=value.objectForKey("facilitatorStatus") as! String
-//        
-//        var serviceCount:Int=value.objectForKey("serviceCount") as! Int
-//        var serviceType:String = value.objectForKey("serviceTypeArray") as! String
-//        let obj:facilitatorInfo = facilitatorInfo(id:id,facilitatorName:facilitatorName,facilitatorID:facilitatorID,officePhone:officePhone,qqNumber:qqNumber,contactPhone:contactPhone,facilitatorProvince:facilitatorProvince,facilitatorCity:facilitatorCity,facilitatorCounty:facilitatorCounty,emailAddress:emailAddress,contactAddress:contactAddress,registerTime: registerTime,facilitatorLevel:facilitatorLevel,creditScore:creditScore,
-//            facilitatorIntro: facilitatorIntro,facilitatorLogo:facilitatorLogo,facilitatorStatus:facilitatorStatus,serviceCount: serviceCount)
-//        
-//        FacilitatorData += [obj]
-// 
-//        
-//       }
-//    }
-//    return FacilitatorData
-//    
-//}
- //1.1. 查询提供某一服务的所有商家
- func refreshFacilitator(secondType:String,attributeName:String,upDown:String,facilitatorCounty:String,pageNo:Int ) ->NSArray  {
+//1.1. 查询提供某一服务的所有商家
+ func refreshFacilitator(secondType:String,attributeName:String,upDown:String,facilitatorCity:String,facilitatorCounty:String,pageNo:Int,fiterCondition:String) ->NSArray  {
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
     
     var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
     
     request.HTTPMethod = "POST"
-    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\", \"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\" }"
+    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCity\":\"\(facilitatorCity)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\(fiterCondition)\"}"
     
-    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;
     var response:NSURLResponse?
     var error:NSError?
     var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
     if (error != nil)
     {
-        
+ 
     }
     else
     {
         var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
-        println("jsonString\(jsonString)")
-
-    }
+     }
     
     let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
     
     var test1: AnyObject?=json.objectForKey("serverResponse")
-    var serverResponse:String = test1 as! String
+    var serverResponse:String = test1 as! String 
     
     var FacilitatorData:[facilitatorInfo] = []
     if  serverResponse == "Success" {
-        var test2: AnyObject?=json.objectForKey("data")
-        let jsonArray = test2 as? NSArray
-        var count = jsonArray?.count
+    var test2: AnyObject?=json.objectForKey("data")
+     let jsonArray = test2 as? NSArray
+    var count = jsonArray?.count
+   
+    for value in jsonArray!{
+        var id:Int=value.objectForKey("id") as! Int
+        var facilitatorName:String=value.objectForKey("facilitatorName") as! String
+       
+        var facilitatorID:String=value.objectForKey("facilitatorID") as! String
+        var officePhone:String=value.objectForKey("officePhone") as! String
         
-        for value in jsonArray!{
-            var id:Int=value.objectForKey("id") as! Int
-            var facilitatorName:String=value.objectForKey("facilitatorName") as! String
-            
-            var facilitatorID:String=value.objectForKey("facilitatorID") as! String
-            var officePhone:String=value.objectForKey("officePhone") as! String
-            
-            
-            
-            var qqNumber:String=value.objectForKey("qqNumber") as! String
-            var contactPhone:String=value.objectForKey("contactPhone") as! String
-            var facilitatorProvince:String=value.objectForKey("facilitatorProvince") as! String
-            var facilitatorCity:String=value.objectForKey("facilitatorCity") as! String
-            var facilitatorCounty:String=value.objectForKey("facilitatorCounty") as! String
-            
-            
-            var emailAddress:String=value.objectForKey("emailAddress") as! String
-            var contactAddress:String=value.objectForKey("contactAddress") as! String
-            var registerTime:String=value.objectForKey("registerTime") as! String
-            var facilitatorLevel:Int=value.objectForKey("facilitatorLevel") as! Int
-            var creditScore:String = value.objectForKey("creditScore") as! String
-            
-            
-            
-            var facilitatorIntro:String=value.objectForKey("facilitatorIntro") as! String
-            var facilitatorLogo:String=value.objectForKey("facilitatorLogo") as! String
-            var facilitatorStatus:String=value.objectForKey("facilitatorStatus") as! String
-            
-            var serviceCount:Int=value.objectForKey("serviceCount") as! Int
-            var serviceType:String = value.objectForKey("serviceTypeArray") as! String
-            let obj:facilitatorInfo = facilitatorInfo(id:id,facilitatorName:facilitatorName,facilitatorID:facilitatorID,officePhone:officePhone,qqNumber:qqNumber,contactPhone:contactPhone,facilitatorProvince:facilitatorProvince,facilitatorCity:facilitatorCity,facilitatorCounty:facilitatorCounty,emailAddress:emailAddress,contactAddress:contactAddress,registerTime: registerTime,facilitatorLevel:facilitatorLevel,creditScore:creditScore,
-                facilitatorIntro: facilitatorIntro,facilitatorLogo:facilitatorLogo,facilitatorStatus:facilitatorStatus,serviceCount: serviceCount)
-            
-            FacilitatorData += [obj]
-            
-            
-        }
+        
+        
+        var qqNumber:String=value.objectForKey("qqNumber") as! String
+        var contactPhone:String=value.objectForKey("contactPhone") as! String
+        var facilitatorProvince:String=value.objectForKey("facilitatorProvince") as! String
+        var facilitatorCity:String=value.objectForKey("facilitatorCity") as! String
+        var facilitatorCounty:String=value.objectForKey("facilitatorCounty") as! String
+        
+        
+        var emailAddress:String=value.objectForKey("emailAddress") as! String
+        var contactAddress:String=value.objectForKey("contactAddress") as! String
+        var registerTime:String=value.objectForKey("registerTime") as! String
+        var facilitatorLevel:Int=value.objectForKey("facilitatorLevel") as! Int
+        var creditScore:String = value.objectForKey("creditScore") as! String
+        
+        
+        
+        var facilitatorIntro:String=value.objectForKey("facilitatorIntro") as! String
+        var facilitatorLogo:String=value.objectForKey("facilitatorLogo") as! String
+        var facilitatorStatus:String=value.objectForKey("facilitatorStatus") as! String
+        
+        var serviceCount:Int=value.objectForKey("serviceCount") as! Int
+        var serviceType:String = value.objectForKey("serviceTypeArray") as! String
+        let obj:facilitatorInfo = facilitatorInfo(id:id,facilitatorName:facilitatorName,facilitatorID:facilitatorID,officePhone:officePhone,qqNumber:qqNumber,contactPhone:contactPhone,facilitatorProvince:facilitatorProvince,facilitatorCity:facilitatorCity,facilitatorCounty:facilitatorCounty,emailAddress:emailAddress,contactAddress:contactAddress,registerTime: registerTime,facilitatorLevel:facilitatorLevel,creditScore:creditScore,
+            facilitatorIntro: facilitatorIntro,facilitatorLogo:facilitatorLogo,facilitatorStatus:facilitatorStatus,serviceCount: serviceCount)
+        
+        FacilitatorData += [obj]
+ 
+        
+       }
     }
     return FacilitatorData
     
- }
+}
+// //1.1. 查询提供某一服务的所有商家
+// func refreshFacilitator(secondType:String,attributeName:String,upDown:String,facilitatorCounty:String,pageNo:Int ) ->NSArray  {
+//    var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
+//    
+//    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
+//    
+//    request.HTTPMethod = "POST"
+//    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\", \"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\" }"
+//    
+//    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+//    request.HTTPBody = data;
+//    var response:NSURLResponse?
+//    var error:NSError?
+//    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+//    if (error != nil)
+//    {
+//        
+//    }
+//    else
+//    {
+//        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
+//        println("jsonString\(jsonString)")
+//
+//    }
+//    
+//    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
+//    
+//    var test1: AnyObject?=json.objectForKey("serverResponse")
+//    var serverResponse:String = test1 as! String
+//    
+//    var FacilitatorData:[facilitatorInfo] = []
+//    if  serverResponse == "Success" {
+//        var test2: AnyObject?=json.objectForKey("data")
+//        let jsonArray = test2 as? NSArray
+//        var count = jsonArray?.count
+//        
+//        for value in jsonArray!{
+//            var id:Int=value.objectForKey("id") as! Int
+//            var facilitatorName:String=value.objectForKey("facilitatorName") as! String
+//            
+//            var facilitatorID:String=value.objectForKey("facilitatorID") as! String
+//            var officePhone:String=value.objectForKey("officePhone") as! String
+//            
+//            
+//            
+//            var qqNumber:String=value.objectForKey("qqNumber") as! String
+//            var contactPhone:String=value.objectForKey("contactPhone") as! String
+//            var facilitatorProvince:String=value.objectForKey("facilitatorProvince") as! String
+//            var facilitatorCity:String=value.objectForKey("facilitatorCity") as! String
+//            var facilitatorCounty:String=value.objectForKey("facilitatorCounty") as! String
+//            
+//            
+//            var emailAddress:String=value.objectForKey("emailAddress") as! String
+//            var contactAddress:String=value.objectForKey("contactAddress") as! String
+//            var registerTime:String=value.objectForKey("registerTime") as! String
+//            var facilitatorLevel:Int=value.objectForKey("facilitatorLevel") as! Int
+//            var creditScore:String = value.objectForKey("creditScore") as! String
+//            
+//            
+//            
+//            var facilitatorIntro:String=value.objectForKey("facilitatorIntro") as! String
+//            var facilitatorLogo:String=value.objectForKey("facilitatorLogo") as! String
+//            var facilitatorStatus:String=value.objectForKey("facilitatorStatus") as! String
+//            
+//            var serviceCount:Int=value.objectForKey("serviceCount") as! Int
+//            var serviceType:String = value.objectForKey("serviceTypeArray") as! String
+//            let obj:facilitatorInfo = facilitatorInfo(id:id,facilitatorName:facilitatorName,facilitatorID:facilitatorID,officePhone:officePhone,qqNumber:qqNumber,contactPhone:contactPhone,facilitatorProvince:facilitatorProvince,facilitatorCity:facilitatorCity,facilitatorCounty:facilitatorCounty,emailAddress:emailAddress,contactAddress:contactAddress,registerTime: registerTime,facilitatorLevel:facilitatorLevel,creditScore:creditScore,
+//                facilitatorIntro: facilitatorIntro,facilitatorLogo:facilitatorLogo,facilitatorStatus:facilitatorStatus,serviceCount: serviceCount)
+//            
+//            FacilitatorData += [obj]
+//            
+//            
+//        }
+//    }
+//    return FacilitatorData
+//    
+// }
 
  //1.2商家页数
- func GetFPage(secondType:String,attributeName:String,upDown:String,facilitatorCounty:String,pageNo:Int) ->Int  {
+ func GetFPage(secondType:String,attributeName:String,upDown:String,facilitatorCity:String,facilitatorCounty:String,pageNo:Int,fiterCondition:String) ->Int  {
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
     //var url: NSURL! = NSURL(string:"http://192.168.1.105:8080/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
 
@@ -230,7 +230,7 @@ class facilitatorInfo:NSObject {
     
     request.HTTPMethod = "POST"
     //var param:String = "{\"customerAccount\":\"Alex\",\"Password\":\"a123\"}"
-     var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\"}"
+  var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCity\":\"\(facilitatorCity)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\(fiterCondition)\"}"
     
     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;

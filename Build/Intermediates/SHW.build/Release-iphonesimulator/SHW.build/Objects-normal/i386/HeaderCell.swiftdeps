@@ -4,22 +4,22 @@ provides:
 nominals:
 - "C3SHW10HeaderCell"
 class-members:
-- "awakeFromNib"
-- "CustomerName"
-- "Phone"
-- "Picture"
 - "setSelected"
+- "Picture"
+- "Phone"
+- "CustomerName"
+- "awakeFromNib"
 top-level:
+- "UIImageView"
 - "UITableViewCell"
 - "Bool"
-- "UIImageView"
 - "UILabel"
 member-access:
-- "CSo8NSObject"
-- "CSo6UIView"
-- "CSo11UIResponder"
 - "C3SHW10HeaderCell"
+- "CSo11UIResponder"
+- "CSo8NSObject"
 - "CSo15UITableViewCell"
+- "CSo6UIView"
 - "PSs9AnyObject"
 dynamic-lookup:
 cross-module:

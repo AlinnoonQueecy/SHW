@@ -30,6 +30,7 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
     var segmentedControl = UISegmentedControl()
     //orderStatus
     var  orderStatus:String = ""
+    var  loginView = UIView()
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,31 +56,73 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         self.view.addSubview(segmentedControl)//添加到父视图
         //添加事件
         segmentedControl.addTarget(self, action: "selected", forControlEvents: UIControlEvents.ValueChanged)
-           
- 
-        loadData()
-        refresh()
         
-        if customerid == "" || loginPassword == ""{
-
-        let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
-        alert.show()
-            
-            
-        }
+        
+         setLoginView()
+         self.view.addSubview(loginView)
+     
+        refresh()
+    
+//        if customerid == "" || loginPassword == ""{
+//
+////        let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
+////        alert.show()
+//           
+//            loginView.hidden = false
+//            yuding.hidden = true
+//            segmentedControl.hidden = true
+//            
+//        }else {
+//            loginView.hidden = true
+//            yuding.hidden = false
+//            segmentedControl.hidden = false
+//               loadData()
+//        }
         
         
         
            
     }
-    func  alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
- 
+    func  setLoginView(){
+        
+       
+        let  w = self.view.frame.width-40
+
+        loginView.frame =  CGRectMake(20, 100 ,w, 60)
+        let label  =  UILabel(frame: CGRectMake(0, 0 ,w, 20))
+        label.textColor = UIColor.grayColor()
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "您还未登录，请登录"
+        label.font = UIFont.systemFontOfSize(14)
+        loginView.addSubview(label)
+        
+        let button = UIButton(frame:CGRectMake(w/2-50, 25, 100, 30))
+        button.backgroundColor = UIColor.orangeColor()
+        button.titleLabel?.font = UIFont.systemFontOfSize(14)
+        button.setTitle("去登录", forState: UIControlState.Normal)
+        button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        button.titleLabel?.textAlignment = NSTextAlignment.Center
+        button.layer.cornerRadius = 7
+        button.addTarget(self, action: "toLogin", forControlEvents: UIControlEvents.TouchUpInside)
+         loginView.addSubview(button)
+        
+        
+    }
+    func  toLogin(){
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
         
         self.navigationController!.pushViewController(vc, animated:true)
-        
+
     }
+//    func  alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+// 
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+//        
+//        self.navigationController!.pushViewController(vc, animated:true)
+//        
+//    }
     //默认的下拉刷新模式
     func refresh(){
         
@@ -238,16 +281,23 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
     }
     
     override func  viewWillAppear(animated: Bool) {
-        // readNSUerDefaults()
-//        if customerid == "" || loginPassword == ""{
-//            
-//            let alert =  UIAlertView(title: "", message: "您还没有登录", delegate: self, cancelButtonTitle: "去登录")
-//            alert.show()
-//            
-//            
-//        }
-        loadData()
-         self.yuding.reloadData()
+        readNSUerDefaults()
+        if customerid != "" && loginPassword != ""{
+            loginView.hidden = true
+            yuding.hidden = false
+            segmentedControl.hidden = false
+            loadData()
+
+        self.yuding.reloadData()
+            
+            
+        }else {
+            loginView.hidden = false
+            yuding.hidden = true
+            segmentedControl.hidden = true
+
+        }
+     
         
     }
     

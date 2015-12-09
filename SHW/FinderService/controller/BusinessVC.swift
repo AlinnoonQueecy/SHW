@@ -52,7 +52,8 @@
     var column2 = 2
     var  row2  = 0
     var  n = 0
-  
+    var facilitatorCity = ""
+    var condition = ""
     let color = UIColor(red: 234/255, green: 103/255, blue: 7/255, alpha: 1.0)
      //上拉加载更多
     var page = 1//下拉加载后的页数
@@ -108,7 +109,7 @@
             
              
         }
-        
+        facilitatorCity = location
         loadData()
    
  
@@ -157,7 +158,7 @@
     func loadMoreData() {
         
         if isPerson == 1 {
-            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCounty,page) as! [ServantInfo]
+            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition) as! [ServantInfo]
             ServantData += data
             data3 = ["默认排序","人员星级"]
             data31 = ["","servantScore"]
@@ -167,9 +168,9 @@
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
            
             //self.navigationItem.setRightBarButtonItem(rightButton, animated: true)
-            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition)
         }else if isPerson == 0 {
-            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCounty,page) as! [facilitatorInfo]
+            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition) as! [facilitatorInfo]
             selectbusiness += data
             data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
             data31 = ["","clientClick","creditScore"]
@@ -177,7 +178,7 @@
             writing.hidden = false
     
             self.navigationItem.rightBarButtonItem = nil
-            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition)
         }
         self.businessTable.reloadData()
         
@@ -186,23 +187,25 @@
     func loadData() {
         
         if isPerson == 1 {
-            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCounty,page) as! [ServantInfo]
+            var data = refreshServant(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition) as! [ServantInfo]
+
             ServantData = data
             data3 = ["默认排序","人员星级"]
             data31 = ["","servantScore"]
             writing.enabled = false
             writing.hidden = true
               self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "筛选", style: UIBarButtonItemStyle.Plain, target: self, action: "showSideBar")
-            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+             allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition)
         }else if isPerson == 0 {
-            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCounty,page) as! [facilitatorInfo]
+            var data = refreshFacilitator(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition) as! [facilitatorInfo]
+
             selectbusiness = data
             data3 = ["默认排序","点击次数由高到低","信用评分由高到低"]
             data31 = ["","clientClick","creditScore"]
             writing.enabled = true
             writing.hidden = false
             self.navigationItem.rightBarButtonItem = nil
-            allpage = GetFPage(SecondType,attributeName,upDown,facilitatorCounty,page)
+            allpage = GetSPage(SecondType,attributeName,upDown,facilitatorCity,facilitatorCounty,page,condition)
         }
         self.businessTable.reloadData()
         
@@ -298,7 +301,8 @@
         }
         
         let parameters = [
-            "typeName" : "月嫂"
+            "typeName" : SecondType,
+            
         ]
         
         Alamofire.request(.POST, "http://219.216.65.182:8080/FamilyServiceSystem/MobileServiceTypeAction?operation=_queryByName", parameters: parameters, encoding: .JSON, headers: nil)
@@ -417,7 +421,10 @@
     
     func confirmButtonDidClicked() {
         self.rightSideBar.dismissAnimated(true)
-        print("选中的选项数组----\(self.selectedOperationArray)")
+        print("选中的选项数组----\(self.selectedOperationArray[0])")
+             print("选中的选项数组----\(self.selectedOperationArray[1])")
+        print("选中的选项数组----\(self.selectedOperationArray[2])")
+        print("选中的选项数组----\(self.selectedOperationArray[3])")
     }
 
 

@@ -22,7 +22,7 @@ class BaseInfoVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
     var currentData1Index : Int = 0
     var data1 :[String] = []
     // var Register = ["用户账号:","用户姓名:","用户性别:","出生日期:","身份证号:","联系电话:","电子邮箱:","所在地:","联系地址:"]
-    var Register = ["用户名:","姓名:","性别:","出生日期:","座机号码","联系电话:","电子邮箱:","QQ号码:","所在地:","联系地址:"]
+    var Register = ["用户名:","昵称:","性别:","出生日期:","座机号码","联系电话:","电子邮箱:","QQ号码:","所在地:","联系地址:"]
     var image = ["yonghuming","yonghuming","nianling","IDCard","dianhua","dianhua","youjian","youjian","dizhi","dizhi"]
     
     //var scrollView = UIScrollView()

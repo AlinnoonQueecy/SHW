@@ -22,6 +22,7 @@
 		1F1B1F301C049C5C00F52545 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1B1F2F1C049C5C00F52545 /* TabBarViewController.swift */; };
 		1F1DDEDB1C106807003A69F6 /* ServiceItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DDEDA1C106807003A69F6 /* ServiceItemVC.swift */; };
 		1F2482681C0AD24C00EC1540 /* DiscoverTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2482671C0AD24C00EC1540 /* DiscoverTVC.swift */; };
+		1F25EBF61C17CCF100DF0DEA /* login&identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F25EBF51C17CCF100DF0DEA /* login&identify.swift */; };
 		1F380C641B69CA430076ABB7 /* JSDropDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F380C631B69CA430076ABB7 /* JSDropDownMenu.m */; };
 		1F380C6D1B6AE8E10076ABB7 /* OrderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F380C6C1B6AE8E10076ABB7 /* OrderDetailVC.swift */; };
 		1F3F08671C128A82009CE48C /* CollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3F08651C128A82009CE48C /* CollectCell.swift */; };
@@ -116,6 +117,7 @@
 		1FC530101BA96C7D006B1A7C /* ZYHWebImageChcheCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5300E1BA96C7D006B1A7C /* ZYHWebImageChcheCenter.swift */; };
 		1FC5307D1BAACEA1006B1A7C /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC5307C1BAACEA1006B1A7C /* NSString+URL.m */; };
 		1FD8571D1C15380900F8FC65 /* CommentTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD8571C1C15380900F8FC65 /* CommentTCell.swift */; };
+		1FD939A01C16CA1600449132 /* UserAgreementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD9399F1C16CA1600449132 /* UserAgreementVC.swift */; };
 		1FEB06641C0DA5A400A1E442 /* PackageItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB06631C0DA5A400A1E442 /* PackageItemVC.swift */; };
 		1FEB066F1C0DC10800A1E442 /* workerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB066C1C0DC10800A1E442 /* workerViewController.swift */; };
 		1FEB06701C0DC10800A1E442 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB066D1C0DC10800A1E442 /* CommentVC.swift */; };
@@ -126,6 +128,8 @@
 		1FEB06821C0E88DC00A1E442 /* RefundDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB067A1C0E88DC00A1E442 /* RefundDetailVC.swift */; };
 		1FEB06831C0E88DC00A1E442 /* RefundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB067B1C0E88DC00A1E442 /* RefundVC.swift */; };
 		1FEB06841C0E88DC00A1E442 /* finishiorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB067D1C0E88DC00A1E442 /* finishiorder.swift */; };
+		1FF278271C16D89A009712C1 /* Pods-SHW.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = 1FF278261C16D89A009712C1 /* Pods-SHW.modulemap */; };
+		1FF278281C16D8C0009712C1 /* Pods-SHW.modulemap in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF278261C16D89A009712C1 /* Pods-SHW.modulemap */; };
 		E5416B733F37A8C1DC51F159 /* Pods_SHW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3CB8D05B190A4B1F611D0F /* Pods_SHW.framework */; };
 		EF1D39241C13161800BB768C /* Condition.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39051C13161800BB768C /* Condition.m */; };
 		EF1D39251C13161800BB768C /* Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D39061C13161800BB768C /* Condition.swift */; };
@@ -213,6 +217,7 @@
 		1F1B1F2F1C049C5C00F52545 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1F1DDEDA1C106807003A69F6 /* ServiceItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceItemVC.swift; sourceTree = "<group>"; };
 		1F2482671C0AD24C00EC1540 /* DiscoverTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTVC.swift; sourceTree = "<group>"; };
+		1F25EBF51C17CCF100DF0DEA /* login&identify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "login&identify.swift"; sourceTree = "<group>"; };
 		1F380C611B69C9CD0076ABB7 /* OCContainerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCContainerHeader.h; sourceTree = "<group>"; };
 		1F380C621B69CA430076ABB7 /* JSDropDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSDropDownMenu.h; sourceTree = "<group>"; };
 		1F380C631B69CA430076ABB7 /* JSDropDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSDropDownMenu.m; sourceTree = "<group>"; };
@@ -331,6 +336,7 @@
 		1FC5307B1BAACEA1006B1A7C /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
 		1FC5307C1BAACEA1006B1A7C /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		1FD8571C1C15380900F8FC65 /* CommentTCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTCell.swift; sourceTree = "<group>"; };
+		1FD9399F1C16CA1600449132 /* UserAgreementVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAgreementVC.swift; sourceTree = "<group>"; };
 		1FEB06631C0DA5A400A1E442 /* PackageItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageItemVC.swift; sourceTree = "<group>"; };
 		1FEB066C1C0DC10800A1E442 /* workerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workerViewController.swift; sourceTree = "<group>"; };
 		1FEB066D1C0DC10800A1E442 /* CommentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 		1FEB067A1C0E88DC00A1E442 /* RefundDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundDetailVC.swift; sourceTree = "<group>"; };
 		1FEB067B1C0E88DC00A1E442 /* RefundVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefundVC.swift; sourceTree = "<group>"; };
 		1FEB067D1C0E88DC00A1E442 /* finishiorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = finishiorder.swift; sourceTree = "<group>"; };
+		1FF278261C16D89A009712C1 /* Pods-SHW.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = "Pods-SHW.modulemap"; path = "Pods/Target Support Files/Pods-SHW/Pods-SHW.modulemap"; sourceTree = "<group>"; };
 		4E71814805E6F84569074EAB /* Pods-SHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SHW/Pods-SHW.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3CB8D05B190A4B1F611D0F /* Pods_SHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5006219296368CA4A041795 /* Pods-SHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-SHW/Pods-SHW.release.xcconfig"; sourceTree = "<group>"; };
@@ -407,6 +414,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF278281C16D8C0009712C1 /* Pods-SHW.modulemap in Frameworks */,
 				1FAE5FEB1BB24EB800C86F3A /* Security.framework in Frameworks */,
 				1FAE5FE71BB19F4700C86F3A /* BaiduMapAPI.framework in Frameworks */,
 				1FA104691B85A9A100BD9AC5 /* AlipaySDK.framework in Frameworks */,
@@ -525,6 +533,7 @@
 		1F4982B11C1280110048A265 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1FD9399F1C16CA1600449132 /* UserAgreementVC.swift */,
 				1FC497511C16782B004CC144 /* LoginVC.swift */,
 				1F8B1A741C158F4400A25812 /* SetingVC.swift */,
 				1F8B1A651C157E4800A25812 /* SetingTVC.swift */,
@@ -544,6 +553,7 @@
 			children = (
 				1F4982BD1C1280110048A265 /* CollectionData.swift */,
 				1F4982BE1C1280110048A265 /* MyInfoData.swift */,
+				1F25EBF51C17CCF100DF0DEA /* login&identify.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -763,6 +773,7 @@
 		65201A721A088622DFC9563F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				1FF278261C16D89A009712C1 /* Pods-SHW.modulemap */,
 				4E71814805E6F84569074EAB /* Pods-SHW.debug.xcconfig */,
 				C5006219296368CA4A041795 /* Pods-SHW.release.xcconfig */,
 			);
@@ -1150,6 +1161,7 @@
 				1FEB06811C0E88DC00A1E442 /* FinishViewController.swift in Sources */,
 				1F88DCD71C0A8E4E001A72C0 /* XWRefreshAutoStateFooter.swift in Sources */,
 				1F1582321BF0FDB500FEAA9D /* HSVerify.swift in Sources */,
+				1FD939A01C16CA1600449132 /* UserAgreementVC.swift in Sources */,
 				1FA104941B85AB4D00BD9AC5 /* base64.m in Sources */,
 				1F88DCDA1C0A8E4E001A72C0 /* XWRefreshHeader.swift in Sources */,
 				EF1D39341C13161800BB768C /* OptionalItemCollectionViewCell.m in Sources */,
@@ -1157,6 +1169,7 @@
 				EF1D39291C13161800BB768C /* PackageData.swift in Sources */,
 				EF1D39241C13161800BB768C /* Condition.m in Sources */,
 				EF1D392B1C13161800BB768C /* ServiceItemData.swift in Sources */,
+				1F25EBF61C17CCF100DF0DEA /* login&identify.swift in Sources */,
 				1FA1047F1B85AB0800BD9AC5 /* DataSigner.m in Sources */,
 				1FA104811B85AB0800BD9AC5 /* DataVerifier.m in Sources */,
 				1FC5307D1BAACEA1006B1A7C /* NSString+URL.m in Sources */,
@@ -1174,6 +1187,7 @@
 				1FA104831B85AB0800BD9AC5 /* RSADataSigner.m in Sources */,
 				1FEB066F1C0DC10800A1E442 /* workerViewController.swift in Sources */,
 				1F88DCDD1C0A8E4E001A72C0 /* UIScrollViewExtension-XW.swift in Sources */,
+				1FF278271C16D89A009712C1 /* Pods-SHW.modulemap in Sources */,
 				1FEB06821C0E88DC00A1E442 /* RefundDetailVC.swift in Sources */,
 				1FA104851B85AB0800BD9AC5 /* RSADataVerifier.m in Sources */,
 				1FC530101BA96C7D006B1A7C /* ZYHWebImageChcheCenter.swift in Sources */,

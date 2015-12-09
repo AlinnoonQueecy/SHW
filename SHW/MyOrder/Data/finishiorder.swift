@@ -245,6 +245,7 @@ func GetOrderPage(customerID:String,orderStatus:String,page:Int) ->Int  {
     request.HTTPMethod = "POST"
  
     var param:String = "{\"customerID\":\"\(customerID)\",\"orderStatus\":\"\(orderStatus)\",\"pageNo\":\"\(page)\"}"
+     println("param\(param)")
     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;
     var response:NSURLResponse?

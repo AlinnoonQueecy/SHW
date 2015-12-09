@@ -5,24 +5,24 @@ nominals:
 - "C3SHW12FinishTVCell"
 class-members:
 - "servicePay"
-- "orderNo"
+- "serviceType"
 - "awakeFromNib"
+- "setSelected"
+- "orderNo"
 - "facilitator"
 - "servantName"
-- "serviceType"
-- "setSelected"
 - "pic"
 top-level:
 - "UILabel"
 - "UITableViewCell"
-- "UIImageView"
 - "Bool"
+- "UIImageView"
 member-access:
+- "CSo6UIView"
 - "CSo11UIResponder"
 - "C3SHW12FinishTVCell"
 - "PSs9AnyObject"
 - "CSo8NSObject"
-- "CSo6UIView"
 - "CSo15UITableViewCell"
 dynamic-lookup:
 cross-module:

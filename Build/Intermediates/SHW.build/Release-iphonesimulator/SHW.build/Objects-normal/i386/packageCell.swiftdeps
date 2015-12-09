@@ -4,24 +4,24 @@ provides:
 nominals:
 - "C3SHW11packageCell"
 class-members:
-- "facilitator"
-- "price"
 - "setSelected"
+- "introLabel"
+- "packageImage"
 - "item"
 - "awakeFromNib"
-- "packageImage"
-- "introLabel"
+- "price"
+- "facilitator"
 top-level:
-- "UILabel"
 - "UITableViewCell"
-- "Bool"
+- "UILabel"
 - "UIImageView"
+- "Bool"
 member-access:
+- "C3SHW11packageCell"
 - "CSo6UIView"
 - "CSo8NSObject"
-- "C3SHW11packageCell"
-- "CSo15UITableViewCell"
 - "PSs9AnyObject"
+- "CSo15UITableViewCell"
 - "CSo11UIResponder"
 dynamic-lookup:
 cross-module:

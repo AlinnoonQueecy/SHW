@@ -47,37 +47,7 @@ class Register: UIViewController,UITextFieldDelegate,UIAlertViewDelegate  {
 //        onMakeNavitem()
         
         var terms = Register.count as Int
-        for var i = 0;i < terms;i++ {
- 
-            var  image2 = UIImageView(frame:CGRectMake(CGFloat(15), CGFloat(12+64+i*57), CGFloat(34), CGFloat(34)))
-            image2.image = UIImage(named:image[i])
-            //label
-            var label2 = UILabel(frame: CGRectMake((CGFloat(52), CGFloat(12+64+i*57),CGFloat(90), CGFloat(34))))
-            label2.text = Register[i]
-            var n = CGFloat(32+64+57*4-40)
-            var agreement = UIButton(frame: CGRectMake(15,n , 150, 30))
-            agreement.setTitle("《生活网用户协议》", forState: UIControlState.Normal)
-            agreement.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-            agreement.backgroundColor = UIColor.whiteColor()
-            agreement.titleLabel?.font = UIFont.systemFontOfSize(14)
-            //            agreement.addTarget(self , action: Selector("tapped:"), forControlEvents: UIControlEvents.TouchUpInside)
-            
-            var button = UIButton(frame: CGRectMake(pageWidth/2-125, pageHeight-70, 250, 30))
-            button.setTitle("同意以上协议并注册", forState: UIControlState.Normal)
-            button.backgroundColor = UIColor.orangeColor()
-            button.titleLabel?.font = UIFont.systemFontOfSize(14)
-            button.showsTouchWhenHighlighted = true
-            button.addTarget(self , action: Selector("tapped:"), forControlEvents: UIControlEvents.TouchUpInside)
-            button.layer.cornerRadius = 5.0
-            
- 
-            self.view.addSubview(image2)
-            self.view.addSubview(label2)
-            self.view.addSubview(agreement)
-            self.view.addSubview(button)
-            
-        }
-        //文本框内容改变时，触发
+         //文本框内容改变时，触发
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textDidChange", name: UITextFieldTextDidChangeNotification, object: nil)
         
         
@@ -87,7 +57,7 @@ class Register: UIViewController,UITextFieldDelegate,UIAlertViewDelegate  {
         customerID.adjustsFontSizeToFitWidth=true  //当文字超出文本框宽度时，自动调整文字大小
         customerID.minimumFontSize=14
         customerID.becomeFirstResponder()
-        customerID.placeholder = "由6-20位数字、字母组成"
+        customerID.placeholder = "6-20位,建议数字、字母组合"
         customerID.delegate = self //设置代理
         customerID.clearButtonMode=UITextFieldViewMode.WhileEditing  //编辑时出现清除按钮
         customerID.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
@@ -112,7 +82,7 @@ class Register: UIViewController,UITextFieldDelegate,UIAlertViewDelegate  {
         loginPassword.minimumFontSize=14
         loginPassword.becomeFirstResponder()
         loginPassword.delegate = self //设置代理
-        loginPassword.placeholder = "由6-20位数字、字母组成"
+        loginPassword.placeholder = "6-20位,建议数字、字母组合"
         loginPassword.secureTextEntry = true
         loginPassword.clearButtonMode=UITextFieldViewMode.WhileEditing  //编辑时出现清除按钮
         loginPassword.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
@@ -133,6 +103,32 @@ class Register: UIViewController,UITextFieldDelegate,UIAlertViewDelegate  {
 
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setUserAgreement(){
+        let  width = self.view.frame.width
+      
+        let label = UILabel(frame:CGRectMake(width/2-125, 155, 60, 30))
+        label.textAlignment = NSTextAlignment.Left
+        label.textColor = UIColor.grayColor()
+        label.text = "阅读并接受"
+        label.font = UIFont.systemFontOfSize(12)
+        self.view.addSubview(label)
+        
+        let agreementButton = UIButton(frame:CGRectMake(width/2-75, 155, 150, 30))
+        agreementButton.titleLabel!.textAlignment = NSTextAlignment.Left
+        agreementButton.setTitle("<<生活网用户协议>>", forState: UIControlState.Normal)
+        agreementButton.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
+        agreementButton.titleLabel!.font = UIFont.systemFontOfSize(12)
+        agreementButton.addTarget(self, action: "UserAgreement", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(agreementButton)
+    }
+    func UserAgreement(){
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("UserAgreementVC") as! UserAgreementVC
+        
+        self.navigationController!.pushViewController(vc, animated:true)
     }
     //通知事件
     func textDidChange(){
@@ -187,7 +183,7 @@ class Register: UIViewController,UITextFieldDelegate,UIAlertViewDelegate  {
             alert.message = "请输入正确的用户账号"
             alert.addButtonWithTitle("确定")
             alert.show()
-        }else if !verifyPhoneNo(phoneNo.text){
+        }else if !verifymobilePhone(phoneNo.text){
             let alert = UIAlertView()
             alert.title = ""
             alert.message = "请输入正确的电话"
@@ -265,36 +261,7 @@ class Register: UIViewController,UITextFieldDelegate,UIAlertViewDelegate  {
           }
         
     }
-    //UIAlert触发函数
-    func  alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-         if (alertView.tag == 1) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        }
-        //self.performSegueWithIdentifier("back", sender: self)
-    }
-    //导航条详情
-    func reply (){
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func onMakeNavitem() -> UINavigationItem{
-        println("创建导航条step1")
-        //创建一个导航项
-        var navigationItem = UINavigationItem()
-        //创建左边按钮
-        var leftButton =  UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Reply, target: self, action: "reply")
-        //var leftButton =  UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Bordered, target: self, action: "reply")
-        //导航栏的标题
-        navigationItem.title = "注册详情"
-        //设置导航栏左边按钮
-        navigationItem.setLeftBarButtonItem(leftButton, animated: true)
-        
-        navigationBar?.pushNavigationItem(navigationItem, animated: true)
-        
-        
-        return navigationItem
-    }
-
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

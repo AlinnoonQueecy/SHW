@@ -326,6 +326,8 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 @property (nonatomic) NSInteger column2;
 @property (nonatomic) NSInteger row2;
 @property (nonatomic) NSInteger n;
+@property (nonatomic, copy) NSString * __nonnull facilitatorCity;
+@property (nonatomic, copy) NSString * __nonnull condition;
 @property (nonatomic, readonly) UIColor * __nonnull color;
 @property (nonatomic) NSInteger page;
 @property (nonatomic) UILabel * __nonnull loadMoreText;
@@ -812,8 +814,10 @@ SWIFT_CLASS("_TtC3SHW17FinishVController")
 @property (nonatomic, readonly) UIView * __nonnull tableFooterView;
 @property (nonatomic) UISegmentedControl * __nonnull segmentedControl;
 @property (nonatomic, copy) NSString * __nonnull orderStatus;
+@property (nonatomic) UIView * __nonnull loginView;
 - (void)viewDidLoad;
-- (void)alertView:(UIAlertView * __nonnull)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
+- (void)setLoginView;
+- (void)toLogin;
 - (void)refresh;
 - (void)upPullLoadData;
 - (void)downPlullLoadData;
@@ -994,12 +998,20 @@ SWIFT_CLASS("_TtC3SHW7LoginVC")
 @property (nonatomic) UITextField * __nonnull identifyCode;
 @property (nonatomic) UITextField * __nonnull customerID;
 @property (nonatomic) UITextField * __nonnull loginPassword;
+@property (nonatomic) UIButton * __nonnull QuickloginButton;
+@property (nonatomic) ILCountDownButton * __nonnull countButton;
+@property (nonatomic) UIButton * __nonnull loginButton;
 - (void)viewDidLoad;
 - (void)QuicklandingView;
+- (void)setUserAgreement;
+- (void)UserAgreement;
+- (void)toRegist;
 - (void)landingView;
 - (void)TimerButton;
+- (void)Pressed;
+- (void)textDidChange;
+- (void)QuickLogin;
 - (void)selected;
-- (void)Pressed:(UIButton * __nonnull)countButton;
 - (void)Login;
 - (void)saveNSUerDefaults;
 - (void)readNSUerDefaults;
@@ -1405,11 +1417,10 @@ SWIFT_CLASS("_TtC3SHW8Register")
 @property (nonatomic, copy) NSString * __nonnull loginPwd;
 - (IBAction)closekeyboard:(id __nonnull)sender;
 - (void)viewDidLoad;
+- (void)setUserAgreement;
+- (void)UserAgreement;
 - (void)textDidChange;
 - (void)tapped:(UIButton * __nonnull)button;
-- (void)alertView:(UIAlertView * __nonnull)alertView clickedButtonAtIndex:(NSInteger)buttonIndex;
-- (void)reply;
-- (UINavigationItem * __nonnull)onMakeNavitem;
 - (void)didReceiveMemoryWarning;
 - (void)saveNSUerDefaults;
 - (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
@@ -1629,6 +1640,18 @@ SWIFT_CLASS("_TtC3SHW20TabBarViewController")
 @property (nonatomic) CGPoint xw_origin;
 @property (nonatomic) CGFloat xw_centerX;
 @property (nonatomic) CGFloat xw_centerY;
+@end
+
+
+SWIFT_CLASS("_TtC3SHW15UserAgreementVC")
+@interface UserAgreementVC : UIViewController <UIScrollViewDelegate>
+@property (nonatomic, weak) IBOutlet UIScrollView * __null_unspecified introScroll;
+@property (nonatomic, weak) IBOutlet UITextView * __null_unspecified agreement;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)viewDidLayoutSubviews;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class UIFont;

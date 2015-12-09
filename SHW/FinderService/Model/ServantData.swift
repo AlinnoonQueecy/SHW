@@ -332,16 +332,14 @@ func getResponse(servantID:String) ->String  {
  return  serverResponse
 }
 //1.2. 查询提供某一服务的所有人员
-func refreshServant(secondType:String,attributeName:String,upDown:String,facilitatorCounty:String,pageNo:Int) ->NSArray  {
-    
+func refreshServant(secondType:String,attributeName:String,upDown:String,facilitatorCity:String,facilitatorCounty:String,pageNo:Int,fiterCondition:String) ->NSArray  {
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
- 
-    
-    
+    //var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_filterQueryServant")
     var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
     
     request.HTTPMethod = "POST"
-    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\"}"
+//    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCity\":\"\(facilitatorCity)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\(fiterCondition)\"}"
+    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\(fiterCondition)\"}"
     println("param\(param)")
     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;
@@ -436,12 +434,12 @@ func refreshServant(secondType:String,attributeName:String,upDown:String,facilit
 }
 
 //1.2人员页数
-func GetSPage(secondType:String,attributeName:String,upDown:String,facilitatorCounty:String,pageNo:Int) ->Int  {
+func GetSPage(secondType:String,attributeName:String,upDown:String,facilitatorCity:String,facilitatorCounty:String,pageNo:Int,fiterCondition:String) ->Int  {
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileFacilitatorInfoAction?operation=_byServiceType")
     var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
     
     request.HTTPMethod = "POST"
-    var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\"}"
+  var param:String = "{\"type\":\"\(secondType)\",\"attributeName\":\"\(attributeName)\",\"upDown\":\"\(upDown)\",\"facilitatorCity\":\"\(facilitatorCity)\",\"facilitatorCounty\":\"\(facilitatorCounty)\",\"pageNo\":\"\(pageNo)\",\"fiterCondition\":\"\(fiterCondition)\"}"
     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;
     var response:NSURLResponse?

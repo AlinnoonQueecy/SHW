@@ -64,7 +64,7 @@ func QueryInfo(customerid:String) ->MyInfo  {
     request.HTTPMethod = "POST"
     
     var param:String = "{\"customerID\":\"\(customerid)\"}"
-    println("customerID:\(customerid)")
+  
     var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
     request.HTTPBody = data;
     var response:NSURLResponse?
@@ -78,7 +78,7 @@ func QueryInfo(customerid:String) ->MyInfo  {
     else
     {
         var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
-        println("jsonstring是:\(jsonString)")
+ 
         
     }
     
@@ -119,7 +119,7 @@ func QueryInfo(customerid:String) ->MyInfo  {
         let obj:MyInfo = MyInfo(id:id,customerID:customerID,customerName:customerName,customerGender:customerGender,customerBirthday:customerBirthday,idCardNo:idCardNo,phoneNo:phoneNo,mobilePhone:mobilePhone,emailAddress:emailAddress,customerProvince:customerProvince,customerCity:customerCity,customerCounty:customerCounty,contactAddress:contactAddress,qqNumber:qqNumber,loginPassword:loginPassword,headPicture:headPicture)
         
         MyInfoData = obj
-        println("我的信息\(MyInfoData)")
+    
     }
     return MyInfoData
     

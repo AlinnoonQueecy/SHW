@@ -335,10 +335,10 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
         locationService = BMKLocationService()
         // 设置定位精确度，默认：kCLLocationAccuracyBest
         BMKLocationService.setLocationDesiredAccuracy(kCLLocationAccuracyBest)
-        println("进入定位状态")
+    
         //指定最小距离更新(米)，默认：kCLDistanceFilterNone
         BMKLocationService.setLocationDistanceFilter(10)
-        println("进入定位状态1111")
+       
         locationService.startUserLocationService()
         // 地理编码器初始化
         geocodeSearch = BMKGeoCodeSearch()
@@ -348,8 +348,7 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
     
     // 1.在地图将要启动定位时，会调用此函数
     func willStartLocatingUser() {
-        println("启动定位……")
-    }
+             }
     // 2.用户位置更新后，会调用此函数
     func didUpdateBMKUserLocation(userLocation: BMKUserLocation!) {
         
@@ -402,7 +401,7 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
             //            let location = city.substringToIndex(index)
             
             location = city
-            println("location\(location)")
+           
             saveNSUerDefaults ()
             readNSUerDefaults()
             

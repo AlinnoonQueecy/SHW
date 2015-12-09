@@ -27,17 +27,28 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     var identifyCode = UITextField()
     var customerID = UITextField()
     var  loginPassword = UITextField()
+    var  QuickloginButton = UIButton()
+    var  countButton  = ILCountDownButton()
+    var loginButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
        // loginPassword.attributedPlaceholder  = attributeStr
        //loginPassword.placeholder = "hudaskjfslervhb"
         //读取用户信息，如果不是第一次登录，则会自动登录
         readNSUerDefaults()
+        self.title = "登录"
         width = self.view.frame.width
         height = self.view.frame.height
         self.view.backgroundColor = UIColor.whiteColor()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: "toRegist")
+        
+        //文本框内容改变时，触发
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textDidChange", name: UITextFieldTextDidChangeNotification, object: nil)
+        
+        
         //分段选择设置
-        var arr = NSArray(objects: "快捷登陆","账户登录")
+        var arr = NSArray(objects: "快捷登录","账户登录")
         var sw = width/2
         //分段选择标题
        segmentedControl = UISegmentedControl(items: arr as [AnyObject])
@@ -78,6 +89,7 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
         phoneNo = UITextField(frame: CGRectMake(25, 20,width-50,30))
         phoneNo.borderStyle =  UITextBorderStyle.RoundedRect
         phoneNo.placeholder = "请输入手机号"
+        phoneNo.becomeFirstResponder()
         phoneNo.font = UIFont.systemFontOfSize(14)
 
         phoneNo.clearButtonMode = UITextFieldViewMode.Always
@@ -86,24 +98,61 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
         TimerButton()
         identifyCode = UITextField(frame: CGRectMake(25, 65,width-140,30))
         identifyCode.placeholder = "请输入验证码"
+        identifyCode.delegate = self
         identifyCode.borderStyle =  UITextBorderStyle.RoundedRect
         identifyCode.font = UIFont.systemFontOfSize(14)
         identifyCode.clearButtonMode = UITextFieldViewMode.Always
         identifyCode.clearsOnBeginEditing = true
         Quicklanding.addSubview(identifyCode)
         
-        let loginButton = UIButton(frame: CGRectMake(width/2-125, 120, 250, 30))
-        loginButton.setTitle("立即登录", forState: UIControlState.Normal)
-        loginButton.backgroundColor = UIColor.orangeColor()
-        loginButton.titleLabel?.font = UIFont.systemFontOfSize(14)
-        loginButton.showsTouchWhenHighlighted = true
-        loginButton.addTarget(self , action: Selector("QuickLogin:"), forControlEvents: UIControlEvents.TouchUpInside)
-        loginButton.layer.cornerRadius = 5.0
-        Quicklanding.addSubview(loginButton)
-        
-        
+        QuickloginButton = UIButton(frame: CGRectMake(25, 140, width-50, 30))
+        QuickloginButton.setTitle("立即登录", forState: UIControlState.Normal)
+        QuickloginButton.backgroundColor = HttpData.grayColor
+        QuickloginButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        QuickloginButton.showsTouchWhenHighlighted = true
+        QuickloginButton.addTarget(self , action: Selector("QuickLogin"), forControlEvents: UIControlEvents.TouchUpInside)
+        QuickloginButton.layer.cornerRadius = 7
+         QuickloginButton.enabled = false
+        Quicklanding.addSubview(QuickloginButton)
+        setUserAgreement()
         
     }
+    
+    func setUserAgreement(){
+        let label = UILabel(frame:CGRectMake(25, 100, 60, 30))
+        label.textAlignment = NSTextAlignment.Left
+        label.textColor = UIColor.grayColor()
+        label.text = "阅读并接受"
+        label.font = UIFont.systemFontOfSize(12)
+        Quicklanding.addSubview(label)
+        
+        let agreementButton = UIButton(frame:CGRectMake(85, 100, 150, 30))
+        agreementButton.titleLabel!.textAlignment = NSTextAlignment.Left
+        agreementButton.setTitle("<<生活网用户协议>>", forState: UIControlState.Normal)
+        agreementButton.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
+        agreementButton.titleLabel!.font = UIFont.systemFontOfSize(12)
+        agreementButton.addTarget(self, action: "UserAgreement", forControlEvents: UIControlEvents.TouchUpInside)
+        Quicklanding.addSubview(agreementButton)
+    }
+    func UserAgreement(){
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("UserAgreementVC") as! UserAgreementVC
+        
+        self.navigationController!.pushViewController(vc, animated:true)
+    }
+    
+    func toRegist(){
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("Register") as! Register
+        
+        self.navigationController!.pushViewController(vc, animated:true)
+        
+    }
+
+    
+    
     func landingView(){
         
         Landing.frame = CGRectMake(0, 50, width, height)
@@ -126,13 +175,15 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
         loginPassword.secureTextEntry = true
         Landing.addSubview(loginPassword)
         
-        let loginButton = UIButton(frame: CGRectMake(width/2-125, 120, 250, 30))
+        loginButton = UIButton(frame: CGRectMake(25, 120, width-50, 30))
         loginButton.setTitle("立即登录", forState: UIControlState.Normal)
-        loginButton.backgroundColor = UIColor.orangeColor()
+        loginButton.backgroundColor = HttpData.grayColor
+          loginButton.enabled = false
         loginButton.titleLabel?.font = UIFont.systemFontOfSize(14)
         loginButton.showsTouchWhenHighlighted = true
-        loginButton.addTarget(self , action: Selector("QuickLogin:"), forControlEvents: UIControlEvents.TouchUpInside)
-        loginButton.layer.cornerRadius = 5.0
+      
+        loginButton.addTarget(self , action: Selector("Login"), forControlEvents: UIControlEvents.TouchUpInside)
+        loginButton.layer.cornerRadius = 7
         Landing.addSubview(loginButton)
         
         
@@ -142,19 +193,83 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
 
     func TimerButton() {
         let frame = CGRectMake(width-105, 65, 80, 30)
-        let countButton = ILCountDownButton(count:30)
-        countButton.frame = frame
-//         countButton.setBackgroundImageForRestart(UIImage(named: "bk_restart")!)
-//        countButton.setBackgroundImageForCount(UIImage(named: "uncheck.png")!)
+         countButton = ILCountDownButton(count:30)
+         countButton.frame = frame
+//         countButton.setBackgroundImageForRestart(UIImage(named: "choose_btn_highlighted")!)
+//        countButton.setBackgroundImageForCount(UIImage(named: "choosed_btn")!)
         countButton.backgroundColor = UIColor.orangeColor()
+ 
         countButton.setTitleForRestart("获取验证码")
-        countButton.layer.cornerRadius = 5.0
+        countButton.layer.cornerRadius = 7.0
         countButton.titleLabel?.font = UIFont.systemFontOfSize(12)
-        countButton.addTarget(self, action: "Pressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        countButton.addTarget(self, action: "Pressed", forControlEvents: UIControlEvents.TouchUpInside)
         Quicklanding.addSubview(countButton)
         
     }
+  
+    //获取验证码
+    func  Pressed(){
+         if  !verifymobilePhone(phoneNo.text) {
+            
+            let alert = UIAlertView()
+            alert.title = ""
+            alert.message = "请输入正确的电话"
+            alert.addButtonWithTitle("确定")
+            alert.show()
+            
+           }else {
+             let  response = GetQuickCode(phoneNo.text)
+            if response == "Failed"{
+                let alert =  UIAlertView(title: "该手机号未注册过", message: "请先注册", delegate: self, cancelButtonTitle: "确定")
+                alert.delegate = self
+                alert.show()
+            
+            }else if response == "Success" {
+                countButton.restart()
+        
+            }
 
+      }
+        
+        
+    }
+    //通知事件
+    func textDidChange(){
+    
+        if verifymobilePhone(phoneNo.text)&&identifyCode.text != ""{
+            
+            QuickloginButton.enabled = true
+            QuickloginButton.backgroundColor = UIColor.orangeColor()
+            
+        }
+        
+        if loginPassword.text != ""&&customerID.text != ""{
+            
+            loginButton.backgroundColor = UIColor.orangeColor()
+            loginButton.enabled = true
+            
+        }
+
+    
+    }
+    //快捷登陆
+    func  QuickLogin(){
+      
+        let  MineData:MyInfo? =  vetifyCheckCode(phoneNo.text,identifyCode.text)!
+        if (MineData == nil) {
+            let alert =  UIAlertView(title: "该输入正确信息", message: "", delegate: self, cancelButtonTitle: "确定")
+            alert.delegate = self
+            alert.show()
+        }else {
+            customerid = MineData!.customerID
+            loginPwd = MineData!.loginPassword
+            saveNSUerDefaults()
+            self.navigationController?.popViewControllerAnimated(true)
+  
+        }
+        
+        
+    }
     
     //分段选择器的函数
     func selected() {
@@ -178,87 +293,47 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     }
     
     
-    func Pressed(countButton: UIButton) {
-        println("倒计时开始")
-    }
-
+ 
 
 
     func Login() {
         customerid = customerID.text
         loginPwd = loginPassword.text
-        if customerID.text == ""{
-            let alert = UIAlertView()
-            alert.title = ""
-            alert.message = "请输入用户账号"
-            alert.addButtonWithTitle("确定")
-            alert.show()
-        }else if loginPassword.text == ""{
-            let alert = UIAlertView()
-            alert.title = ""
-            alert.message = "请输入登录密码"
-            alert.addButtonWithTitle("确定")
-            alert.show()
-            
-        }else {
-        var url: NSURL! = NSURL(string:HttpData.http+"/FamilyServiceSystem/MobileCustomerInfoAction?operation=_login")
-         
         
-        var request:NSMutableURLRequest = NSMutableURLRequest(URL: url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
-        
-        request.HTTPMethod = "POST"
-        
-        var param:String = "{\"customerID\":\"\(customerID.text)\",\"loginPassword\":\"\(loginPassword.text)\"}"
-            println("param")
-            println(param)
-    
-        var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-        request.HTTPBody = data;
-        var response:NSURLResponse?
-        var error:NSError?
-        var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
-        if (error != nil)
-        {
-            println(error?.code)
-            println(error?.description)
-        }
-        else
-        {
-            var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
-            println(jsonString)
-            
-        }
-        
-        let dict:AnyObject? = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
-        var dic = dict as! NSDictionary
-        
-        let serverResponse = dic.objectForKey("serverResponse") as? String
-             if serverResponse == "Success"{
+        let serverResponse =  ordinaryLogin(customerid,loginPwd)
+        if serverResponse == "Success"{
              saveNSUerDefaults ()
            
              self.navigationController?.popViewControllerAnimated(true)
-//             self.dismissViewControllerAnimated(true, completion: nil)
+ 
         
            }else if serverResponse == "Failed"{
             
             let alert =  UIAlertView(title: "登录失败", message: "请输入正确的用户名和密码", delegate: self, cancelButtonTitle: "确定")
             alert.show()
         }
+            
+            
+            
       }
-    }
+    
+
     //保存数据到NSUerDefaults
     func saveNSUerDefaults () {
         //将数据全部存储到NSUerDefaults中
         var userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         //存储时，除了NSNumber类型使用对应的类型外，其他的都使用setObject:forKey:
   
-        userDefaults.setObject( customerID.text , forKey: "customerID")
-        userDefaults.setObject( loginPassword.text , forKey: "loginPassword")
+        userDefaults.setObject( customerid , forKey: "customerID")
+        userDefaults.setObject( loginPwd , forKey: "loginPassword")
       
         
         //建议同步到磁盘，但不是必须得
         userDefaults.synchronize()
     }
+        
+        
+        
     //从NSUerDefaults 中读取数据
     func readNSUerDefaults () {
         
@@ -278,6 +353,8 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
              }
+        
+        
     override func viewWillAppear(animated: Bool) {
         
         loginPassword.delegate  = self
