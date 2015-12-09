@@ -37,8 +37,8 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         self.title = "订单"
         //读取用户信息，如果不是第一次登录，则会自动登录
         readNSUerDefaults()
-        yuding.dataSource = self
-        yuding.delegate = self
+//        yuding.dataSource = self
+//        yuding.delegate = self
         //分段选择设置
         var arr = NSArray(objects: "全部","待接受","待付款","待评价","退款中")
         var sw = (self.view.frame.width-10)/4
@@ -234,34 +234,34 @@ class FinishVController: UIViewController,UITableViewDataSource,UITableViewDeleg
         switch(x){
         case 0:
             orderStatus = ""
-         loadData()
-            self.yuding.reloadData()
+             loadData()
+           
 
             break
         case 1:
             orderStatus = "待接受"
             loadData()
         
-            self.yuding.reloadData()
+       
             break
         case 2:
             orderStatus = "待付款"
             loadData()
             
-            self.yuding.reloadData()
+            
             break
         case 3:
             orderStatus = "付款完成"
             loadData()
 
-            self.yuding.reloadData()
+           
             break
 
         default:
             orderStatus = "退款"
             loadData()
 
-            self.yuding.reloadData()
+           
             break
         }
         

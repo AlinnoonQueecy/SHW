@@ -155,6 +155,7 @@ func vetifyCheckCode(phoneNo:String,checkCode :String) -> MyInfo? {
     
     
      MyInfoData  = nil
+    println("MyInfoData\(MyInfoData)")
     return MyInfoData
     
     

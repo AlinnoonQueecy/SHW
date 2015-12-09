@@ -45,6 +45,9 @@
 		1F4982C81C1280110048A265 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BB1C1280110048A265 /* Register.swift */; };
 		1F4982C91C1280110048A265 /* CollectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BD1C1280110048A265 /* CollectionData.swift */; };
 		1F4982CA1C1280110048A265 /* MyInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4982BE1C1280110048A265 /* MyInfoData.swift */; };
+		1F51EF0B1C1823680046F816 /* RegisterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51EF0A1C1823680046F816 /* RegisterData.swift */; };
+		1F51EF0E1C1833BE0046F816 /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51EF0D1C1833BE0046F816 /* registerVC.swift */; };
+		1F51EF121C183BAD0046F816 /* NextStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F51EF111C183BAD0046F816 /* NextStepVC.swift */; };
 		1F53AD441B7E2A0F007BA581 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F53AD431B7E2A0F007BA581 /* MapKit.framework */; };
 		1F55B21B1B7D8FBE00B4D655 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F55B21A1B7D8FBE00B4D655 /* CoreLocation.framework */; };
 		1F612D0D1C0ADA5200040F29 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F612D0C1C0ADA5200040F29 /* DiscoverCell.swift */; };
@@ -243,6 +246,9 @@
 		1F4982BD1C1280110048A265 /* CollectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionData.swift; sourceTree = "<group>"; };
 		1F4982BE1C1280110048A265 /* MyInfoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInfoData.swift; sourceTree = "<group>"; };
 		1F4AE8D21B53FDE700E67C63 /* dingwei.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = dingwei.playground; sourceTree = "<group>"; };
+		1F51EF0A1C1823680046F816 /* RegisterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterData.swift; sourceTree = "<group>"; };
+		1F51EF0D1C1833BE0046F816 /* registerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
+		1F51EF111C183BAD0046F816 /* NextStepVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextStepVC.swift; sourceTree = "<group>"; };
 		1F53AD431B7E2A0F007BA581 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1F55B21A1B7D8FBE00B4D655 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1F606FD91B243CDD009901E3 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -533,6 +539,7 @@
 		1F4982B11C1280110048A265 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1F51EF0C1C18338E0046F816 /* Register */,
 				1FD9399F1C16CA1600449132 /* UserAgreementVC.swift */,
 				1FC497511C16782B004CC144 /* LoginVC.swift */,
 				1F8B1A741C158F4400A25812 /* SetingVC.swift */,
@@ -554,8 +561,18 @@
 				1F4982BD1C1280110048A265 /* CollectionData.swift */,
 				1F4982BE1C1280110048A265 /* MyInfoData.swift */,
 				1F25EBF51C17CCF100DF0DEA /* login&identify.swift */,
+				1F51EF0A1C1823680046F816 /* RegisterData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		1F51EF0C1C18338E0046F816 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				1F51EF111C183BAD0046F816 /* NextStepVC.swift */,
+				1F51EF0D1C1833BE0046F816 /* registerVC.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		1F68E12C1B8098FA002DBE33 /* Frameworks */ = {
@@ -1195,6 +1212,7 @@
 				1F4478751B9E832E00ED8B8A /* CityModel.swift in Sources */,
 				1F1B1F1B1C049BD200F52545 /* HSTabBarViewController.m in Sources */,
 				1FC530081BA94D95006B1A7C /* HYBLoadingImageView.swift in Sources */,
+				1F51EF0B1C1823680046F816 /* RegisterData.swift in Sources */,
 				1F380C641B69CA430076ABB7 /* JSDropDownMenu.m in Sources */,
 				1F4982C81C1280110048A265 /* Register.swift in Sources */,
 				1FC5300F1BA96C7D006B1A7C /* ZYHWebImage.swift in Sources */,
@@ -1211,7 +1229,9 @@
 				1F3F086C1C128B21009CE48C /* FooterCell.swift in Sources */,
 				1F4982CA1C1280110048A265 /* MyInfoData.swift in Sources */,
 				1F1B1F191C049BD200F52545 /* UIView+SetFrame.m in Sources */,
+				1F51EF0E1C1833BE0046F816 /* registerVC.swift in Sources */,
 				F862F29D1B08A100001093D3 /* AllDate.swift in Sources */,
+				1F51EF121C183BAD0046F816 /* NextStepVC.swift in Sources */,
 				1F65B82B1B3AE14C0051270E /* Maintwo.swift in Sources */,
 				1FEB06841C0E88DC00A1E442 /* finishiorder.swift in Sources */,
 				EF1D39381C13161800BB768C /* TitleCollectionViewHeaderCellCollectionViewCell.m in Sources */,

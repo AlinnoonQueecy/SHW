@@ -8,16 +8,16 @@ class-members:
 - "operations"
 - "isAvaliable"
 top-level:
-- "String"
-- "NSArray"
-- "NSObject"
-- "IntegerLiteralType"
 - "FloatLiteralType"
+- "IntegerLiteralType"
+- "NSObject"
+- "NSArray"
+- "String"
 member-access:
 - "C3SHW9Condition"
-- "SS"
 - "CSo7NSArray"
 - "CSo8NSObject"
+- "SS"
 - "PSs9AnyObject"
 dynamic-lookup:
 cross-module:

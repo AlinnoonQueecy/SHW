@@ -248,7 +248,7 @@ class workerViewController: UIViewController,UITableViewDelegate,UITableViewData
             
         }
         
-        orderButton.addTarget(self , action: Selector("Order:"), forControlEvents: UIControlEvents.TouchUpInside)
+        orderButton.addTarget(self , action: Selector("Order"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(orderButton)
         
         let grayColor = UIColor(red: 234/255, green: 234/255, blue: 234/255, alpha: 1.0)
@@ -415,45 +415,14 @@ class workerViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     
-    
-    override func viewDidLayoutSubviews() {
+    func Order(){
         
-        //        FacilitatorTV.frame = CGRectMake(0, 180,self.view.frame.width,35*3)
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
+        
         
     }
-    //
-    //    //服务项目的跳转函数
-    //    func  Common(term1:UIButton){
-    //
-    //        titleOfState = term1.titleForState(.Normal)!
-    //        for var i = 0;i < CommonItemInfo.count;i++ {
-    //            if CommonItemInfo[i].serviceType == titleOfState{
-    //                common = CommonItemInfo[i]
-    //            }
-    //        }
-    //
-    //        self.performSegueWithIdentifier("toCommon", sender: self)
-    //
-    //    }
-    //    //一口价的跳转函数
-    //    func  Package(term2:UIButton){
-    //        titleOfState = term2.titleForState(.Normal)!
-    //        for var i = 0;i < PackageItemInfo.count;i++ {
-    //            if PackageItemInfo[i].serviceType == titleOfState{
-    //                package = PackageItemInfo[i]
-    //            }
-    //        }
-    //        self.performSegueWithIdentifier("toPackage", sender: self)
-    //
-    //
-    //    }
-    //    //服务人员的跳转函数
-    //    func tapped(renyuan:UIButton){
-    //        self.performSegueWithIdentifier("toServant", sender: self)
-    //        }
-    //    func tapped1(renyuan1:UIButton){
-    //        self.performSegueWithIdentifier("toServant", sender: self)
-    //    }
     //收藏的函数传数据函数
     func AddCollect () {
         //读取用户信息，如果不是第一次登录，则会自动登录
@@ -568,26 +537,7 @@ class workerViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //        if segue.identifier! == "toCommon" {
-        //            let controller = segue.destinationViewController as! CommonItemVC
-        //            var  object = common
-        //
-        //            controller.CommonItem = object
-        //
-        //
-        //        }else if segue.identifier! == "toPackage" {
-        //            let controller = segue.destinationViewController as! PackageItemVC
-        //            var  object = package
-        //            controller.ItemData = object
-        //
-        //        }else if segue.identifier! == "toServant" {
-        //            let controller = segue.destinationViewController as! WorkerVC
-        //            var  object = detailItem.facilitatorID
-        //            controller.facilitatorID = object
-        //
-        //        }
-    }
+ 
     //从NSUerDefaults 中读取数据
     func readNSUerDefaults () {
         

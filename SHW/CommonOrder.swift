@@ -506,15 +506,7 @@ class CommonOrder: UIViewController,UITextFieldDelegate,UIAlertViewDelegate,NSUR
             loginPassword = userDefaultes.stringForKey("loginPassword")!
         }
     }
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+ 
     func touchScrollView(sender: UITapGestureRecognizer){
         println("取消键盘2")
         //        self.view.resignFirstResponder()

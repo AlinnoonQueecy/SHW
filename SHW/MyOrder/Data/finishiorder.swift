@@ -5,7 +5,7 @@
 //  Created by Zhang on 15/7/7.
 //  Copyright (c) 2015年 star. All rights reserved.
 //
-//
+//注意：PageSize返回有误，已经注释
 import Foundation
 import UIKit
 //var FinishiData:[Finishinfo] = []
@@ -239,42 +239,42 @@ func refreshOrderData(customerID:String,orderStatus:String,page:Int) ->NSArray  
 //查询订单页数
 func GetOrderPage(customerID:String,orderStatus:String,page:Int) ->Int  {
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileServiceOrderAction?operation=_queryOrder")
+//    
+//    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
+//    
+//    request.HTTPMethod = "POST"
+// 
+//    var param:String = "{\"customerID\":\"\(customerID)\",\"orderStatus\":\"\(orderStatus)\",\"pageNo\":\"\(page)\"}"
+//     println("param\(param)")
+//    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
+//    request.HTTPBody = data;
+//    var response:NSURLResponse?
+//    var error:NSError?
+//    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+//    if (error != nil)
+//    {
+//        println(error?.code)
+//        println(error?.description)
+//    }
+//    else
+//    {
+//        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
+//        println(jsonString)
+//        
+//    }
+//    
+//    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
+//    
+//    var test1: AnyObject?=json.objectForKey("serverResponse")
+//    var serverResponse:String = test1 as! String
+    var Page:Int = 0
+//    if  serverResponse == "Success" {
+//        let pagesize: AnyObject?=json.objectForKey("pageSize")
+//        Page = pagesize as! Int
+//        
+//    }
     
-    var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
-    
-    request.HTTPMethod = "POST"
- 
-    var param:String = "{\"customerID\":\"\(customerID)\",\"orderStatus\":\"\(orderStatus)\",\"pageNo\":\"\(page)\"}"
-     println("param\(param)")
-    var data:NSData = param.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!
-    request.HTTPBody = data;
-    var response:NSURLResponse?
-    var error:NSError?
-    var receiveData:NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
-    if (error != nil)
-    {
-        println(error?.code)
-        println(error?.description)
-    }
-    else
-    {
-        var jsonString = NSString(data:receiveData!, encoding: NSUTF8StringEncoding)
-        println(jsonString)
-        
-    }
-    
-    let json:AnyObject! = NSJSONSerialization.JSONObjectWithData(receiveData!, options: NSJSONReadingOptions.AllowFragments, error: nil)
-    
-    var test1: AnyObject?=json.objectForKey("serverResponse")
-    var serverResponse:String = test1 as! String
-    var Page:Int!
-    if  serverResponse == "Success" {
-        var pagesize: AnyObject?=json.objectForKey("pageSize")
-        Page = pagesize as? Int
-        
-    }
-    
-    return Page!
+    return Page
     
     
 }

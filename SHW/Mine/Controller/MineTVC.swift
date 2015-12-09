@@ -169,9 +169,7 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
         if indexPath.section == 0 {
             
             
-            
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+            let vc = LoginVC()
             
             self.navigationController!.pushViewController(vc, animated:true)
 
@@ -224,9 +222,9 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
                 
             }else{
                 
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
-                
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+                let vc = LoginVC()
                 self.navigationController!.pushViewController(vc, animated:true)
 
                 
@@ -239,10 +237,10 @@ class MineTVC: UITableViewController,UIImagePickerControllerDelegate,UINavigatio
                self.performSegueWithIdentifier("toCollect", sender: self)
             
               }else{
-                
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
-                
+//                
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+                 let vc = LoginVC()
                 self.navigationController!.pushViewController(vc, animated:true)
 
 

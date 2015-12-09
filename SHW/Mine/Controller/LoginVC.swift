@@ -34,8 +34,7 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
         super.viewDidLoad()
        // loginPassword.attributedPlaceholder  = attributeStr
        //loginPassword.placeholder = "hudaskjfslervhb"
-        //读取用户信息，如果不是第一次登录，则会自动登录
-        readNSUerDefaults()
+        
         self.title = "登录"
         width = self.view.frame.width
         height = self.view.frame.height
@@ -136,17 +135,16 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     }
     func UserAgreement(){
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("UserAgreementVC") as! UserAgreementVC
-        
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewControllerWithIdentifier("UserAgreementVC") as! UserAgreementVC
+        let vc = UserAgreementVC()
         self.navigationController!.pushViewController(vc, animated:true)
     }
     
     func toRegist(){
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("Register") as! Register
         
+        let vc = registerVC()
         self.navigationController!.pushViewController(vc, animated:true)
         
     }
@@ -255,7 +253,8 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     //快捷登陆
     func  QuickLogin(){
       
-        let  MineData:MyInfo? =  vetifyCheckCode(phoneNo.text,identifyCode.text)!
+        let  MineData:MyInfo? =  vetifyCheckCode(phoneNo.text,identifyCode.text)
+        
         if (MineData == nil) {
             let alert =  UIAlertView(title: "该输入正确信息", message: "", delegate: self, cancelButtonTitle: "确定")
             alert.delegate = self
@@ -333,18 +332,7 @@ class LoginVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelegate 
     }
         
         
-        
-    //从NSUerDefaults 中读取数据
-    func readNSUerDefaults () {
-        
-        var userDefaultes = NSUserDefaults.standardUserDefaults()
-        if  (userDefaultes.stringForKey("customerID")) != nil && (userDefaultes.stringForKey("loginPassword")) != nil{
-            customerid = userDefaultes.stringForKey("customerID")!
-            loginPwd = userDefaultes.stringForKey("loginPassword")!
-              
-        }
-        
-    }
+ 
  
    
   

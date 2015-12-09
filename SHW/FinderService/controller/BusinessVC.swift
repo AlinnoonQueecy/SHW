@@ -541,7 +541,9 @@
  
         
 
-       self.performSegueWithIdentifier("toPackage", sender: self)
+//       self.performSegueWithIdentifier("toPackage", sender: self)
+        
+       self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
     

@@ -24,12 +24,12 @@ provides:
 nominals:
 class-members:
 top-level:
-- "String"
-- "StringLiteralType"
 - "xwColor"
-- "IntegerLiteralType"
-- "CGFloat"
+- "String"
 - "UIFont"
+- "StringLiteralType"
+- "CGFloat"
+- "IntegerLiteralType"
 - "FloatLiteralType"
 member-access:
 - "CSo6UIFont"

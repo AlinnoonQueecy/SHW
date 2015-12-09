@@ -52,6 +52,7 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
         super.viewDidLoad()
         //self.hidesBottomBarWhenPushed = true
         self.title = "找服务"
+        self.view.backgroundColor = UIColor.whiteColor()
         //初始化数据
         AdvertiseDatas = refreshAdvertise(1) as! [HomeAdvertise]
         FirstTypeData  = refreshParentType("") as! [ServiceType]
@@ -228,17 +229,9 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
 //        
 //    }
     
-    func toLocation(Location:UIButton){
-        println("怎么样了")
-        // self.performSegueWithIdentifier("toLocation", sender: self)
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewControllerWithIdentifier("LocationVC") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-    }
-    
+     
     func ToLocation(){
-        println("怎么样了")
-        // self.performSegueWithIdentifier("toLocation", sender: self)
+         // self.performSegueWithIdentifier("toLocation", sender: self)
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewControllerWithIdentifier("LocationVC") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
@@ -255,6 +248,8 @@ UIScrollViewDelegate,UIAlertViewDelegate,NSURLConnectionDelegate,NSURLConnection
         if serviceTypeData != [] {
             
             self.performSegueWithIdentifier("toItem", sender: self)
+            
+            
          
         }else {
             let alert =  UIAlertView(title: "", message: "暂无数据，敬请期待!", delegate: self, cancelButtonTitle: "确定")

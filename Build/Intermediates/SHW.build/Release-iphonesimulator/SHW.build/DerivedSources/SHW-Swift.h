@@ -351,9 +351,13 @@ SWIFT_CLASS("_TtC3SHW10BusinessVC")
 - (void)setupContentView;
 - (void)setupCollectionView;
 - (void)setupSideMenuBottomView;
+
+/// 显示侧栏
 - (void)showSideBar;
 - (void)collectionButtonItemClicked:(UIButton * __nonnull)sender;
 - (void)setupPanGesture;
+
+/// 手势触发
 - (void)handlePanGesture:(UIPanGestureRecognizer * __nonnull)recognizer;
 - (void)loadConditions;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * __nonnull)collectionView;
@@ -764,7 +768,6 @@ SWIFT_CLASS("_TtC3SHW11FindService")
 @property (nonatomic, copy) NSArray * __nonnull FirstTypeData;
 - (void)viewDidLoad;
 - (void)removeNSUerDefaults;
-- (void)toLocation:(UIButton * __nonnull)Location;
 - (void)ToLocation;
 - (void)tapped:(UIButton * __nonnull)term1;
 - (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
@@ -1014,7 +1017,6 @@ SWIFT_CLASS("_TtC3SHW7LoginVC")
 - (void)selected;
 - (void)Login;
 - (void)saveNSUerDefaults;
-- (void)readNSUerDefaults;
 - (void)didReceiveMemoryWarning;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -1087,6 +1089,28 @@ SWIFT_CLASS("_TtC3SHW6MyInfo")
 + (void)exchangeInstanceMethod1:(SEL __null_unspecified)method1 method2:(SEL __null_unspecified)method2;
 + (void)exchangeClassMethod1:(SEL __null_unspecified)method1 method2:(SEL __null_unspecified)method2;
 - (void)xwExeAction:(SEL __null_unspecified)action;
+@end
+
+
+SWIFT_CLASS("_TtC3SHW10NextStepVC")
+@interface NextStepVC : UIViewController <UITextFieldDelegate, NSURLConnectionDataDelegate, UINavigationControllerDelegate>
+@property (nonatomic, copy) NSString * __nonnull customerid;
+@property (nonatomic, copy) NSString * __nonnull loginPwd;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic, copy) NSString * __nonnull mobilePhone;
+@property (nonatomic) UILabel * __nonnull Label;
+@property (nonatomic) UITextField * __nonnull customerID;
+@property (nonatomic) UITextField * __nonnull loginPassword;
+@property (nonatomic) UIButton * __nonnull loginButton;
+- (void)viewDidLoad;
+- (void)landingView;
+- (void)textDidChange;
+- (void)toRegister;
+- (void)saveNSUerDefaults;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1885,6 +1909,28 @@ SWIFT_CLASS("_TtC3SHW15packageItemCell")
 @end
 
 
+SWIFT_CLASS("_TtC3SHW10registerVC")
+@interface registerVC : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
+@property (nonatomic) UITextField * __nonnull phoneNo;
+@property (nonatomic) UITextField * __nonnull identifyCode;
+@property (nonatomic) UIButton * __nonnull nextButton;
+@property (nonatomic) ILCountDownButton * __nonnull countButton;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+- (void)viewDidLoad;
+- (void)registerView;
+- (void)TimerButton;
+- (void)setUserAgreement;
+- (void)UserAgreement;
+- (void)Pressed;
+- (void)textDidChange;
+- (void)nextStep;
+- (void)didReceiveMemoryWarning;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC3SHW15serviceItemInfo")
 @interface serviceItemInfo : NSObject
 @property (nonatomic) NSInteger id;
@@ -1920,14 +1966,13 @@ SWIFT_CLASS("_TtC3SHW20workerViewController")
 @property (nonatomic, copy) NSString * __null_unspecified serverResponse;
 - (void)viewDidLoad;
 - (void)selected;
-- (void)viewDidLayoutSubviews;
+- (void)Order;
 - (void)AddCollect;
 - (UIImage * __nullable)imageForRank:(NSInteger)rank;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
 - (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (void)Call;
-- (void)prepareForSegue:(UIStoryboardSegue * __nonnull)segue sender:(id __nullable)sender;
 - (void)readNSUerDefaults;
 - (void)didReceiveMemoryWarning;
 - (void)viewWillAppear:(BOOL)animated;

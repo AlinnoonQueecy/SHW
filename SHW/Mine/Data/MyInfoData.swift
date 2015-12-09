@@ -58,7 +58,7 @@ class MyInfo:NSObject {
 func QueryInfo(customerid:String) ->MyInfo  {
     var url: NSURL! = NSURL(string: HttpData.http+"/FamilyServiceSystem/MobileCustomerInfoAction?operation=_queryByID")
     
-    
+    let customerid = "yang123"
     var request:NSMutableURLRequest = NSMutableURLRequest(URL:url, cachePolicy:NSURLRequestCachePolicy.UseProtocolCachePolicy,timeoutInterval: 10)
     
     request.HTTPMethod = "POST"

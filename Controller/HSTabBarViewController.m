@@ -47,7 +47,7 @@
     // 1.设置控制器的属性
     vc.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
-   // vc.view.backgroundColor = [UIColor whiteColor];
+    //vc.view.backgroundColor = [UIColor whiteColor];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedimage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     // 2.包装导航控制器
     if (wappered) {
