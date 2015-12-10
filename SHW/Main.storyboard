@@ -7,7 +7,7 @@
         <!--User AgreementVC-->
         <scene sceneID="2Ms-Ec-3Ky">
             <objects>
-                <viewController storyboardIdentifier="UserAgreementVC" id="kYJ-hP-awL" customClass="UserAgreementVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserAgreementVC" hidesBottomBarWhenPushed="YES" id="kYJ-hP-awL" customClass="UserAgreementVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8yY-nx-7FS"/>
                         <viewControllerLayoutGuide type="bottom" id="f1p-cB-m9v"/>
@@ -1857,12 +1857,12 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nm0-Ap-cjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="-1485"/>
+            <point key="canvasLocation" x="1871" y="-1485"/>
         </scene>
         <!--基本资料-->
         <scene sceneID="5vT-l4-eVO">
             <objects>
-                <viewController id="yDD-ov-JrP" customClass="BaseInfoVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="yDD-ov-JrP" customClass="BaseInfoVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C09-mP-WoP"/>
                         <viewControllerLayoutGuide type="bottom" id="YkQ-tT-0mR"/>
@@ -1885,7 +1885,7 @@ Cg
         <!--修改密码-->
         <scene sceneID="2S5-bG-aYf">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordVC" id="VA4-cb-7yX" customClass="ChangePasswordVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordVC" hidesBottomBarWhenPushed="YES" id="VA4-cb-7yX" customClass="ChangePasswordVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bue-rf-ckq"/>
                         <viewControllerLayoutGuide type="bottom" id="0T2-2S-jOb"/>
@@ -1900,7 +1900,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPY-Ut-Mi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="-717"/>
+            <point key="canvasLocation" x="2386" y="-717"/>
         </scene>
         <!--我的-->
         <scene sceneID="Css-jy-SNZ">
@@ -1990,7 +1990,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVk-Zc-At6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="-992"/>
+            <point key="canvasLocation" x="1969" y="-992"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="DAY-75-QkT">
@@ -2292,7 +2292,7 @@ Cg
         <!--服务人员-->
         <scene sceneID="49u-5L-HXe">
             <objects>
-                <viewController storyboardIdentifier="ServantListVC" id="eXN-bJ-Ndw" customClass="ServantListVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ServantListVC" hidesBottomBarWhenPushed="YES" id="eXN-bJ-Ndw" customClass="ServantListVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RVO-bU-Kcz"/>
                         <viewControllerLayoutGuide type="bottom" id="TjF-5j-aYf"/>
@@ -2423,7 +2423,7 @@ Cg
         <!--Package Order-->
         <scene sceneID="TzB-9D-P6A">
             <objects>
-                <viewController id="1bT-oq-Tdc" customClass="PackageOrder" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="1bT-oq-Tdc" customClass="PackageOrder" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="phb-Fr-fWC"/>
                         <viewControllerLayoutGuide type="bottom" id="J9z-2C-cKZ"/>
@@ -2445,7 +2445,7 @@ Cg
         <!--支付详情-->
         <scene sceneID="HWr-pz-JCJ">
             <objects>
-                <viewController id="Jgd-rK-5j5" customClass="PayVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Jgd-rK-5j5" customClass="PayVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eia-5A-jAt"/>
                         <viewControllerLayoutGuide type="bottom" id="Hfw-A9-sCK"/>
@@ -2497,12 +2497,12 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qd7-Cx-8R3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="96" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qd7-Cx-8R3">
                                 <rect key="frame" x="0.0" y="46" width="320" height="568"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="120" id="o5R-S4-ZjU" customClass="FinishTVCell" customModule="SHW" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="96" id="o5R-S4-ZjU" customClass="FinishTVCell" customModule="SHW" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="22" width="320" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o5R-S4-ZjU" id="UKg-Ly-o5X">
@@ -2512,35 +2512,35 @@ Cg
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="orderNo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMk-jF-W9D">
                                                     <rect key="frame" x="18" y="8" width="300" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="serviceType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbn-jn-LLj">
-                                                    <rect key="frame" x="18" y="31" width="300" height="19"/>
+                                                    <rect key="frame" x="18" y="27" width="300" height="19"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.42785383929999998" blue="0.22168913379999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="facilitator" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLq-gK-pyE">
-                                                    <rect key="frame" x="18" y="51" width="300" height="20"/>
+                                                    <rect key="frame" x="18" y="42" width="300" height="20"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="servantName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlV-Un-cMi">
-                                                    <rect key="frame" x="18" y="71" width="300" height="20"/>
+                                                    <rect key="frame" x="18" y="57" width="300" height="20"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="servicePay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq9-G7-Jkq">
-                                                    <rect key="frame" x="18" y="91" width="300" height="20"/>
+                                                    <rect key="frame" x="18" y="71" width="300" height="20"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2575,7 +2575,7 @@ Cg
         <!--Service ItemVC-->
         <scene sceneID="vPD-F2-4Jl">
             <objects>
-                <viewController id="8vt-j7-xzG" customClass="ServiceItemVC" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="8vt-j7-xzG" customClass="ServiceItemVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JPa-8t-w9T"/>
                         <viewControllerLayoutGuide type="bottom" id="aJn-mH-GCG"/>
@@ -2594,7 +2594,7 @@ Cg
         <!--Package ListVC-->
         <scene sceneID="1LY-Xe-j7b">
             <objects>
-                <viewController id="W7h-dG-pwR" customClass="PackageListVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="W7h-dG-pwR" customClass="PackageListVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rUw-Rf-wcL"/>
                         <viewControllerLayoutGuide type="bottom" id="zF4-Wv-CDo"/>
@@ -2733,7 +2733,7 @@ Cg
         <!--Discover DetailVC-->
         <scene sceneID="cEm-nj-oZG">
             <objects>
-                <viewController id="JPZ-cl-fcs" customClass="DiscoverDetailVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="JPZ-cl-fcs" customClass="DiscoverDetailVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pO5-KR-TBM"/>
                         <viewControllerLayoutGuide type="bottom" id="9Jp-Wo-Men"/>
@@ -2752,7 +2752,7 @@ Cg
         <!--订单详情-->
         <scene sceneID="Tte-4M-0pH">
             <objects>
-                <viewController id="Vzc-cR-yWL" customClass="FinishViewController" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Vzc-cR-yWL" customClass="FinishViewController" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hHT-b1-zda"/>
                         <viewControllerLayoutGuide type="bottom" id="3jV-Ty-BHM"/>
@@ -2786,7 +2786,7 @@ Cg
         <!--Evaluate-->
         <scene sceneID="250-eg-iMD">
             <objects>
-                <viewController id="nzE-Ph-Vvw" userLabel="Evaluate" customClass="EvaluateVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="nzE-Ph-Vvw" userLabel="Evaluate" customClass="EvaluateVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dsu-UC-Gbq"/>
                         <viewControllerLayoutGuide type="bottom" id="X0J-vd-arI"/>
@@ -2806,7 +2806,7 @@ Cg
         <!--退款信息-->
         <scene sceneID="9zP-Oc-SB0">
             <objects>
-                <viewController storyboardIdentifier="RefundVC" id="hWR-zF-L1s" customClass="RefundVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RefundVC" hidesBottomBarWhenPushed="YES" id="hWR-zF-L1s" customClass="RefundVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="God-No-asl"/>
                         <viewControllerLayoutGuide type="bottom" id="Whr-iP-cb7"/>
@@ -2826,7 +2826,7 @@ Cg
         <!--PackageItemVC-->
         <scene sceneID="nAl-9u-wo7">
             <objects>
-                <viewController title="PackageItemVC" id="L1Y-CE-qLU" customClass="PackageItemVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PackageItemVC" hidesBottomBarWhenPushed="YES" id="L1Y-CE-qLU" customClass="PackageItemVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rlp-V2-dBp"/>
                         <viewControllerLayoutGuide type="bottom" id="Srp-Vv-Lzj"/>
@@ -2897,7 +2897,7 @@ Cg
         <!--Package-->
         <scene sceneID="Syj-Jm-aSy">
             <objects>
-                <viewController title="Package" id="8wZ-Jg-Ax2" customClass="PackageVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Package" hidesBottomBarWhenPushed="YES" id="8wZ-Jg-Ax2" customClass="PackageVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EJA-ds-flt"/>
                         <viewControllerLayoutGuide type="bottom" id="B97-ct-3p5"/>
@@ -3005,7 +3005,7 @@ Cg
         <!--退款信息-->
         <scene sceneID="5Vk-7H-zRz">
             <objects>
-                <viewController storyboardIdentifier="AlterRefundVC" id="0WP-rJ-gWI" customClass="AlterRefund" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlterRefundVC" hidesBottomBarWhenPushed="YES" id="0WP-rJ-gWI" customClass="AlterRefund" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JaX-qd-d1X"/>
                         <viewControllerLayoutGuide type="bottom" id="MUK-4X-9mX"/>
@@ -3025,7 +3025,7 @@ Cg
         <!--退款详情-->
         <scene sceneID="fYH-AK-eoe">
             <objects>
-                <viewController id="exe-xb-0vh" customClass="RefundDetailVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="exe-xb-0vh" customClass="RefundDetailVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4Pg-LZ-Des"/>
                         <viewControllerLayoutGuide type="bottom" id="UPD-qN-A8v"/>
@@ -3048,13 +3048,15 @@ Cg
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="glx-l7-EaA" customClass="TabBarViewController" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ATQ-rN-6QP">
+                    <tabBar key="tabBar" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ATQ-rN-6QP">
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xhq-1N-WCh" kind="relationship" relationship="viewControllers" id="j8v-Kf-eV0"/>
+                        <segue destination="xhq-1N-WCh" kind="relationship" relationship="viewControllers" id="b2Q-nZ-V5D"/>
                         <segue destination="NYa-eq-pd3" kind="relationship" relationship="viewControllers" id="kRC-Au-1wy"/>
                         <segue destination="dk3-WT-LkR" kind="relationship" relationship="viewControllers" id="wcU-be-3bb"/>
                         <segue destination="1cV-Kc-OMt" kind="relationship" relationship="viewControllers" id="WQM-Ml-tpG"/>
@@ -3090,7 +3092,6 @@ Cg
         <!--Navigation Controller-->
         <scene sceneID="7kj-zI-bfn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="86i-ie-Zn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xhq-1N-WCh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="ytw-PC-Uhl">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
@@ -3106,13 +3107,13 @@ Cg
                         <segue destination="MUt-5e-865" kind="relationship" relationship="rootViewController" id="4ck-Ji-wQt"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86i-ie-Zn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-461" y="235"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTU-wb-6rn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zfk-CJ-hgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NYa-eq-pd3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="SLk-hO-PHe"/>
                     <toolbarItems/>
@@ -3126,13 +3127,14 @@ Cg
                         <segue destination="47Y-fa-p9P" kind="relationship" relationship="rootViewController" id="V9T-jI-SrU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfk-CJ-hgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-96" y="1088"/>
         </scene>
         <!--我的收藏-->
         <scene sceneID="1C7-lg-Xam">
             <objects>
-                <viewController id="uUl-BF-IFW" customClass="CollectionVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="uUl-BF-IFW" customClass="CollectionVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HW4-PH-lFO"/>
                         <viewControllerLayoutGuide type="bottom" id="bYB-YX-d7T"/>
@@ -3213,12 +3215,12 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyQ-0D-JTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1872" y="-1456"/>
+            <point key="canvasLocation" x="2404" y="-1456"/>
         </scene>
         <!--SetingVC-->
         <scene sceneID="BaF-eQ-LYp">
             <objects>
-                <viewController storyboardIdentifier="SetingVC" id="ZZX-LK-pUd" customClass="SetingVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetingVC" hidesBottomBarWhenPushed="YES" id="ZZX-LK-pUd" customClass="SetingVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u13-vo-esX"/>
                         <viewControllerLayoutGuide type="bottom" id="j1y-gx-U6V"/>
@@ -3279,12 +3281,11 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGk-UJ-Eft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2359" y="-922"/>
+            <point key="canvasLocation" x="2891" y="-922"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6qx-sU-rGw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bf8-WF-cSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dk3-WT-LkR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="izk-Oi-MmX"/>
                     <toolbarItems/>
@@ -3298,6 +3299,7 @@ Cg
                         <segue destination="zNQ-cE-mT7" kind="relationship" relationship="rootViewController" id="dec-aa-MDh"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bf8-WF-cSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-999" y="1117"/>
         </scene>
@@ -3344,10 +3346,10 @@ Cg
             </objects>
             <point key="canvasLocation" x="-545" y="1139"/>
         </scene>
-        <!--LoginVC-->
+        <!--ssssssss-->
         <scene sceneID="iDN-NW-2nA">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="85t-ev-XDA" customClass="LoginVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" hidesBottomBarWhenPushed="YES" id="85t-ev-XDA" customClass="LoginVC" customModule="SHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7nv-ld-EQf"/>
                         <viewControllerLayoutGuide type="bottom" id="eMJ-mm-2fH"/>
@@ -3358,15 +3360,15 @@ Cg
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="ssssssss" id="cEN-z7-Kt9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t09-Id-2Zi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="414" y="-929"/>
+            <point key="canvasLocation" x="852" y="-1099"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L1d-mc-ZlQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4j8-H4-5ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1cV-Kc-OMt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="" id="YOI-pN-9hM"/>
                     <toolbarItems/>
@@ -3380,8 +3382,9 @@ Cg
                         <segue destination="G5y-Nh-jTa" kind="relationship" relationship="rootViewController" id="pGv-Q9-rT9"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4j8-H4-5ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813" y="-698"/>
+            <point key="canvasLocation" x="1345" y="-698"/>
         </scene>
     </scenes>
     <resources>
@@ -3393,8 +3396,8 @@ Cg
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Wd5-sZ-taN"/>
-        <segue reference="0C4-hk-sqY"/>
+        <segue reference="uWf-ca-I6v"/>
+        <segue reference="C7L-gf-d3E"/>
         <segue reference="Tbh-Ac-vcx"/>
     </inferredMetricsTieBreakers>
 </document>

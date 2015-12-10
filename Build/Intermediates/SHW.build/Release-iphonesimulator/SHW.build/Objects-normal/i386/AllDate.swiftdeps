@@ -5,15 +5,15 @@ nominals:
 - "V3SHW8HttpData"
 class-members:
 top-level:
-- "StringLiteralType"
 - "String"
-- "/"
 - "UnicodeScalarType"
+- "StringLiteralType"
+- "/"
 - "UIColor"
 member-access:
 - "CSo7UIColor"
-- "CSo8NSObject"
 - "V12CoreGraphics7CGFloat"
+- "CSo8NSObject"
 - "V3SHW8HttpData"
 dynamic-lookup:
 cross-module:

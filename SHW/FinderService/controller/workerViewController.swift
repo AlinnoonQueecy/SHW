@@ -215,8 +215,8 @@ class workerViewController: UIViewController,UITableViewDelegate,UITableViewData
         //设置在某状态下（未选中状态）
         segmentedControl.setTitleTextAttributes(Normaldic as [NSObject : AnyObject], forState: UIControlState.Normal)
         //设置背景图片
-        segmentedControl.setBackgroundImage(UIImage(named:"u4.png"), forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)//选中状态
-        segmentedControl.setBackgroundImage(UIImage(named:"u4.png"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)//未选中状态
+        segmentedControl.setBackgroundImage(UIImage(named:"not_segment.png"), forState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)//未选中状态
+        segmentedControl.setBackgroundImage(UIImage(named:"yes_segment.png"), forState: UIControlState.Selected, barMetrics: UIBarMetrics.Default)//选中状态
         //每个的宽度按segment的宽度平分
         segmentedControl.apportionsSegmentWidthsByContent =  true
         //选中第几个segment 一般用于初始化时选中

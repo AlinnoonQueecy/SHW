@@ -21,6 +21,11 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
     var customerID = UITextField()
     var loginPassword = UITextField()
     var loginButton = UIButton()
+
+    //声明导航条
+    let  navigationBar =  UINavigationBar()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "设置账号、密码"
@@ -32,8 +37,19 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
         // Do any additional setup after loading the view.
         
         landingView()
+        
+        //实例化导航条
+        navigationBar.frame = CGRectMake(0, 0, self.view.frame.width, 64)
+        self.view.addSubview(navigationBar)
+        onMakeNavitem()
     }
+    
+    
     func landingView(){
+        let  registerview = UIView()
+        registerview.frame = CGRectMake(0, 64, width, height)
+        
+        self.view.addSubview(registerview)
         let data = ["账号:","密码:"]
        
         for var i = 0;i < data.count;i++ {
@@ -42,7 +58,7 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
             label.text = data[i]
             label.textColor  = UIColor.grayColor()
             label.font = UIFont.systemFontOfSize(14)
-            self.view.addSubview(label)
+           registerview.addSubview(label)
             
             
             
@@ -52,7 +68,7 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
         Label = UILabel(frame: CGRectMake((CGFloat(75), CGFloat(20),CGFloat(150), CGFloat(15))))
         Label.font = UIFont.systemFontOfSize(12)
         Label.textColor = UIColor.orangeColor()
-        self.view.addSubview(Label)
+        registerview.addSubview(Label)
 
         customerID = UITextField(frame: CGRectMake(75, 40,width-100,30))
         customerID.borderStyle = UITextBorderStyle.RoundedRect
@@ -65,7 +81,7 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
         customerID.clearButtonMode=UITextFieldViewMode.WhileEditing  //编辑时出现清除按钮
         customerID.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
 
-        self.view.addSubview(customerID)
+        registerview.addSubview(customerID)
         
         loginPassword = UITextField(frame: CGRectMake(75, 85,width-100,30))
         loginPassword.borderStyle = UITextBorderStyle.RoundedRect
@@ -78,7 +94,7 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
         loginPassword.secureTextEntry = true
         loginPassword.clearButtonMode=UITextFieldViewMode.WhileEditing  //编辑时出现清除按钮
         loginPassword.returnKeyType = UIReturnKeyType.Go //表示完成输入，同时会跳到另一页
-         self.view.addSubview(loginPassword)
+        registerview.addSubview(loginPassword)
         
         loginButton = UIButton(frame: CGRectMake(25, 135, width-50, 30))
         loginButton.setTitle("立即注册", forState: UIControlState.Normal)
@@ -89,7 +105,7 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
         
         loginButton.addTarget(self , action: Selector("toRegister"), forControlEvents: UIControlEvents.TouchUpInside)
         loginButton.layer.cornerRadius = 7
-         self.view.addSubview(loginButton)
+        registerview.addSubview(loginButton)
         
         
         
@@ -180,14 +196,17 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
 //                let vc = LoginVC()
 //                self.navigationController?.popToViewController(vc, animated: true)
                 
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = sb.instantiateViewControllerWithIdentifier("LoginVC") as! LoginVC
 //                self.navigationController?.delegate = self
                 
 //                 self.presentViewController(vc, animated: false, completion: nil)
                 
-                self.navigationController?.popToRootViewControllerAnimated(true)
+//                self.navigationController?.popToRootViewControllerAnimated(true)
+//                self.dismissViewControllerAnimated(true, completion: nil)
                 
+                let vc = LoginVC()
+                self.presentViewController(vc, animated: true, completion: nil)
                 
                 
             }else if serverResponse == "Failed"{
@@ -220,7 +239,26 @@ class NextStepVC: UIViewController,UITextFieldDelegate,NSURLConnectionDataDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //导航条详情
+    func reply (){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
+    func onMakeNavitem() -> UINavigationItem{
+        println("创建导航条step1")
+        //创建一个导航项
+        var navigationItem = UINavigationItem()
+        //创建左边按钮
+        var leftButton =  UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Reply, target: self, action: "reply")
+        //var leftButton =  UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Bordered, target: self, action: "reply")
+        //导航栏的标题
+        navigationItem.title = "设置账号、密码"
+        //设置导航栏左边按钮
+        navigationItem.setLeftBarButtonItem(leftButton, animated: true)
+        navigationBar.pushNavigationItem(navigationItem, animated: true)
+        return navigationItem
+    }
+
 
  
 }

@@ -45,14 +45,14 @@ class FinishViewController: UIViewController {
             var orderNo = UILabel(frame: CGRectMake(8, 5, width, 20))
             orderNo.text = "订单编号:\(detail.orderNo)"
             orderNo.textColor = UIColor.blackColor()
-            orderNo.font = UIFont.systemFontOfSize(15)
+            orderNo.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(orderNo)
         
         
             var orderStatus = UILabel(frame: CGRectMake(8, 25, width, 20))
             orderStatus.text = "订单状态:\(detail.orderStatus)"
             orderStatus.textColor = UIColor.orangeColor()
-            orderStatus.font = UIFont.systemFontOfSize(15)
+            orderStatus.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(orderStatus)
         
             var button8C = UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
@@ -63,14 +63,14 @@ class FinishViewController: UIViewController {
             var customerID = UILabel(frame: CGRectMake(8,55 , width, 20))
             customerID.text = "客户账号:\(detail.customerID)"
             customerID.textColor = UIColor.blackColor()
-            customerID.font = UIFont.systemFontOfSize(14)
+            customerID.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(customerID)
             
         
             var customerName = UILabel(frame: CGRectMake(8, 75, width, 20))
             customerName.text = "客户姓名:\(detail.customerName)"
             customerName.textColor = UIColor.blackColor()
-            customerName.font = UIFont.systemFontOfSize(14)
+            customerName.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(customerName)
             
 //            let scoreImg = UIImageView(frame: CGRectMake(75, 60, 80, 16))
@@ -81,19 +81,19 @@ class FinishViewController: UIViewController {
             var facilitatorID = UILabel(frame: CGRectMake(8, 95, width , 20))
             facilitatorID.text = "商家账号:\(detail.facilitatorID)"
             facilitatorID.textColor = UIColor.blackColor()
-            facilitatorID.font = UIFont.systemFontOfSize(14)
+            facilitatorID.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(facilitatorID )
 
             var facilitatorName = UILabel(frame: CGRectMake(8, 115, width, 20))
             facilitatorName.text = "商家名称:\(detail.facilitatorName)"
             facilitatorName.textColor = UIColor.blackColor()
-            facilitatorName.font = UIFont.systemFontOfSize(14)
+            facilitatorName.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(facilitatorName )
         
             var servantName = UILabel(frame: CGRectMake(8, 135, width, 20))
             servantName.text = "服务人员:\(detail.servantName)"
             servantName.textColor = UIColor.blackColor()
-            servantName.font = UIFont.systemFontOfSize(14)
+            servantName.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(servantName)
 
 //            var servantID = UILabel(frame: CGRectMake(8, 155, width, 20))
@@ -109,7 +109,7 @@ class FinishViewController: UIViewController {
             var serviceType = UILabel(frame: CGRectMake(8, 165, width, 20))
             serviceType.text = "服务类型:\(detail.serviceType)"
             serviceType.textColor = UIColor.blackColor()
-            serviceType.font = UIFont.systemFontOfSize(14)
+            serviceType.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(serviceType)
 
             var serviceContent = UILabel(frame: CGRectMake(8, 185, width, 40))
@@ -120,19 +120,19 @@ class FinishViewController: UIViewController {
 //            serviceContent.baselineAdjustment = UIBaselineAdjustment.AlignCenters\\文本基线位置
             serviceContent.baselineAdjustment = .None
             serviceContent.textColor = UIColor.blackColor()
-            serviceContent.font = UIFont.systemFontOfSize(14)
+            serviceContent.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(serviceContent)
         var contactPhone = UILabel(frame: CGRectMake(8, 225, width, 20))
         contactPhone.text = "联系电话:\(detail.contactPhone)"
         contactPhone.textColor = UIColor.blackColor()
-        contactPhone.font = UIFont.systemFontOfSize(14)
+        contactPhone.font = UIFont.systemFontOfSize(13)
         contactPhone.numberOfLines = 0
         contactPhone.baselineAdjustment = .AlignBaselines
         scrollView.addSubview(contactPhone)
         var contactAddress = UILabel(frame: CGRectMake(8, 245, width, 40))
         contactAddress.text = "联系地址:\(detail.contactAddress)"
         contactAddress.textColor = UIColor.blackColor()
-        contactAddress.font = UIFont.systemFontOfSize(14)
+        contactAddress.font = UIFont.systemFontOfSize(13)
         contactAddress.numberOfLines = 0
         contactAddress.baselineAdjustment = .AlignBaselines
         scrollView.addSubview(contactAddress)
@@ -142,7 +142,7 @@ class FinishViewController: UIViewController {
             var itemName = UILabel(frame: CGRectMake(8, 285, width, 20))
             itemName.text = "项目名称:\(detail.itemName)"
             itemName.textColor = UIColor.blackColor()
-            itemName.font = UIFont.systemFontOfSize(14)
+            itemName.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(itemName)
 //
 //            var itemID = UILabel(frame: CGRectMake(8, 305, width, 20))
@@ -158,13 +158,13 @@ class FinishViewController: UIViewController {
             var orderTime = UILabel(frame: CGRectMake(8,315, width, 20))
             orderTime.text = "订单时间:\(detail.orderTime)"
             orderTime.textColor = UIColor.blackColor()
-            orderTime.font = UIFont.systemFontOfSize(14)
+            orderTime.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(orderTime)
             
             var confirmTime = UILabel(frame: CGRectMake(8, 335, width, 20))
             confirmTime.text = "确定时间:\(detail.confirmTime)"
             confirmTime.textColor = UIColor.blackColor()
-            confirmTime.font = UIFont.systemFontOfSize(14)
+            confirmTime.font = UIFont.systemFontOfSize(13)
             scrollView.addSubview(confirmTime)
             var H = CGFloat(355)
  
@@ -175,14 +175,14 @@ class FinishViewController: UIViewController {
             var servicePrice = UILabel(frame: CGRectMake(8, H+10, width, 20))
             servicePrice.text = "服务费用:\(detail.servicePrice)元"
             servicePrice.textColor = UIColor.orangeColor()
-            servicePrice.font = UIFont.systemFontOfSize(15)
+            servicePrice.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(servicePrice)
 
             var paidAmount = UILabel(frame: CGRectMake(8, H+30
 , width, 20))
             paidAmount.text = "已付金额:\(detail.paidAmount)元"
             paidAmount.textColor = UIColor.orangeColor()
-            paidAmount.font = UIFont.systemFontOfSize(15)
+            paidAmount.font = UIFont.systemFontOfSize(14)
             scrollView.addSubview(paidAmount)
         
         var lable5 = UILabel(frame: CGRectMake(0, H+50,width+16, 7))
@@ -192,7 +192,7 @@ class FinishViewController: UIViewController {
             var customerEvaluate = UILabel(frame: CGRectMake(8, H+60, width, 40))
             customerEvaluate.text = "订单评价:\(detail.customerEvaluate)"
             customerEvaluate.textColor = UIColor.blackColor()
-            customerEvaluate.font = UIFont.systemFontOfSize(14)
+            customerEvaluate.font = UIFont.systemFontOfSize(13)
             customerEvaluate.numberOfLines = 0
             customerEvaluate.baselineAdjustment = .AlignBaselines
             scrollView.addSubview(customerEvaluate)
@@ -200,7 +200,7 @@ class FinishViewController: UIViewController {
             var remarks = UILabel(frame: CGRectMake(8, H+100, width, 60))
             remarks.text = "备注:\(detail.remarks)"
             remarks.textColor = UIColor.blackColor()
-            remarks.font = UIFont.systemFontOfSize(14)
+            remarks.font = UIFont.systemFontOfSize(13)
             remarks.numberOfLines = 0
             scrollView.addSubview(remarks)
         
